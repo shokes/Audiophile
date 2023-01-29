@@ -1,18 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-
-    // Or if using `src` directory:
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss/tailwind-config').TailwindConfig} */
 module.exports = {
@@ -26,54 +12,45 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      serif: ['ModernoFB', ...defaultTheme.fontFamily.serif],
-      sans: ['Creo', ...defaultTheme.fontFamily.sans],
+      sans: ['var(--font-manrope)', ...fontFamily.sans],
     },
     fontSize: {
-      xs: ['14px', { lineHeight: '29px' }],
-      sm: ['16px', { lineHeight: '29px' }],
-      base: ['17px', { lineHeight: '29px' }],
-      lg: ['18px', { lineHeight: '32px' }],
-      xl: ['20px', { lineHeight: '1' }],
+      xs: ['15px', { lineHeight: '25px' }],
+      sm: ['13px', { lineHeight: '25px', letterSpacing: '2px' }],
+      base: ['14px', { lineHeight: '19px', letterSpacing: '10px' }],
+      lg: ['18px', { lineHeight: '24px', letterSpacing: '1.3px' }],
+      xl: ['24px', { lineHeight: '33px', letterSpacing: '1.7px' }],
+      logo: [
+        '24px',
+        {
+          lineHeight: '1px',
+          letterSpacing: '0.8px',
+          fontWeight: '800',
+        },
+      ],
       // Headings H6 - H1
-      '2xl': ['22px', { lineHeight: '1' }],
-      '3xl': ['32px', { lineHeight: '1' }],
-      '4xl': ['60px', { lineHeight: '1' }],
-      '5xl': ['68px', { lineHeight: '1' }],
+      '2xl': ['28px', { lineHeight: '38px', letterSpacing: '2px' }],
+      '3xl': ['32px', { lineHeight: '36px', letterSpacing: '1.15px' }],
+      '4xl': ['40px', { lineHeight: '44px', letterSpacing: '1.5px' }],
+      '5xl': ['56px', { lineHeight: '58px', letterSpacing: '2px' }],
       '6xl': ['78px', { lineHeight: '1' }],
     },
     extend: {
-      container: {
-        center: true,
-        padding: '2rem',
-      },
       colors: {
         brand: {
-          50: '#E4D6C5',
-          100: '#DECCB8',
-          200: '#D1B89C',
-          300: '#C4A480',
-          400: '#B79064',
-          500: '#A57C4D',
-          600: '#7F5F3B',
-          700: '#594329',
-          800: '#322617',
-          900: '#0C0906',
+          amber: '#D87D4A',
+          pastelYellow: '#FBAF85',
         },
+        brandBlack: {
+          50: '#101010',
+          100: '#000000',
+        },
+
         brandGray: {
-          50: '#F5F5F5',
-          100: '#E5E5E5',
-          200: '#D4D4D4',
-          300: '#A3A3A3',
-          400: '#888888',
-          500: '#707070',
-          600: '#464646',
-          700: '#282828',
-          800: '#212121',
-          900: '#191919',
+          100: '#FAFAFA',
+          200: '#F1F1F1',
         },
       },
     },
   },
-  // plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };
