@@ -12,31 +12,27 @@ const navigation = [
 
 const Navigation = () => {
   return (
-    <div className=''>
-      <div className='flex pt-[32px] border-b mb-[6rem] opacity-20pb-[36px] items-center justify-between text-white'>
-        <div className='text-logo'>
-          <Link href='/' passHref>
-            audiophile
-          </Link>
-        </div>
+    <nav className='mb-32 flex pt-8 border-b border-white/20 pb-9 items-center justify-between text-white'>
+      <Link href='/' className='text-logo'>
+        audiophile
+      </Link>
 
-        <div className='hidden lg:flex lg:gap-x-12'>
-          {navigation.map((item) => (
-            <div
-              className='hover:text-brand-amber duration-200'
-              key={item.name}
-            >
+      <div className='hidden lg:flex lg:gap-x-[34px]'>
+        {navigation.map((item) => {
+          const { name, href } = item;
+          return (
+            <div className='hover:text-brand-amber duration-200' key={name}>
               <Typography as='span' weight='font-bold' transform='uppercase'>
-                <Link href={item.href}>{item.name}</Link>
+                <Link href={href}>{name}</Link>
               </Typography>
             </div>
-          ))}
-        </div>
-        <div className=''>
-          <AiOutlineShoppingCart className='w-[23.33px]  h-[20px]' />
-        </div>
+          );
+        })}
       </div>
-    </div>
+      <div>
+        <AiOutlineShoppingCart className='w-[23.33px]  h-[20px]' />
+      </div>
+    </nav>
   );
 };
 

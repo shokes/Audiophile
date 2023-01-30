@@ -12,30 +12,25 @@ const Hero = () => {
       <Image
         src={heroImage}
         alt='hero'
-        className='absolute inset-0 -z-10 h-full w-full object-cover'
+        className='absolute inset-0 -z-10 h-full w-full object-cover 2xl:object-fill'
       />
-      <div className='px-6 lg:px-[165px] '>
-        <nav>
-          <Navigation />
-        </nav>
+      <div className='px-[165px]'>
+        <Navigation />
 
-        <div className='] pt-[128px] text-white'>
+        <div className='text-white pb-[151px]'>
           <div className='mb-6 opacity-50'>
             <Typography as='p' weight='font-normal'>
               New product
             </Typography>
           </div>
-
-          <div className=''>
-            <div className='mb-6 w-[398px]'>
-              <Typography as='h1'>XX99 Mark II Headphones</Typography>
-            </div>
-            <div className='opacity-75 mb-6 w-[349px]'>
-              <Typography as='small' weight='font-medium'>
-                Experience natural, lifelike audio and exceptional build quality
-                made for the passionate music enthusiast.
-              </Typography>
-            </div>
+          <div className='mb-6 w-[398px]'>
+            <Typography as='h1'>XX99 Mark II Headphones</Typography>
+          </div>
+          <div className='opacity-75 mb-6 w-[349px]'>
+            <Typography as='small' weight='font-medium'>
+              Experience natural, lifelike audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </Typography>
           </div>
           <Button color='brand-amber' hover='brand-pastelYellow'>
             <Link className='uppercase' href='/product'>
