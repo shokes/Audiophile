@@ -27,7 +27,7 @@ const Hero = () => {
             <Typography as='h1'>XX99 Mark II Headphones</Typography>
           </div>
           <div className='opacity-75 mb-6 w-[349px]'>
-            <Typography as='small' weight='font-medium'>
+            <Typography as='xsmall' weight='font-medium'>
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </Typography>

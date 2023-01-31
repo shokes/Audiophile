@@ -22,7 +22,7 @@ const Navigation = () => {
           const { name, href } = item;
           return (
             <div className='hover:text-brand-amber duration-200' key={name}>
-              <Typography as='span' weight='font-bold' transform='uppercase'>
+              <Typography as='small' weight='font-bold' transform='uppercase'>
                 <Link href={href}>{name}</Link>
               </Typography>
             </div>
