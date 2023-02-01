@@ -16,7 +16,6 @@ const Hero = () => {
       />
       <div className='px-[165px]'>
         <Navigation />
-
         <div className='text-white pb-[151px]'>
           <div className='mb-6 opacity-50'>
             <Typography as='p' weight='font-normal'>
