@@ -22,7 +22,7 @@ const featureItems = [
   },
 ];
 
-const FeatureItem = () => {
+const Feature = () => {
   return (
     <ul className='grid grid-cols-1 gap-x-[30px] sm:grid-cols-2 lg:grid-cols-3 px-[151px] mt-[200px]'>
       {featureItems.map((feature) => (
@@ -57,4 +57,4 @@ const FeatureItem = () => {
   );
 };
 
-export default FeatureItem;
+export default Feature;

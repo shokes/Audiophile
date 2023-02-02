@@ -1,14 +1,37 @@
-import FeatureItem from '@/components/FeatureItem';
-import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
 import { Fragment } from 'react';
+import {
+  useStoryblokState,
+  getStoryblokApi,
+  StoryblokComponent,
+} from '@storyblok/react';
 
-export default function Home() {
+export default function Home({ story }: any) {
+  story = useStoryblokState(story);
+
   return (
     <Fragment>
-      <Hero />
-      <FeatureItem />
-      <Footer />
+      <StoryblokComponent blok={story.content} />
     </Fragment>
   );
+}
+
+export async function getStaticProps() {
+  // home is the default slug for the homepage in Storyblok
+  let slug = 'home';
+
+  // load the draft version
+  let sbParams = {
+    version: 'draft', // or 'published'
+  };
+
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams as any);
+
+  return {
+    props: {
+      story: data ? data.story : false,
+      key: data ? data.story.id : false,
+    },
+    revalidate: 3600, // revalidate every hour
+  };
 }

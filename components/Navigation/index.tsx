@@ -16,7 +16,6 @@ const Navigation = () => {
       <Link href='/' className='text-logo'>
         audiophile
       </Link>
-
       <div className='hidden lg:flex lg:gap-x-[34px]'>
         {navigation.map((item) => {
           const { name, href } = item;

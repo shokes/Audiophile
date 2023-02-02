@@ -1,18 +1,22 @@
 import React from 'react';
 import Navigation from '../Navigation';
-import heroImage from '../../public/hero/image-hero.jpg';
 import Image from 'next/image';
 import Typography from '../Typography';
 import Button from '../Button';
 import Link from 'next/link';
+import { SbBlokData, storyblokEditable } from '@storyblok/react';
 
-const Hero = () => {
+const Hero = ({ blok }: any) => {
   return (
-    <div className='relative isolate overflow-hidden'>
+    <div
+      className='relative isolate overflow-hidden'
+      {...storyblokEditable(blok)}
+    >
       <Image
-        src={heroImage}
+        src={`https://${blok.image}`}
         alt='hero'
         className='absolute inset-0 -z-10 h-full w-full object-cover 2xl:object-fill'
+        fill
       />
       <div className='px-[165px]'>
         <Navigation />
@@ -23,12 +27,11 @@ const Hero = () => {
             </Typography>
           </div>
           <div className='mb-6 w-[398px]'>
-            <Typography as='h1'>XX99 Mark II Headphones</Typography>
+            <Typography as='h1'>{blok.title}</Typography>
           </div>
           <div className='opacity-75 mb-6 w-[349px]'>
             <Typography as='xsmall' weight='font-medium'>
-              Experience natural, lifelike audio and exceptional build quality
-              made for the passionate music enthusiast.
+              {blok.description}
             </Typography>
           </div>
           <Button color='brand-amber' hover='brand-pastelYellow'>
