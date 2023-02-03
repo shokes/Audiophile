@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "sb-pull": "storyblok pull-components --space=194757",
+    "sb-types": "storyblok-generate-ts source=./components.194757.json target=./@types/generated/storyblok compilerOptions.additionalProperties=false",
     "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
@@ -21,11 +23,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "storyblok": "^3.17.2",
     "typescript": "4.9.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
+    "storyblok-generate-ts": "^1.12.0",
     "tailwindcss": "^3.2.4"
   }
 }

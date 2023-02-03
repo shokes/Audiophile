@@ -4,6 +4,7 @@ import {
   getStoryblokApi,
   StoryblokComponent,
 } from '@storyblok/react';
+import HomeProductOne from '@/components/HomeProductOne';
 
 export default function Home({ story }: any) {
   story = useStoryblokState(story);
@@ -11,6 +12,7 @@ export default function Home({ story }: any) {
   return (
     <Fragment>
       <StoryblokComponent blok={story.content} />
+      <HomeProductOne />
     </Fragment>
   );
 }

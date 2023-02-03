@@ -5,8 +5,13 @@ import Typography from '../Typography';
 import Button from '../Button';
 import Link from 'next/link';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
+import { HeroStoryblok } from '@/@types/generated/storyblok';
 
-const Hero = ({ blok }: any) => {
+interface HeroProps {
+  blok: SbBlokData & HeroStoryblok;
+}
+
+const Hero = ({ blok }: HeroProps) => {
   return (
     <div
       className='relative isolate overflow-hidden'

@@ -6,11 +6,7 @@ interface Props {
   hover: string;
 }
 
-const Button = ({
-  color = 'brand-amber',
-  children,
-  hover = 'brand-pastelYellow',
-}: Props) => {
+const Button = ({ color, children, hover }: Props) => {
   return (
     <button
       className={`hover:bg-${hover} bg-${color}  px-[31px] py-[15px] duration-200 text-sm font-bold`}
