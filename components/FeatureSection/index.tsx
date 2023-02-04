@@ -10,7 +10,7 @@ interface FeatureSectionProps {
 const FeatureSection = ({ blok }: FeatureSectionProps) => {
   return (
     <ul
-      className='grid grid-cols-1 gap-x-[30px] sm:grid-cols-2 lg:grid-cols-3 px-[151px] mt-[200px]'
+      className='grid grid-cols-1 gap-x-[30px] sm:grid-cols-2 lg:grid-cols-3 max-w-[1110px]  mx-auto mt-[200px]'
       {...storyblokEditable(blok)}
     >
       {blok.features &&

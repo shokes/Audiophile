@@ -5,6 +5,10 @@ import {
   StoryblokComponent,
 } from '@storyblok/react';
 import HomeProductOne from '@/components/HomeProductOne';
+import HomeProductTwo from '@/components/HomeProductTwo';
+import HomeProductThree from '@/components/HomeProductThree';
+import HomeProductFour from '@/components/HomeProductFour';
+import Footer from '@/components/Footer';
 
 export default function Home({ story }: any) {
   story = useStoryblokState(story);
@@ -13,6 +17,10 @@ export default function Home({ story }: any) {
     <Fragment>
       <StoryblokComponent blok={story.content} />
       <HomeProductOne />
+      <HomeProductTwo />
+      <HomeProductThree />
+      <HomeProductFour />
+      <Footer />
     </Fragment>
   );
 }

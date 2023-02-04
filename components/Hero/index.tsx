@@ -23,7 +23,7 @@ const Hero = ({ blok }: HeroProps) => {
         className='absolute inset-0 -z-10 h-full w-full object-cover 2xl:object-fill'
         fill
       />
-      <div className='px-[165px]'>
+      <div className='max-w-[1110px]  mx-auto'>
         <Navigation />
         <div className='text-white pb-[151px]'>
           <div className='mb-6 opacity-50'>
@@ -32,7 +32,9 @@ const Hero = ({ blok }: HeroProps) => {
             </Typography>
           </div>
           <div className='mb-6 w-[398px]'>
-            <Typography as='h1'>{blok.title}</Typography>
+            <Typography as='h1' weight='font-bold'>
+              {blok.title}
+            </Typography>
           </div>
           <div className='opacity-75 mb-6 w-[349px]'>
             <Typography as='xsmall' weight='font-medium'>
