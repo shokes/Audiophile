@@ -3,7 +3,6 @@ import Navigation from '../Navigation';
 import Image from 'next/image';
 import Typography from '../Typography';
 import Button from '../Button';
-import Link from 'next/link';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
 
@@ -41,11 +40,7 @@ const Hero = ({ blok }: HeroProps) => {
               {blok.description}
             </Typography>
           </div>
-          <Button color='brand-amber' hover='brand-pastelYellow'>
-            <Link className='uppercase' href='/product'>
-              See product
-            </Link>
-          </Button>
+          <Button bg='brand-amber' hover='brand-pastelYellow' />
         </div>
       </div>
     </div>

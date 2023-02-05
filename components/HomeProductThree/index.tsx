@@ -1,13 +1,12 @@
 import React from 'react';
 import Typography from '../Typography';
 import Button from '../Button';
-import Link from 'next/link';
 import earphones from '../../public/image-earphones-yx1.jpg';
 import Image from 'next/image';
 
 const HomeProductThree = () => {
   return (
-    <div className='max-w-[1110px]  mx-auto mt-[50px] flex items-center justify-between'>
+    <div className='max-w-[1110px]  mx-auto mt-[48px] flex items-center justify-between'>
       <div>
         <Image
           src={earphones}
@@ -25,11 +24,7 @@ const HomeProductThree = () => {
               YX1 EARPHONES
             </Typography>
           </div>
-          <Button color='black' hover='[#4C4C4C]'>
-            <Link className='uppercase text-white' href='/product'>
-              See product
-            </Link>
-          </Button>
+          <Button hover='black' />
         </div>
       </div>
     </div>

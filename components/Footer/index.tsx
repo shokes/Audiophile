@@ -4,7 +4,7 @@ import Typography from '../Typography';
 
 const Footer = () => {
   return (
-    <div className='  text-white bg-black mx-auto mt-[50px]'>
+    <div className='  text-white bg-black mx-auto mt-[200px]'>
       <div className='max-w-[1110px] mx-auto '>
         <Navigation />
         <div className='opacity-50 w-[540px]'>
@@ -19,5 +19,4 @@ const Footer = () => {
     </div>
   );
 };
-
 export default Footer;

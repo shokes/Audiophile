@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import FeatureSection from '@/components/FeatureSection';
 import { Manrope } from '@next/font/google';
 import Feature from '@/components/Feature';
+import HomeProductOne from '@/components/HomeProductOne';
 
 const components = {
   teaser: Teaser,
@@ -14,6 +15,7 @@ const components = {
   hero: Hero,
   feature_section: FeatureSection,
   feature: Feature,
+  home_product_one: HomeProductOne,
 };
 
 const manrope = Manrope({

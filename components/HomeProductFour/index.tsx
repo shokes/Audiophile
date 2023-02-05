@@ -5,7 +5,7 @@ import gear from '../../public/image-gallery-1.png';
 
 const HomeProductFour = () => {
   return (
-    <div className='max-w-[1110px] mx-auto mt-[50px] flex items-center justify-between'>
+    <div className='max-w-[1110px] mx-auto mt-[200px] flex items-center justify-between'>
       <div className='w-[445px]'>
         <div className='mb-8'>
           <Typography weight='font-bold' as='h2' transform='uppercase'>
