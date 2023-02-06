@@ -1,23 +1,33 @@
 import React from 'react';
 import Typography from '../Typography';
 import Button from '../Button';
-import bg from '../../public/image-speaker-zx7.jpg';
+import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
+import { HomeProductTwoStoryblok } from '@/@types/generated/storyblok';
 
-const HomeProductTwo = () => {
+interface HomeProductTwoProps {
+  blok: SbBlokData & HomeProductTwoStoryblok;
+}
+
+const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
   return (
-    <div className='max-w-[1110px]  mx-auto mt-[48px]'>
+    <div
+      className='max-w-[1110px]  mx-auto mt-[48px]'
+      {...storyblokEditable(blok)}
+    >
       <div className='relative isolate overflow-hidden'>
-        <Image
-          src={bg}
-          alt='hero'
-          className='absolute inset-0 -z-10 object-cover rounded-lg'
-          fill
-        />
+        {blok && (
+          <Image
+            src={`https://${blok.image}`}
+            alt='hero'
+            className='absolute inset-0 -z-10 object-cover rounded-lg'
+            fill
+          />
+        )}
         <div className=' pb-[151px] pl-[95px] pt-[101px] text-black'>
           <div className='mb-6 w-[398px] '>
             <Typography as='h4' weight='font-bold'>
-              ZX7 SPEAKER
+              {blok && blok.name}
             </Typography>
           </div>
           <Button hover='black' />

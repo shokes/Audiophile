@@ -1,14 +1,17 @@
 import React from 'react';
 import Typography from '../Typography';
 import Button from '../Button';
-import Link from 'next/link';
 import Image from 'next/image';
-import speaker from '../../public/image-speaker-zx9.png';
 import mdOval from '../../public/OvalMd.png';
 import { storyblokEditable } from '@storyblok/react';
+import { SbBlokData } from '@storyblok/react';
+import { HomeProductOneStoryblok } from '@/@types/generated/storyblok';
 
-const HomeProductOne = ({ blok }: any) => {
-  console.log(blok);
+interface HomeProductOneProps {
+  blok: SbBlokData & HomeProductOneStoryblok;
+}
+
+const HomeProductOne = ({ blok }: HomeProductOneProps) => {
   return (
     <div
       className='max-w-[1110px]  mx-auto mt-[168px]'
@@ -17,7 +20,7 @@ const HomeProductOne = ({ blok }: any) => {
       <div className='bg-brand-amber w-full relative  rounded-lg flex gap-[138.28px] justify-center'>
         <div className='mt-[133px] z-30'>
           <Image
-            src={speaker}
+            src={`https://${blok.image}`}
             width={410.23}
             height={493}
             alt='dfdfd'
@@ -45,17 +48,15 @@ const HomeProductOne = ({ blok }: any) => {
           width={944}
           height={944}
         />
-
         <div className='w-[349px] z-30 text-white mt-[133px] pb-[124px]'>
           <div className='mb-6'>
             <Typography as='h1' weight='font-bold'>
-              ZX9 SPEAKER
+              {blok.name}
             </Typography>
           </div>
           <div className='mb-10'>
             <Typography as='xsmall' weight='font-medium'>
-              Upgrade to premium speakers that are phenomenally built to deliver
-              truly remarkable sound.
+              {blok.description}
             </Typography>
           </div>
           <div className='z-50'>

@@ -15,7 +15,6 @@ export default function Home({ story }: any) {
   return (
     <Fragment>
       <StoryblokComponent blok={story.content} />
-      <HomeProductTwo />
       <HomeProductThree />
       <HomeProductFour />
       <Footer />

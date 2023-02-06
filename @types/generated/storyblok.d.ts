@@ -50,11 +50,41 @@ export interface HeroStoryblok {
   component: "hero";
 }
 
+export interface HomeProductOneStoryblok {
+  name?: string;
+  description?: string;
+  link?: MultilinkStoryblok;
+  image?: string;
+  _uid: string;
+  component: "home_product_one";
+}
+
+export interface HomeProductsStoryblok {
+  _uid: string;
+  component: "home_products";
+}
+
+export interface HomeProductTwoStoryblok {
+  name: string;
+  link: MultilinkStoryblok;
+  image: string;
+  _uid: string;
+  component: "home_product_two";
+}
+
 export interface PageStoryblok {
   body?: any[];
   _uid: string;
   component: "page";
   uuid?: string;
+}
+
+export interface ProductInfoShortStoryblok {
+  name?: string;
+  description?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: "product_info_short";
 }
 
 export interface TeaserStoryblok {
