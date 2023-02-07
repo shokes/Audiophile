@@ -4,11 +4,10 @@ import Link from 'next/link';
 
 interface Props {
   bg?: string;
-  //children: React.ReactNode;
   hover: string;
 }
 
-const Button = ({ bg = '', hover = '[#4C4C4C]' }: Props) => {
+const Button = ({ bg = '', hover = 'black' }: Props) => {
   return (
     <button
       className={classNames(

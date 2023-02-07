@@ -36,18 +36,20 @@ export interface FeatureSectionStoryblok {
   component: "feature_section";
 }
 
-export interface GridStoryblok {
-  columns?: any[];
-  _uid: string;
-  component: "grid";
-}
-
 export interface HeroStoryblok {
   image: string;
   title: string;
   description: string;
   _uid: string;
   component: "hero";
+}
+
+export interface HomeProductFourStoryblok {
+  title?: string;
+  description?: string;
+  image?: string;
+  _uid: string;
+  component: "home_product_four";
 }
 
 export interface HomeProductOneStoryblok {
@@ -59,9 +61,12 @@ export interface HomeProductOneStoryblok {
   component: "home_product_one";
 }
 
-export interface HomeProductsStoryblok {
+export interface HomeProductThreeStoryblok {
+  image?: string;
+  name?: string;
+  link?: MultilinkStoryblok;
   _uid: string;
-  component: "home_products";
+  component: "home_product_three";
 }
 
 export interface HomeProductTwoStoryblok {
@@ -85,10 +90,4 @@ export interface ProductInfoShortStoryblok {
   link?: MultilinkStoryblok;
   _uid: string;
   component: "product_info_short";
-}
-
-export interface TeaserStoryblok {
-  headline?: string;
-  _uid: string;
-  component: "teaser";
 }

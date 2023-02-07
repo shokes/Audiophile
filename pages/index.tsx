@@ -4,9 +4,6 @@ import {
   getStoryblokApi,
   StoryblokComponent,
 } from '@storyblok/react';
-import HomeProductTwo from '@/components/HomeProductTwo';
-import HomeProductThree from '@/components/HomeProductThree';
-import HomeProductFour from '@/components/HomeProductFour';
 import Footer from '@/components/Footer';
 
 export default function Home({ story }: any) {
@@ -15,8 +12,6 @@ export default function Home({ story }: any) {
   return (
     <Fragment>
       <StoryblokComponent blok={story.content} />
-      <HomeProductThree />
-      <HomeProductFour />
       <Footer />
     </Fragment>
   );

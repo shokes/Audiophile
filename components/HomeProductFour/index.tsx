@@ -1,9 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Typography from '../Typography';
-import gear from '../../public/image-gallery-1.png';
+import { SbBlokData } from '@storyblok/react';
+import { HomeProductFourStoryblok } from '@/@types/generated/storyblok';
 
-const HomeProductFour = () => {
+interface HomeProductFourProps {
+  blok: SbBlokData & HomeProductFourStoryblok;
+}
+
+const HomeProductFour = ({ blok }: HomeProductFourProps) => {
   return (
     <div className='max-w-[1110px] mx-auto mt-[200px] flex items-center justify-between'>
       <div className='w-[445px]'>
@@ -15,23 +20,19 @@ const HomeProductFour = () => {
         </div>
         <div className='opacity-50'>
           <Typography weight='font-medium' as='xsmall'>
-            Located at the heart of New York City, Audiophile is the premier
-            store for high end headphones, earphones, speakers, and audio
-            accessories. We have a large showroom and luxury demonstration rooms
-            available for you to browse and experience a wide range of our
-            products. Stop by our store to meet some of the fantastic people who
-            make Audiophile the best place to buy your portable audio equipment.
+            {blok && blok.description}
           </Typography>
         </div>
       </div>
-
-      <Image
-        src={gear}
-        width={540}
-        height={588}
-        alt='gear'
-        className='rounded-lg object-cover'
-      />
+      {blok && (
+        <Image
+          src={`https://${blok.image}`}
+          width={540}
+          height={588}
+          alt='gear'
+          className='rounded-lg object-cover'
+        />
+      )}
     </div>
   );
 };

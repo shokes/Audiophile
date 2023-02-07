@@ -4,15 +4,15 @@ import Typography from '../Typography';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Headphones', href: '#' },
-  { name: 'Speakers', href: '#' },
-  { name: 'Earphones', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'Headphones', href: '/headphones' },
+  { name: 'Speakers', href: '/speakers' },
+  { name: 'Earphones', href: '/earphones' },
 ];
 
-const Navigation = () => {
+const Navigation = (props: { shoppingCart: boolean }) => {
   return (
-    <nav className='mb-32 flex pt-8 border-b border-white/20 pb-9 items-center justify-between text-white'>
+    <nav className='flex items-center justify-between text-white'>
       <Link href='/' className='text-logo'>
         audiophile
       </Link>
@@ -28,9 +28,9 @@ const Navigation = () => {
           );
         })}
       </div>
-      <div>
-        <AiOutlineShoppingCart className='w-[23.33px]  h-[20px]' />
-      </div>
+      {props.shoppingCart && (
+        <AiOutlineShoppingCart className='w-[23.33px]  text-white h-[20px]' />
+      )}
     </nav>
   );
 };

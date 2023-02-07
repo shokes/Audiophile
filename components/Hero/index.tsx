@@ -23,7 +23,10 @@ const Hero = ({ blok }: HeroProps) => {
         fill
       />
       <div className='max-w-[1110px]  mx-auto'>
-        <Navigation />
+        <div className='border-b mb-32 border-white/20 pt-8  pb-9'>
+          <Navigation shoppingCart={true} />
+        </div>
+
         <div className='text-white pb-[151px]'>
           <div className='mb-6 opacity-50'>
             <Typography as='p' weight='font-normal'>
