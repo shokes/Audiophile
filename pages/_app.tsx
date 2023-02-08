@@ -10,6 +10,8 @@ import HomeProductOne from '@/components/HomeProductOne';
 import HomeProductTwo from '@/components/HomeProductTwo';
 import HomeProductThree from '@/components/HomeProductThree';
 import HomeProductFour from '@/components/HomeProductFour';
+import Product from '@/components/Product';
+import ProductSection from '@/components/ProductSection';
 
 const components = {
   page: Page,
@@ -20,6 +22,8 @@ const components = {
   home_product_two: HomeProductTwo,
   home_product_three: HomeProductThree,
   home_product_four: HomeProductFour,
+  product: Product,
+  product_section: ProductSection,
 };
 
 const manrope = Manrope({

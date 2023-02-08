@@ -1,16 +1,15 @@
 import Head from 'next/head';
-import Navigation from '../Navigation';
-import Footer from '../Footer';
+
 import {
   useStoryblokState,
   getStoryblokApi,
   StoryblokComponent,
 } from '@storyblok/react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export default function Page({ story }: any) {
   story = useStoryblokState(story);
-
-  console.log(story);
 
   return (
     <div>
@@ -18,7 +17,6 @@ export default function Page({ story }: any) {
         <title>{story ? story.name : 'My Site'}</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Navigation shoppingCart={true} />
       <StoryblokComponent blok={story.content} />
       <Footer />
     </div>
