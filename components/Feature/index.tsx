@@ -28,6 +28,7 @@ const Feature = ({ feature }: FeatureProps) => {
             className='object-contain absolute -top-16'
           />
         </div>
+
         <div className='text-center text-black mb-3.5 absolute top-[116px]'>
           <Typography as='h6' transform='uppercase' weight='font-bold'>
             {feature.name}

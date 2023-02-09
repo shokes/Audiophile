@@ -1,9 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const config = {
   reactStrictMode: true,
   images: {
     domains: ['a.storyblok.com'],
   },
 };
 
-module.exports = nextConfig;
+module.exports = config;
