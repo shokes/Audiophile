@@ -5,6 +5,7 @@ import Typography from '../Typography';
 import Button from '../Button';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
+import Link from 'next/link';
 
 interface HeroProps {
   blok: SbBlokData & HeroStoryblok;
@@ -43,7 +44,13 @@ const Hero = ({ blok }: HeroProps) => {
               {blok.description}
             </Typography>
           </div>
-          <Button bg='brand-amber' hover='brand-pastelYellow' />
+          {/* <Button bg='brand-amber' hover='brand-pastelYellow' /> */}
+          <Link
+            href={`product/${blok.title}`}
+            className='hover:underline underline-offset-2 hover:text-blue duration-150 ease-in-out '
+          >
+            see button
+          </Link>
         </div>
       </div>
     </div>

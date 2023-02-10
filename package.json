@@ -25,6 +25,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "storyblok": "^3.17.2",
+    "storyblok-rich-text-react-renderer": "^2.6.1",
     "typescript": "4.9.4"
   },
   "devDependencies": {

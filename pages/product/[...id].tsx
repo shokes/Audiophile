@@ -1,27 +1,32 @@
+import React from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import {
   useStoryblokState,
   getStoryblokApi,
   StoryblokComponent,
 } from '@storyblok/react';
-import Footer from '@/components/Footer';
 
-export default function Page({ story }: any) {
+const ProductDetail = ({ story }: any) => {
+  const router = useRouter();
+  const { id } = router.query;
   story = useStoryblokState(story);
+
+  console.log(id);
 
   return (
     <div>
-      <Head>
-        <title>{story ? story.name : 'My Site'}</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <StoryblokComponent blok={story.content} />
-      <Footer />
+      {/* <StoryblokComponent blok={story.content} /> */}
+      <div>ProductDetail</div>
     </div>
   );
-}
+};
+
+export default ProductDetail;
 
 export async function getStaticProps({ params }: any) {
+  console.log('wroiking');
+  console.log(params);
   let slug = params.slug ? params.slug.join('/') : 'home';
 
   let sbParams = {
@@ -41,6 +46,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
+  console.log('workig');
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get('cdn/links/', {
     version: 'draft',

@@ -45,7 +45,6 @@ export interface HeroStoryblok {
 }
 
 export interface HomeProductFourStoryblok {
-  title?: string;
   description?: string;
   image?: string;
   _uid: string;
@@ -84,10 +83,29 @@ export interface PageStoryblok {
   uuid?: string;
 }
 
+export interface ProductStoryblok {
+  new?: boolean;
+  name?: string;
+  image?: string;
+  description?: string;
+  link?: MultilinkStoryblok;
+  reverse?: "" | "reverse" | "no-reverse";
+  type?: string;
+  _uid: string;
+  component: "product";
+}
+
 export interface ProductInfoShortStoryblok {
   name?: string;
   description?: string;
   link?: MultilinkStoryblok;
   _uid: string;
   component: "product_info_short";
+}
+
+export interface ProductSectionStoryblok {
+  heading?: string;
+  products?: any[];
+  _uid: string;
+  component: "product_section";
 }

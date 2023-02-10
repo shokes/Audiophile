@@ -3,10 +3,17 @@ import Image from 'next/image';
 import Button from '../Button';
 import classNames from 'classnames';
 import Typography from '../Typography';
+import { SbBlokData, storyblokEditable } from '@storyblok/react';
+import { ProductStoryblok } from '@/@types/generated/storyblok';
 
-const Product = ({ product }: any) => {
+interface ProductProps {
+  product: SbBlokData & ProductStoryblok;
+}
+
+const Product = ({ product }: ProductProps) => {
   return (
     <div
+      {...storyblokEditable(product)}
       key={product.name}
       className={classNames(
         'flex items-center gap-[125px] mt-40',

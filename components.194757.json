@@ -88,12 +88,9 @@
       "name": "home_product_four",
       "display_name": null,
       "created_at": "2023-02-06T07:57:25.975Z",
-      "updated_at": "2023-02-06T07:57:56.871Z",
+      "updated_at": "2023-02-08T08:49:10.883Z",
       "id": 3398305,
       "schema": {
-        "title": {
-          "type": "text"
-        },
         "description": {
           "type": "text"
         },
@@ -230,6 +227,60 @@
       "icon": null
     },
     {
+      "name": "product",
+      "display_name": null,
+      "created_at": "2023-02-07T11:47:52.121Z",
+      "updated_at": "2023-02-08T09:24:39.629Z",
+      "id": 3405084,
+      "schema": {
+        "new": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "text"
+        },
+        "image": {
+          "type": "image"
+        },
+        "description": {
+          "type": "text"
+        },
+        "link": {
+          "type": "multilink"
+        },
+        "reverse": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "acb9e217-ac04-472a-bfaf-836d58dead06",
+              "name": "reverse",
+              "value": "reverse"
+            },
+            {
+              "_uid": "08754b8f-feb7-4c6d-aa3b-c0d7e43cef28",
+              "value": "no-reverse",
+              "name": "no-reverse"
+            }
+          ]
+        },
+        "type": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "product",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "product_info_short",
       "display_name": null,
       "created_at": "2023-02-04T11:43:39.678Z",
@@ -254,6 +305,32 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "product_info_short",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "product_section",
+      "display_name": null,
+      "created_at": "2023-02-07T11:12:23.874Z",
+      "updated_at": "2023-02-08T08:43:35.834Z",
+      "id": 3404830,
+      "schema": {
+        "heading": {
+          "type": "text"
+        },
+        "products": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "product_section",
       "component_group_uuid": null,
       "color": null,
       "icon": null
