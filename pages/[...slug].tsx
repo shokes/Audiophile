@@ -11,10 +11,10 @@ export default function Page({ story }: any) {
 
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>{story ? story.name : 'My Site'}</title>
         <link rel='icon' href='/favicon.ico' />
-      </Head>
+      </Head> */}
       <StoryblokComponent blok={story.content} />
       <Footer />
     </div>

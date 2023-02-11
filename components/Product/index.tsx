@@ -5,12 +5,14 @@ import classNames from 'classnames';
 import Typography from '../Typography';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { ProductStoryblok } from '@/@types/generated/storyblok';
+import Link from 'next/link';
 
 interface ProductProps {
   product: SbBlokData & ProductStoryblok;
 }
 
 const Product = ({ product }: ProductProps) => {
+  //console.log(product.link?.cached_url);
   return (
     <div
       {...storyblokEditable(product)}
@@ -53,9 +55,11 @@ const Product = ({ product }: ProductProps) => {
             {product.description}
           </Typography>
         </div>
-        <div className='text-white'>
+
+        <Link href={`/${product.link?.cached_url}`}>see button</Link>
+        {/* <div className='text-white'>
           <Button bg='brand-amber' hover='brand-pastelYellow' />
-        </div>
+        </div> */}
       </div>
     </div>
   );

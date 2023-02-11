@@ -46,7 +46,7 @@ const Hero = ({ blok }: HeroProps) => {
           </div>
           {/* <Button bg='brand-amber' hover='brand-pastelYellow' /> */}
           <Link
-            href={`product/${blok.title}`}
+            href='/product'
             className='hover:underline underline-offset-2 hover:text-blue duration-150 ease-in-out '
           >
             see button
