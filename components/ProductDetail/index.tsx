@@ -2,7 +2,6 @@ import { render } from 'storyblok-rich-text-react-renderer';
 import Image from 'next/image';
 
 const ProductDetail = ({ blok }: any) => {
-  //console.log(blok);
   return (
     <section className='text-gray-600 body-font'>
       <div className='container mx-auto flex px-5 py-24 items-center justify-center flex-col'>
