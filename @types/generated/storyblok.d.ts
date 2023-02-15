@@ -95,6 +95,34 @@ export interface ProductStoryblok {
   component: "product";
 }
 
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+}
+
+export interface ProductStoryblok {
+  name?: string;
+  description?: string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: "Product";
+}
+
+export interface ProductDetailStoryblok {
+  name?: string;
+  type?: string;
+  new?: boolean;
+  image?: AssetStoryblok;
+  description?: string;
+  _uid: string;
+  component: "product_detail";
+}
+
 export interface ProductInfoShortStoryblok {
   name?: string;
   description?: string;

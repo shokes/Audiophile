@@ -230,7 +230,7 @@
       "name": "product",
       "display_name": null,
       "created_at": "2023-02-07T11:47:52.121Z",
-      "updated_at": "2023-02-08T09:24:39.629Z",
+      "updated_at": "2023-02-10T16:41:20.708Z",
       "id": 3405084,
       "schema": {
         "new": {
@@ -246,7 +246,8 @@
           "type": "text"
         },
         "link": {
-          "type": "multilink"
+          "type": "multilink",
+          "display_name": ""
         },
         "reverse": {
           "type": "option",
@@ -276,6 +277,70 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "product",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Product",
+      "display_name": null,
+      "created_at": "2023-02-10T13:45:57.945Z",
+      "updated_at": "2023-02-10T13:46:50.930Z",
+      "id": 3424626,
+      "schema": {
+        "name": {
+          "type": "text"
+        },
+        "description": {
+          "type": "text"
+        },
+        "image": {
+          "type": "asset"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Product",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "product_detail",
+      "display_name": null,
+      "created_at": "2023-02-10T16:03:17.535Z",
+      "updated_at": "2023-02-10T16:32:19.870Z",
+      "id": 3425386,
+      "schema": {
+        "name": {
+          "type": "text"
+        },
+        "type": {
+          "type": "text"
+        },
+        "new": {
+          "type": "boolean"
+        },
+        "image": {
+          "type": "asset"
+        },
+        "description": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "product_detail",
       "component_group_uuid": null,
       "color": null,
       "icon": null
