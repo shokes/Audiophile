@@ -12,19 +12,18 @@ interface ProductProps {
 }
 
 const Product = ({ product }: ProductProps) => {
-  //console.log(product.link?.cached_url);
   return (
     <div
       {...storyblokEditable(product)}
       key={product.name}
       className={classNames(
         'flex items-center gap-[125px] mt-40',
-        product.reverse === 'reverse' && 'flex-row-reverse'
+        product.content.reverse === 'reverse' && 'flex-row-reverse'
       )}
     >
       <div>
         <Image
-          src={`https://${product.image}`}
+          src={product.content.image.filename}
           width={540}
           height={560}
           alt='iad'
@@ -33,7 +32,7 @@ const Product = ({ product }: ProductProps) => {
       </div>
 
       <div className='w-[445px]'>
-        {product.new && (
+        {product.content.new && (
           <div className='mb-4 text-brand-amber'>
             <Typography as='p' transform='uppercase' weight='font-normal'>
               new product
@@ -42,17 +41,17 @@ const Product = ({ product }: ProductProps) => {
         )}
         <div>
           <Typography as='h2' weight='font-bold' transform='uppercase'>
-            {product.name}
+            {product.content.name}
           </Typography>
         </div>
         <div className='mb-8'>
           <Typography as='h2' weight='font-bold' transform='uppercase'>
-            {product.type}
+            {product.content.type}
           </Typography>
         </div>
         <div className='mb-10 opacity-50'>
           <Typography as='small' weight='font-medium'>
-            {product.description}
+            {product.content.description}
           </Typography>
         </div>
 

@@ -105,20 +105,13 @@ export interface AssetStoryblok {
   focus?: string;
 }
 
-export interface ProductStoryblok {
-  name?: string;
-  description?: string;
-  image?: AssetStoryblok;
-  _uid: string;
-  component: "Product";
-}
-
 export interface ProductDetailStoryblok {
   name?: string;
   type?: string;
   new?: boolean;
   image?: AssetStoryblok;
   description?: string;
+  reverse?: "" | "reverse" | "no-reverse";
   _uid: string;
   component: "product_detail";
 }

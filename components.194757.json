@@ -282,39 +282,10 @@
       "icon": null
     },
     {
-      "name": "Product",
-      "display_name": null,
-      "created_at": "2023-02-10T13:45:57.945Z",
-      "updated_at": "2023-02-10T13:46:50.930Z",
-      "id": 3424626,
-      "schema": {
-        "name": {
-          "type": "text"
-        },
-        "description": {
-          "type": "text"
-        },
-        "image": {
-          "type": "asset"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": true,
-      "preview_tmpl": null,
-      "is_nestable": false,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "Product",
-      "component_group_uuid": null,
-      "color": null,
-      "icon": null
-    },
-    {
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-02-10T16:32:19.870Z",
+      "updated_at": "2023-02-15T17:10:28.485Z",
       "id": 3425386,
       "schema": {
         "name": {
@@ -331,6 +302,22 @@
         },
         "description": {
           "type": "text"
+        },
+        "reverse": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "4f5dcba5-6d22-4e58-850b-767f600cf1a1",
+              "name": "reverse",
+              "value": "reverse"
+            },
+            {
+              "_uid": "b4e583c3-15f7-4576-99a4-017f7fa9fa50",
+              "value": "no-reverse",
+              "name": "no-reverse"
+            }
+          ]
         }
       },
       "image": null,
