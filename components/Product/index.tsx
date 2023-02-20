@@ -4,21 +4,26 @@ import Button from '../Button';
 import classNames from 'classnames';
 import Typography from '../Typography';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
-import { ProductStoryblok } from '@/@types/generated/storyblok';
+import {
+  ProductDetailStoryblok,
+  ProductStoryblok,
+} from '@/@types/generated/storyblok';
 import Link from 'next/link';
 
 interface ProductProps {
   product: SbBlokData & ProductStoryblok;
 }
 
-const Product = ({ product }: ProductProps) => {
+// !to fix typings later
+
+const Product = ({ product }: any) => {
   return (
     <div
       {...storyblokEditable(product)}
-      key={product.name}
+      key={product?.content?.name}
       className={classNames(
         'flex items-center gap-[125px] mt-40',
-        product.content.reverse === 'reverse' && 'flex-row-reverse'
+        product?.content?.reverse === 'reverse' && 'flex-row-reverse'
       )}
     >
       <div>
@@ -46,7 +51,7 @@ const Product = ({ product }: ProductProps) => {
         </div>
         <div className='mb-8'>
           <Typography as='h2' weight='font-bold' transform='uppercase'>
-            {product.content.type}
+            {product.content.category}
           </Typography>
         </div>
         <div className='mb-10 opacity-50'>
@@ -55,7 +60,7 @@ const Product = ({ product }: ProductProps) => {
           </Typography>
         </div>
 
-        <Link href={`/${product.link?.cached_url}`}>see button</Link>
+        <Link href={`/headphones/${product.content.slug}`}>see button</Link>
         {/* <div className='text-white'>
           <Button bg='brand-amber' hover='brand-pastelYellow' />
         </div> */}

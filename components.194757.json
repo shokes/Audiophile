@@ -285,13 +285,10 @@
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-02-15T17:10:28.485Z",
+      "updated_at": "2023-02-20T08:40:24.254Z",
       "id": 3425386,
       "schema": {
         "name": {
-          "type": "text"
-        },
-        "type": {
           "type": "text"
         },
         "new": {
@@ -301,7 +298,8 @@
           "type": "asset"
         },
         "description": {
-          "type": "text"
+          "type": "text",
+          "required": true
         },
         "reverse": {
           "type": "option",
@@ -317,7 +315,30 @@
               "value": "no-reverse",
               "name": "no-reverse"
             }
-          ]
+          ],
+          "exclude_empty_option": true
+        },
+        "category": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "45fdfdbf-3e43-4d42-81ff-9f2373cf88ff",
+              "name": "headphones",
+              "value": "headphones"
+            },
+            {
+              "_uid": "fab3c7a1-da5c-4802-8620-bdc2cfb50418",
+              "value": "earphones",
+              "name": "earphones"
+            },
+            {
+              "_uid": "84d5ec40-ea59-4d1e-b4b3-a497797e427a",
+              "value": "speakers",
+              "name": "speakers"
+            }
+          ],
+          "exclude_empty_option": true
         }
       },
       "image": null,
