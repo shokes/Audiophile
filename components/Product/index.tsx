@@ -59,11 +59,14 @@ const Product = ({ product }: any) => {
             {product.content.description}
           </Typography>
         </div>
-
-        <Link href={`/headphones/${product.content.slug}`}>see button</Link>
-        {/* <div className='text-white'>
-          <Button bg='brand-amber' hover='brand-pastelYellow' />
-        </div> */}
+        <div className='text-white'>
+          <Button
+            bg='brand-amber'
+            hover='brand-pastelYellow'
+            content='see product'
+            link={`${product.content.category}/${product.content.slug}`}
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,18 +1,20 @@
-import { render } from 'storyblok-rich-text-react-renderer';
 import Image from 'next/image';
 import { SbBlokData } from '@storyblok/react';
 import { ProductDetailStoryblok } from '@/@types/generated/storyblok';
 import Navigation from '../Navigation';
 import Typography from '../Typography';
+import { useRouter } from 'next/router';
+import Button from '../Button';
 
 interface ProductDetailProps {
   blok: SbBlokData & ProductDetailStoryblok;
 }
 
 const ProductDetail = ({ blok }: ProductDetailProps) => {
-  console.log(blok);
+  const router = useRouter();
+
   return (
-    <section className='text-black body-font'>
+    <section className='body-font'>
       <div className='bg-black '>
         <div className='max-w-[1110px]  mx-auto pb-[37px] pt-8'>
           <Navigation shoppingCart={true} />
@@ -20,11 +22,14 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
       </div>
 
       <div className='max-w-[1110px] mx-auto'>
-        <div className='opacity-50 mb-[56px] mt-[79px]'>
+        <button
+          className='opacity-50 mb-[56px] mt-[79px]'
+          onClick={() => router.back()}
+        >
           <Typography transform='capitalize' as='xsmall'>
             go back
           </Typography>
-        </div>
+        </button>
 
         <div className='flex items-center gap-[124.5px]'>
           {blok.image && (
@@ -59,6 +64,19 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               <Typography as='small' weight='font-medium'>
                 {blok.description}
               </Typography>
+            </div>
+            <div className='mb-10'>${blok.price}</div>
+            <div className='flex items-center gap-2'>
+              <span className='bg-brandGray-200 px-[52px] py-[15px]'>1</span>
+              <div className='text-white'>
+                <Button
+                  bg='brand-amber'
+                  hover='brand-pastelYellow'
+                  content='add to cart'
+                  link='/'
+                  // link={`${product.content.category}/${product.content.slug}`}
+                />
+              </div>
             </div>
           </div>
         </div>

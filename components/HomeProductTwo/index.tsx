@@ -30,7 +30,7 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
               {blok && blok.name}
             </Typography>
           </div>
-          <Button hover='black' />
+          <Button hover='black' content='see product' link='/' />
         </div>
       </div>
     </div>

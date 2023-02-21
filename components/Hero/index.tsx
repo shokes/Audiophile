@@ -44,13 +44,12 @@ const Hero = ({ blok }: HeroProps) => {
               {blok.description}
             </Typography>
           </div>
-          {/* <Button bg='brand-amber' hover='brand-pastelYellow' /> */}
-          <Link
-            href='/product'
-            className='hover:underline underline-offset-2 hover:text-blue duration-150 ease-in-out '
-          >
-            see button
-          </Link>
+          <Button
+            bg='brand-amber'
+            hover='brand-pastelYellow'
+            content='see product'
+            link='/headphones/xx99-mark-ii'
+          />
         </div>
       </div>
     </div>

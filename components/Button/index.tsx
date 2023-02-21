@@ -5,9 +5,16 @@ import Link from 'next/link';
 interface Props {
   bg?: string;
   hover: string;
+  link: string;
+  content: string;
 }
 
-const Button = ({ bg = '', hover = 'black' }: Props) => {
+const Button = ({
+  bg = '',
+  hover = 'black',
+  link = '/',
+  content = '',
+}: Props) => {
   return (
     <button
       className={classNames(
@@ -15,8 +22,8 @@ const Button = ({ bg = '', hover = 'black' }: Props) => {
         bg === '' ? 'border border-black  hover:text-white' : `bg-${bg} `
       )}
     >
-      <Link className='uppercase' href='/product'>
-        See product
+      <Link className='uppercase' href={link}>
+        {content}
       </Link>
     </button>
   );

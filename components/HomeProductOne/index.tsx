@@ -60,7 +60,12 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
             </Typography>
           </div>
           <div className='z-50'>
-            <Button bg='black' hover='[#4C4C4C]' />
+            <Button
+              bg='black'
+              hover='[#4C4C4C]'
+              content='see product'
+              link='/'
+            />
           </div>
         </div>
       </div>
