@@ -113,6 +113,8 @@ export interface ProductDetailStoryblok {
   reverse: "reverse" | "no-reverse";
   category: "headphones" | "earphones" | "speakers";
   price?: number;
+  featureOne?: string;
+  featureTwo?: string;
   _uid: string;
   component: "product_detail";
 }

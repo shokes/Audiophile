@@ -12,6 +12,7 @@ interface ProductDetailProps {
 
 const ProductDetail = ({ blok }: ProductDetailProps) => {
   const router = useRouter();
+  console.log(blok);
 
   return (
     <section className='body-font'>
@@ -31,7 +32,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
           </Typography>
         </button>
 
-        <div className='flex items-center gap-[124.5px]'>
+        <div className='flex items-center gap-[124.5px] mb-[160px]'>
           {blok.image && (
             <Image
               className=' object-cover object-center rounded'
@@ -74,11 +75,40 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                   hover='brand-pastelYellow'
                   content='add to cart'
                   link='/'
-                  // link={`${product.content.category}/${product.content.slug}`}
                 />
               </div>
             </div>
           </div>
+        </div>
+        <div className='flex gap-7'>
+          <div>
+            <div className='mb-8'>
+              <Typography transform='uppercase' as='h3' weight='font-bold'>
+                features
+              </Typography>
+            </div>
+            <div className='mb-8 opacity-50'>
+              <Typography as='xsmall' weight='font-medium'>
+                {blok.featureOne}
+              </Typography>
+            </div>
+            <div className='opacity-50'>
+              <Typography as='xsmall' weight='font-medium'>
+                {blok.featureTwo}
+              </Typography>
+            </div>
+          </div>
+          <div>
+            <div className='mb-8'>
+              <Typography transform='uppercase' as='h3' weight='font-bold'>
+                in the box
+              </Typography>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            itaque, ipsa minus architecto, debitis rerum maxime quam beatae
+            officiis voluptatum sed. Praesentium ipsam sapiente, ipsum porro
+            quaerat quis vero et.
+          </div>{' '}
         </div>
       </div>
     </section>
