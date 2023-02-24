@@ -285,7 +285,7 @@
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-02-21T09:10:49.406Z",
+      "updated_at": "2023-02-22T09:32:40.321Z",
       "id": 3425386,
       "schema": {
         "name": {
@@ -294,10 +294,6 @@
         },
         "new": {
           "type": "boolean",
-          "required": true
-        },
-        "image": {
-          "type": "asset",
           "required": true
         },
         "description": {
@@ -353,6 +349,30 @@
         },
         "featureTwo": {
           "type": "text"
+        },
+        "image1": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
+        },
+        "image2": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
+        },
+        "image3": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
+        },
+        "image4": {
+          "type": "asset"
+        },
+        "nnn": {
+          "type": "bloks"
         }
       },
       "image": null,

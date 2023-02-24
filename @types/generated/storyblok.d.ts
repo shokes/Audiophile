@@ -108,13 +108,17 @@ export interface AssetStoryblok {
 export interface ProductDetailStoryblok {
   name: string;
   new: boolean;
-  image: AssetStoryblok;
   description: string;
   reverse: "reverse" | "no-reverse";
   category: "headphones" | "earphones" | "speakers";
   price?: number;
   featureOne?: string;
   featureTwo?: string;
+  image1?: AssetStoryblok;
+  image2?: AssetStoryblok;
+  image3?: AssetStoryblok;
+  image4?: AssetStoryblok;
+  nnn?: any[];
   _uid: string;
   component: "product_detail";
 }

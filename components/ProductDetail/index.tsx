@@ -5,6 +5,8 @@ import Navigation from '../Navigation';
 import Typography from '../Typography';
 import { useRouter } from 'next/router';
 import Button from '../Button';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
+import { PageStoryblok } from '@/@types/generated/storyblok';
 
 interface ProductDetailProps {
   blok: SbBlokData & ProductDetailStoryblok;
@@ -12,8 +14,6 @@ interface ProductDetailProps {
 
 const ProductDetail = ({ blok }: ProductDetailProps) => {
   const router = useRouter();
-  console.log(blok);
-
   return (
     <section className='body-font'>
       <div className='bg-black '>
@@ -21,7 +21,6 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
           <Navigation shoppingCart={true} />
         </div>
       </div>
-
       <div className='max-w-[1110px] mx-auto'>
         <button
           className='opacity-50 mb-[56px] mt-[79px]'
@@ -33,11 +32,11 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
         </button>
 
         <div className='flex items-center gap-[124.5px] mb-[160px]'>
-          {blok.image && (
+          {blok.image1 && (
             <Image
               className=' object-cover object-center rounded'
               alt='ddd'
-              src={blok.image.filename}
+              src={blok.image1.filename}
               width={540}
               height={560}
             />
@@ -80,7 +79,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
             </div>
           </div>
         </div>
-        <div className='flex gap-7'>
+        <div className='flex gap-7 mb-[106px]'>
           <div>
             <div className='mb-8'>
               <Typography transform='uppercase' as='h3' weight='font-bold'>
@@ -109,6 +108,48 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
             officiis voluptatum sed. Praesentium ipsam sapiente, ipsum porro
             quaerat quis vero et.
           </div>{' '}
+        </div>
+
+        <div className='flex gap-[30px] mb-[106px]'>
+          <div>
+            {blok.image2 && (
+              <Image
+                className=' object-cover mb-8 rounded-lg'
+                alt='ddd'
+                src={blok.image2.filename}
+                width={445}
+                height={280}
+              />
+            )}
+
+            {blok.image3 && (
+              <Image
+                className=' object-cover rounded-lg'
+                alt='ddd'
+                src={blok.image3.filename}
+                width={445}
+                height={280}
+              />
+            )}
+          </div>
+          {blok.image4 && (
+            <Image
+              className=' object-cover  rounded-lg'
+              alt='ddd'
+              src={blok.image4.filename}
+              width={635}
+              height={592}
+            />
+          )}
+        </div>
+
+        <div>
+          <div className='text-center'>
+            {' '}
+            <Typography transform='uppercase' as='h3' weight='font-bold'>
+              you may also like
+            </Typography>
+          </div>
         </div>
       </div>
     </section>
