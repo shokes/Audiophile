@@ -16,17 +16,19 @@ interface ProductSectionProps {
 
 const ProductSection = ({ blok }: ProductSectionProps) => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const getProducts = async () => {
       const storyblokApi = getStoryblokApi();
       const { data } = await storyblokApi.get(`cdn/stories`, {
         version: 'draft', // or 'published'
-        starts_with: 'headphones/',
+        starts_with: `${blok.heading}`,
         // change later
         is_startpage: 0,
       });
 
       setProducts((prev) =>
+        // ! fix typings later
         data.stories.map((product: any) => {
           product.content.slug = product.slug;
           return product;

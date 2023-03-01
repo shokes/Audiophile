@@ -17,17 +17,15 @@ const Feature = ({ feature }: FeatureProps) => {
       <Link
         key={feature.name}
         href='/'
-        className='flex hover:text-brand-amber  rounded-lg flex-col duration-200 relative items-center h-[204px] bg-brandGray-200'
+        className='flex hover:text-brand-amber mt-[200px]  rounded-lg flex-col duration-200 relative items-center h-[204px] bg-brandGray-200'
       >
-        <div className='relative w-[122.95px] h-8'>
-          <Image
-            src={`https://${feature.image}`}
-            alt={feature.name as string}
-            width={500}
-            height={500}
-            className='object-contain absolute -top-16'
-          />
-        </div>
+        <Image
+          src={`https://${feature.image}`}
+          alt={feature.name as string}
+          width={200}
+          height={200}
+          className='object-contain absolute -top-16'
+        />
 
         <div className='text-center text-black mb-3.5 absolute top-[116px]'>
           <Typography as='h6' transform='uppercase' weight='font-bold'>

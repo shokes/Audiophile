@@ -6,7 +6,6 @@ import Typography from '../Typography';
 import { useRouter } from 'next/router';
 import Button from '../Button';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
-import { PageStoryblok } from '@/@types/generated/storyblok';
 
 interface ProductDetailProps {
   blok: SbBlokData & ProductDetailStoryblok;
@@ -15,8 +14,8 @@ interface ProductDetailProps {
 const ProductDetail = ({ blok }: ProductDetailProps) => {
   const router = useRouter();
   return (
-    <main {...storyblokEditable(blok)}>
-      <section className='body-font'>
+    <section {...storyblokEditable(blok)}>
+      <div className='body-font'>
         <div className='bg-black '>
           <div className='max-w-[1110px]  mx-auto pb-[37px] pt-8'>
             <Navigation shoppingCart={true} />
@@ -81,7 +80,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
             </div>
           </div>
           <div className='flex gap-7 mb-[106px]'>
-            <div>
+            <div className='w-3/4'>
               <div className='mb-8'>
                 <Typography transform='uppercase' as='h3' weight='font-bold'>
                   features
@@ -98,7 +97,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
             </div>
-            <div>
+            <div className='w-1/2'>
               <div className='mb-8'>
                 <Typography transform='uppercase' as='h3' weight='font-bold'>
                   in the box
@@ -143,21 +142,17 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               />
             )}
           </div>
-
-          <div>
-            <div className='text-center'>
-              {' '}
-              <Typography transform='uppercase' as='h3' weight='font-bold'>
-                you may also like
-              </Typography>
-            </div>
-          </div>
         </div>
-      </section>
+        <div className='text-center mb-1'>
+          <Typography transform='uppercase' as='h3' weight='font-bold'>
+            you may also like
+          </Typography>
+        </div>
+      </div>
       {(blok.body as SbBlokData[]).map((nestedBlok) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
-    </main>
+    </section>
   );
 };
 export default ProductDetail;

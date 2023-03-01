@@ -28,10 +28,10 @@ const Product = ({ product }: any) => {
     >
       <div>
         <Image
-          src={product.content.image.filename}
+          src={product.content.image1?.filename}
           width={540}
           height={560}
-          alt='iad'
+          alt={product?.content?.name}
           className='object-cover rounded-lg'
         />
       </div>

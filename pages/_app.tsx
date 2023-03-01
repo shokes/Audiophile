@@ -13,7 +13,6 @@ import HomeProductFour from '@/components/HomeProductFour';
 import Product from '@/components/Product';
 import ProductSection from '@/components/ProductSection';
 import ProductDetail from '@/components/ProductDetail';
-import MayLikeSection from '@/components/MayLikeSection';
 import Like from '@/components/Like';
 
 const components = {
@@ -28,7 +27,6 @@ const components = {
   product: Product,
   product_section: ProductSection,
   product_detail: ProductDetail,
-  may_like_section: MayLikeSection,
   like: Like,
 };
 
