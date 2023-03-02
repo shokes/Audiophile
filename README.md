@@ -7,10 +7,6 @@ todo
 
 ```
 npm run sb-pull
-```
-
-And then generate the types
-
-```
 npm run sb-types
+
 ```

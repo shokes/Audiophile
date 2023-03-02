@@ -23,7 +23,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
             src={`https://${blok.image}`}
             width={410.23}
             height={493}
-            alt='dfdfd'
+            alt={blok.name as string}
             className='object-cover'
           />
         </div>
@@ -62,10 +62,11 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
           <div className='z-50'>
             <Button
               bg='black'
-              hover='[#4C4C4C]'
-              content='see product'
-              link='/'
-            />
+              hover='brandGray-300'
+              link={blok.link?.cached_url}
+            >
+              see product
+            </Button>
           </div>
         </div>
       </div>

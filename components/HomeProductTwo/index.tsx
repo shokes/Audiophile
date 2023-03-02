@@ -30,7 +30,9 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
               {blok && blok.name}
             </Typography>
           </div>
-          <Button hover='black' content='see product' link='/' />
+          <Button hover='brandBlack-100' link={blok.link?.cached_url}>
+            see product
+          </Button>
         </div>
       </div>
     </div>

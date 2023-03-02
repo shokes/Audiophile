@@ -11,12 +11,14 @@ interface FeatureProps {
   feature: SbBlokData & FeatureStoryblok;
 }
 
+// ! to fix typings later
+
 const Feature = ({ feature }: FeatureProps) => {
   return (
     <div {...storyblokEditable(feature)}>
       <Link
         key={feature.name}
-        href='/'
+        href={feature.link.cached_url}
         className='flex hover:text-brand-amber mt-[200px]  rounded-lg flex-col duration-200 relative items-center h-[204px] bg-brandGray-200'
       >
         <Image

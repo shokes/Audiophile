@@ -6,24 +6,20 @@ interface Props {
   bg?: string;
   hover: string;
   link: string;
-  content: string;
+  children: React.ReactNode;
 }
 
-const Button = ({
-  bg = '',
-  hover = 'black',
-  link = '/',
-  content = '',
-}: Props) => {
+const Button = ({ bg = '', hover = '', link = '/', children }: Props) => {
   return (
-    <button
-      className={classNames(
-        `hover:bg-${hover} px-[31px] py-[15px] duration-200 text-sm font-bold`,
-        bg === '' ? 'border border-black  hover:text-white' : `bg-${bg} `
-      )}
-    >
-      <Link className='uppercase' href={link}>
-        {content}
+    <button>
+      <Link
+        className={classNames(
+          `hover:bg-${hover} uppercase  px-[31px] py-[15px] duration-200 text-sm font-bold`,
+          bg === '' ? 'border border-black  hover:text-white' : `bg-${bg} `
+        )}
+        href={link}
+      >
+        {children}
       </Link>
     </button>
   );

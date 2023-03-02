@@ -49,6 +49,7 @@ module.exports = {
         brandGray: {
           100: '#FAFAFA',
           200: '#F1F1F1',
+          300: '#4C4C4C',
         },
       },
     },

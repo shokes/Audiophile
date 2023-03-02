@@ -3,24 +3,20 @@ import Image from 'next/image';
 import Button from '../Button';
 import classNames from 'classnames';
 import Typography from '../Typography';
-import { SbBlokData, storyblokEditable } from '@storyblok/react';
-import {
-  ProductDetailStoryblok,
-  ProductStoryblok,
-} from '@/@types/generated/storyblok';
-import Link from 'next/link';
+import { storyblokEditable, SbBlokData } from '@storyblok/react';
+import { ProductStoryblok } from '@/@types/generated/storyblok';
 
 interface ProductProps {
   product: SbBlokData & ProductStoryblok;
 }
 
-// !to fix typings later
+// !to fix typings laterr
 
-const Product = ({ product }: any) => {
+const Product = ({ product }: ProductProps) => {
+  console.log('product comp', product);
   return (
     <div
       {...storyblokEditable(product)}
-      key={product?.content?.name}
       className={classNames(
         'flex items-center gap-[125px] mt-40',
         product?.content?.reverse === 'reverse' && 'flex-row-reverse'
@@ -63,9 +59,10 @@ const Product = ({ product }: any) => {
           <Button
             bg='brand-amber'
             hover='brand-pastelYellow'
-            content='see product'
             link={`${product.content.category}/${product.content.slug}`}
-          />
+          >
+            see product
+          </Button>
         </div>
       </div>
     </div>

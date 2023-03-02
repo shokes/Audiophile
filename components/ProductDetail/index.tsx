@@ -69,12 +69,9 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               <div className='flex items-center gap-2'>
                 <span className='bg-brandGray-200 px-[52px] py-[15px]'>1</span>
                 <div className='text-white'>
-                  <Button
-                    bg='brand-amber'
-                    hover='brand-pastelYellow'
-                    content='add to cart'
-                    link='/'
-                  />
+                  <Button bg='brand-amber' hover='brand-pastelYellow' link='/'>
+                    add to cart
+                  </Button>
                 </div>
               </div>
             </div>

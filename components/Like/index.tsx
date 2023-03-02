@@ -2,14 +2,25 @@ import React from 'react';
 import Button from '../Button';
 import Image from 'next/image';
 import Typography from '../Typography';
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
+import { storyblokEditable, SbBlokData } from '@storyblok/react';
+import { LikeStoryblok } from '@/@types/generated/storyblok';
 
-// ! to fix typings later
-const Like = ({ like }: any) => {
+interface LikeProps {
+  like: SbBlokData & LikeStoryblok;
+}
+
+const Like = ({ like }: LikeProps) => {
   return (
     <div {...storyblokEditable(like)}>
       <div className='flex flex-col items-center gap-10 mt-16'>
-        <Image src={like.image?.filename} width={350} height={318} alt='dfd' />
+        {like.image && like.name && (
+          <Image
+            src={like.image?.filename}
+            width={350}
+            height={318}
+            alt={like.name}
+          />
+        )}
         <div>
           <Typography as='h5' weight='font-bold'>
             {like.name}
@@ -19,9 +30,10 @@ const Like = ({ like }: any) => {
           <Button
             bg='brand-amber'
             hover='brand-pastelYellow'
-            content='see product'
-            link='/'
-          />
+            link={like.link?.cached_url}
+          >
+            see products
+          </Button>
         </div>
       </div>
     </div>

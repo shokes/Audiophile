@@ -4,14 +4,15 @@
       "name": "feature",
       "display_name": null,
       "created_at": "2023-02-01T11:21:48.438Z",
-      "updated_at": "2023-02-02T07:45:03.602Z",
+      "updated_at": "2023-03-01T09:06:18.266Z",
       "id": 3377775,
       "schema": {
         "image": {
           "type": "image"
         },
         "link": {
-          "type": "multilink"
+          "type": "multilink",
+          "required": true
         },
         "name": {
           "type": "text"
@@ -56,7 +57,7 @@
       "name": "hero",
       "display_name": null,
       "created_at": "2023-02-01T12:16:47.615Z",
-      "updated_at": "2023-02-01T12:33:55.433Z",
+      "updated_at": "2023-03-01T10:20:23.637Z",
       "id": 3377977,
       "schema": {
         "image": {
@@ -70,6 +71,9 @@
         "description": {
           "type": "text",
           "required": true
+        },
+        "link": {
+          "type": "multilink"
         }
       },
       "image": null,
@@ -204,6 +208,35 @@
       "icon": null
     },
     {
+      "name": "like",
+      "display_name": null,
+      "created_at": "2023-02-28T08:35:32.923Z",
+      "updated_at": "2023-02-28T10:15:00.015Z",
+      "id": 3501760,
+      "schema": {
+        "image": {
+          "type": "asset"
+        },
+        "name": {
+          "type": "text"
+        },
+        "link": {
+          "type": "multilink"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "like",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "page",
       "display_name": null,
       "created_at": "2023-02-01T11:21:48.390Z",
@@ -285,7 +318,7 @@
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-02-22T09:32:40.321Z",
+      "updated_at": "2023-02-28T11:31:59.873Z",
       "id": 3425386,
       "schema": {
         "name": {
@@ -294,7 +327,7 @@
         },
         "new": {
           "type": "boolean",
-          "required": true
+          "required": false
         },
         "description": {
           "type": "text",
@@ -371,7 +404,7 @@
         "image4": {
           "type": "asset"
         },
-        "nnn": {
+        "body": {
           "type": "bloks"
         }
       },
@@ -384,7 +417,7 @@
       "preset_id": null,
       "real_name": "product_detail",
       "component_group_uuid": null,
-      "color": null,
+      "color": "",
       "icon": null
     },
     {

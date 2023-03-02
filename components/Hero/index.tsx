@@ -47,9 +47,10 @@ const Hero = ({ blok }: HeroProps) => {
           <Button
             bg='brand-amber'
             hover='brand-pastelYellow'
-            content='see product'
-            link='/headphones/xx99-mark-ii'
-          />
+            link={blok.link?.cached_url}
+          >
+            see product
+          </Button>
         </div>
       </div>
     </div>
