@@ -10,10 +10,9 @@ interface ProductProps {
   product: SbBlokData & ProductStoryblok;
 }
 
-// !to fix typings laterr
+// ! to fix typings later
 
 const Product = ({ product }: ProductProps) => {
-  console.log('product comp', product);
   return (
     <div
       {...storyblokEditable(product)}
@@ -24,7 +23,7 @@ const Product = ({ product }: ProductProps) => {
     >
       <div>
         <Image
-          src={product.content.image1?.filename}
+          src={product?.content?.image1?.filename}
           width={540}
           height={560}
           alt={product?.content?.name}

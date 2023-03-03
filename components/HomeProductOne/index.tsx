@@ -63,7 +63,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
             <Button
               bg='black'
               hover='brandGray-300'
-              link={blok.link?.cached_url}
+              link={blok.link?.cached_url as string}
             >
               see product
             </Button>

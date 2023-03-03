@@ -11,15 +11,13 @@ interface FeatureProps {
   feature: SbBlokData & FeatureStoryblok;
 }
 
-// ! to fix typings later
-
 const Feature = ({ feature }: FeatureProps) => {
   return (
     <div {...storyblokEditable(feature)}>
       <Link
         key={feature.name}
-        href={feature.link.cached_url}
-        className='flex hover:text-brand-amber mt-[200px]  rounded-lg flex-col duration-200 relative items-center h-[204px] bg-brandGray-200'
+        href={feature.link.cached_url as string}
+        className='flex mt-[200px] rounded-lg flex-col duration-200 relative items-center h-[204px] bg-brandGray-200 box'
       >
         <Image
           src={`https://${feature.image}`}
@@ -28,14 +26,13 @@ const Feature = ({ feature }: FeatureProps) => {
           height={200}
           className='object-contain absolute -top-16'
         />
-
         <div className='text-center text-black mb-3.5 absolute top-[116px]'>
           <Typography as='h6' transform='uppercase' weight='font-bold'>
             {feature.name}
           </Typography>
         </div>
-        <div className=' absolute top-[156px]  duration-200 text-center flex justify-center'>
-          <div className='opacity-50'>
+        <div className='absolute top-[156px]  duration-200 text-center flex justify-center'>
+          <div className='opacity-50 boxName'>
             <Typography as='small' transform='uppercase' weight='font-bold'>
               Shop
             </Typography>

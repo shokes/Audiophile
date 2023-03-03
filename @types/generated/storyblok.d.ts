@@ -20,6 +20,7 @@ export type MultilinkStoryblok =
   | {
       email?: string;
       linktype?: 'email';
+      cached_url?: string;
     };
 
 export interface FeatureStoryblok {

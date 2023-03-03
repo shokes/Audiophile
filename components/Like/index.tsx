@@ -30,7 +30,7 @@ const Like = ({ like }: LikeProps) => {
           <Button
             bg='brand-amber'
             hover='brand-pastelYellow'
-            link={like.link?.cached_url}
+            link={like.link?.cached_url as string}
           >
             see products
           </Button>
