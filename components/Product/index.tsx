@@ -5,34 +5,46 @@ import classNames from 'classnames';
 import Typography from '../Typography';
 import { storyblokEditable, SbBlokData } from '@storyblok/react';
 import { ProductStoryblok } from '@/@types/generated/storyblok';
+import { ProductDetailStoryblok } from '@/@types/generated/storyblok';
+import { resolveLink } from '@/utils/storyblok/resolveLinks';
 
 interface ProductProps {
   product: SbBlokData & ProductStoryblok;
 }
 
-// ! to fix typings later
-
 const Product = ({ product }: ProductProps) => {
+  const {
+    reverse,
+    image1,
+    name,
+    new: newProduct,
+    category,
+    description,
+    link,
+  } = product.content as SbBlokData & ProductDetailStoryblok;
+
+  const resolvedLink = resolveLink(link);
+
   return (
     <div
       {...storyblokEditable(product)}
       className={classNames(
         'flex items-center gap-[125px] mt-40',
-        product?.content?.reverse === 'reverse' && 'flex-row-reverse'
+        reverse === 'reverse' && 'flex-row-reverse'
       )}
     >
-      <div>
+      {image1 && (
         <Image
-          src={product?.content?.image1?.filename}
+          src={image1.filename}
           width={540}
           height={560}
-          alt={product?.content?.name}
+          alt={name}
           className='object-cover rounded-lg'
         />
-      </div>
+      )}
 
       <div className='w-[445px]'>
-        {product.content.new && (
+        {newProduct && (
           <div className='mb-4 text-brand-amber'>
             <Typography as='p' transform='uppercase' weight='font-normal'>
               new product
@@ -41,24 +53,24 @@ const Product = ({ product }: ProductProps) => {
         )}
         <div>
           <Typography as='h2' weight='font-bold' transform='uppercase'>
-            {product.content.name}
+            {name}
           </Typography>
         </div>
         <div className='mb-8'>
           <Typography as='h2' weight='font-bold' transform='uppercase'>
-            {product.content.category}
+            {category}
           </Typography>
         </div>
         <div className='mb-10 opacity-50'>
           <Typography as='small' weight='font-medium'>
-            {product.content.description}
+            {description}
           </Typography>
         </div>
         <div className='text-white'>
           <Button
             bg='brand-amber'
             hover='brand-pastelYellow'
-            link={`${product.content.category}/${product.content.slug}`}
+            link={resolvedLink}
           >
             see product
           </Button>

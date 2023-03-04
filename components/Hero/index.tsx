@@ -5,13 +5,15 @@ import Typography from '../Typography';
 import Button from '../Button';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
-import Link from 'next/link';
+import { resolveLink } from '@/utils/storyblok/resolveLinks';
 
 interface HeroProps {
   blok: SbBlokData & HeroStoryblok;
 }
 
 const Hero = ({ blok }: HeroProps) => {
+  const resolvedLink = resolveLink(blok.link);
+
   return (
     <div
       className='relative isolate overflow-hidden'
@@ -47,7 +49,7 @@ const Hero = ({ blok }: HeroProps) => {
           <Button
             bg='brand-amber'
             hover='brand-pastelYellow'
-            link={blok.link?.cached_url as string}
+            link={resolvedLink}
           >
             see product
           </Button>

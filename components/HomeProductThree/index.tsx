@@ -4,12 +4,15 @@ import Button from '../Button';
 import Image from 'next/image';
 import { SbBlokData } from '@storyblok/react';
 import { HomeProductThreeStoryblok } from '@/@types/generated/storyblok';
+import { resolveLink } from '@/utils/storyblok/resolveLinks';
 
 interface HomeProductThreeProps {
   blok: SbBlokData & HomeProductThreeStoryblok;
 }
 
 const HomeProductThree = ({ blok }: HomeProductThreeProps) => {
+  const resolvedLink = resolveLink(blok.link);
+
   return (
     <div className='max-w-[1110px]  mx-auto mt-[48px] flex items-center justify-between'>
       <div>
@@ -31,7 +34,7 @@ const HomeProductThree = ({ blok }: HomeProductThreeProps) => {
               {blok && blok.name}
             </Typography>
           </div>
-          <Button hover='brandBlack-100' link={blok.link?.cached_url as string}>
+          <Button hover='brandBlack-100' link={resolvedLink}>
             see product
           </Button>
         </div>

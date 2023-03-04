@@ -10,6 +10,7 @@ interface LikeProps {
 }
 
 const Like = ({ like }: LikeProps) => {
+  console.log('like -', like);
   return (
     <div {...storyblokEditable(like)}>
       <div className='flex flex-col items-center gap-10 mt-16'>

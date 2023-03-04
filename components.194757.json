@@ -318,7 +318,7 @@
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-02-28T11:31:59.873Z",
+      "updated_at": "2023-03-03T10:22:50.369Z",
       "id": 3425386,
       "schema": {
         "name": {
@@ -406,6 +406,9 @@
         },
         "body": {
           "type": "bloks"
+        },
+        "link": {
+          "type": "multilink"
         }
       },
       "image": null,

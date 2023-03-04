@@ -6,17 +6,19 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { storyblokEditable } from '@storyblok/react';
 import { SbBlokData } from '@storyblok/react';
 import { FeatureStoryblok } from '@/@types/generated/storyblok';
+import { resolveLink } from '@/utils/storyblok/resolveLinks';
 
 interface FeatureProps {
   feature: SbBlokData & FeatureStoryblok;
 }
 
 const Feature = ({ feature }: FeatureProps) => {
+  const resolvedLink = resolveLink(feature.link);
   return (
     <div {...storyblokEditable(feature)}>
       <Link
         key={feature.name}
-        href={feature.link.cached_url as string}
+        href={resolvedLink}
         className='flex mt-[200px] rounded-lg flex-col duration-200 relative items-center h-[204px] bg-brandGray-200 box'
       >
         <Image

@@ -3,6 +3,7 @@ import Typography from '../Typography';
 import Button from '../Button';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
+import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import { HomeProductTwoStoryblok } from '@/@types/generated/storyblok';
 
 interface HomeProductTwoProps {
@@ -10,6 +11,8 @@ interface HomeProductTwoProps {
 }
 
 const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
+  const resolvedLink = resolveLink(blok.link);
+
   return (
     <div
       className='max-w-[1110px]  mx-auto mt-[48px]'
@@ -30,7 +33,7 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
               {blok && blok.name}
             </Typography>
           </div>
-          <Button hover='brandBlack-100' link={blok.link?.cached_url as string}>
+          <Button hover='brandBlack-100' link={resolvedLink}>
             see product
           </Button>
         </div>

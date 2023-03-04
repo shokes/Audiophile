@@ -6,12 +6,15 @@ import mdOval from '../../public/OvalMd.png';
 import { storyblokEditable } from '@storyblok/react';
 import { SbBlokData } from '@storyblok/react';
 import { HomeProductOneStoryblok } from '@/@types/generated/storyblok';
+import { resolveLink } from '@/utils/storyblok/resolveLinks';
 
 interface HomeProductOneProps {
   blok: SbBlokData & HomeProductOneStoryblok;
 }
 
 const HomeProductOne = ({ blok }: HomeProductOneProps) => {
+  const resolvedLink = resolveLink(blok.link);
+
   return (
     <div
       className='max-w-[1110px]  mx-auto mt-[168px]'
@@ -60,11 +63,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
             </Typography>
           </div>
           <div className='z-50'>
-            <Button
-              bg='black'
-              hover='brandGray-300'
-              link={blok.link?.cached_url as string}
-            >
+            <Button bg='black' hover='brandGray-300' link={resolvedLink}>
               see product
             </Button>
           </div>
