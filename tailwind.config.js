@@ -18,6 +18,7 @@ module.exports = {
       xs: ['15px', { lineHeight: '25px' }],
       sm: ['13px', { lineHeight: '25px', letterSpacing: '2px' }],
       base: ['14px', { lineHeight: '19px', letterSpacing: '10px' }],
+      base2: ['14px', { lineHeight: '25px' }],
       lg: ['18px', { lineHeight: '24px', letterSpacing: '1.3px' }],
       xl: ['24px', { lineHeight: '33px', letterSpacing: '1.7px' }],
       logo: [

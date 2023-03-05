@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import Typography from '../Typography';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import Cart from '../Cart';
+import { useState } from 'react';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -11,6 +13,8 @@ const navigation = [
 ];
 
 const Navigation = (props: { shoppingCart: boolean }) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className='flex items-center justify-between text-white'>
       <Link href='/' className='text-logo'>
@@ -28,9 +32,15 @@ const Navigation = (props: { shoppingCart: boolean }) => {
           );
         })}
       </div>
-      {props.shoppingCart && (
-        <AiOutlineShoppingCart className='w-[23.33px]  text-white h-[20px]' />
-      )}
+      <div className='relative'>
+        {props.shoppingCart && (
+          <AiOutlineShoppingCart
+            className='w-[23.33px]  text-white h-[20px] cursor-pointer'
+            onClick={() => setOpen(!open)}
+          />
+        )}
+        <div className='absolute top-[90px] right-0'>{open && <Cart />}</div>
+      </div>
     </nav>
   );
 };

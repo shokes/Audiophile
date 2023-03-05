@@ -1,6 +1,16 @@
 import React from 'react';
 
-type Type = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'small' | 'xsmall';
+type Type =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'p'
+  | 'p2'
+  | 'small'
+  | 'xsmall';
 
 const VARIANT_Styles: Record<Type, string> = {
   h1: 'text-5xl',
@@ -10,10 +20,10 @@ const VARIANT_Styles: Record<Type, string> = {
   h5: 'text-xl',
   h6: 'text-lg',
   p: 'text-base',
+  p2: 'text-base2',
   small: 'text-sm',
   xsmall: 'text-xs',
 };
-
 type Weight =
   | 'font-thin'
   | 'font-extralight'

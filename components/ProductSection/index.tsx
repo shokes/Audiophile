@@ -29,17 +29,10 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
 
       setProducts((prev) =>
         // ! fix typings later
-        data.stories.map(
-          (product: {
-            content: {
-              slug: string;
-            };
-            slug: string;
-          }) => {
-            product.content.slug = product.slug;
-            return product;
-          }
-        )
+        data.stories.map((product: any) => {
+          product.content.slug = product.slug;
+          return product;
+        })
       );
     };
     getProducts();
@@ -59,9 +52,9 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
         </div>
       </div>
       <div className='max-w-[1110px]  mx-auto'>
-        {/* ! to fix typings later */}
+        {/* // ! to fix typings later * */}
         {products &&
-          products.map((product: { name: string }) => {
+          products.map((product: any) => {
             return <Product key={product.name} product={product} />;
           })}
       </div>
