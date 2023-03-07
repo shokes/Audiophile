@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Typography from '../Typography';
 import { SbBlokData } from '@storyblok/react';
 import { HomeProductFourStoryblok } from '@/@types/generated/storyblok';
+import { storyblokEditable } from '@storyblok/react';
 
 interface HomeProductFourProps {
   blok: SbBlokData & HomeProductFourStoryblok;
@@ -10,7 +11,10 @@ interface HomeProductFourProps {
 
 const HomeProductFour = ({ blok }: HomeProductFourProps) => {
   return (
-    <div className='max-w-[1110px] mx-auto mt-[200px] flex items-center justify-between'>
+    <div
+      {...storyblokEditable(blok)}
+      className='max-w-[1110px] mx-auto mt-[200px] flex items-center justify-between'
+    >
       <div className='w-[445px]'>
         <div className='mb-8'>
           <Typography weight='font-bold' as='h2' transform='uppercase'>

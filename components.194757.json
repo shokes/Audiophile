@@ -208,6 +208,32 @@
       "icon": null
     },
     {
+      "name": "in_box",
+      "display_name": null,
+      "created_at": "2023-03-06T16:16:26.558Z",
+      "updated_at": "2023-03-06T16:17:05.281Z",
+      "id": 3534325,
+      "schema": {
+        "quantity": {
+          "type": "number"
+        },
+        "item": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "in_box",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "like",
       "display_name": null,
       "created_at": "2023-02-28T08:35:32.923Z",
@@ -318,7 +344,7 @@
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-03-03T10:22:50.369Z",
+      "updated_at": "2023-03-06T16:21:30.805Z",
       "id": 3425386,
       "schema": {
         "name": {
@@ -409,6 +435,9 @@
         },
         "link": {
           "type": "multilink"
+        },
+        "inBox": {
+          "type": "bloks"
         }
       },
       "image": null,

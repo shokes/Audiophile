@@ -6,4 +6,5 @@
 .box:hover .boxName {
   opacity: 1;
   color: #d87d4a;
+  transition-duration: 300ms;
 }

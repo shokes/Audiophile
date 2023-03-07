@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { SbBlokData } from '@storyblok/react';
 import { HomeProductThreeStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
+import { storyblokEditable } from '@storyblok/react';
 
 interface HomeProductThreeProps {
   blok: SbBlokData & HomeProductThreeStoryblok;
@@ -14,7 +15,10 @@ const HomeProductThree = ({ blok }: HomeProductThreeProps) => {
   const resolvedLink = resolveLink(blok.link);
 
   return (
-    <div className='max-w-[1110px]  mx-auto mt-[48px] flex items-center justify-between'>
+    <div
+      {...storyblokEditable(blok)}
+      className='max-w-[1110px]  mx-auto mt-[48px] flex items-center justify-between'
+    >
       <div>
         {blok && (
           <Image

@@ -4,13 +4,15 @@ import Image from 'next/image';
 import Typography from '../Typography';
 import { storyblokEditable, SbBlokData } from '@storyblok/react';
 import { LikeStoryblok } from '@/@types/generated/storyblok';
+import { resolveLink } from '@/utils/storyblok/resolveLinks';
 
 interface LikeProps {
   like: SbBlokData & LikeStoryblok;
 }
 
 const Like = ({ like }: LikeProps) => {
-  console.log('like -', like);
+  const resolvedLink = resolveLink(like.link);
+
   return (
     <div {...storyblokEditable(like)}>
       <div className='flex flex-col items-center gap-10 mt-16'>
@@ -31,9 +33,9 @@ const Like = ({ like }: LikeProps) => {
           <Button
             bg='brand-amber'
             hover='brand-pastelYellow'
-            link={like.link?.cached_url as string}
+            link={resolvedLink}
           >
-            see products
+            see product
           </Button>
         </div>
       </div>

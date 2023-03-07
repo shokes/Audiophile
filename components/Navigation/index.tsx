@@ -32,15 +32,18 @@ const Navigation = (props: { shoppingCart: boolean }) => {
           );
         })}
       </div>
-      <div className='relative'>
-        {props.shoppingCart && (
+      {props.shoppingCart && (
+        <div className='relative'>
           <AiOutlineShoppingCart
             className='w-[23.33px]  text-white h-[20px] cursor-pointer'
             onClick={() => setOpen(!open)}
           />
-        )}
-        <div className='absolute top-[90px] right-0'>{open && <Cart />}</div>
-      </div>
+
+          <div className='absolute top-[90px] z-40 right-0'>
+            {open && <Cart />}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

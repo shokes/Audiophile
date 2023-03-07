@@ -77,6 +77,13 @@ export interface HomeProductTwoStoryblok {
   component: "home_product_two";
 }
 
+export interface InBoxStoryblok {
+  quantity?: number;
+  item?: string;
+  _uid: string;
+  component: "in_box";
+}
+
 export interface AssetStoryblok {
   alt?: string;
   copyright?: string;
@@ -129,6 +136,7 @@ export interface ProductDetailStoryblok {
   image4?: AssetStoryblok;
   body?: any[];
   link?: MultilinkStoryblok;
+  inBox?: any[];
   _uid: string;
   component: "product_detail";
 }

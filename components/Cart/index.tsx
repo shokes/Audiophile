@@ -2,7 +2,8 @@ import React from 'react';
 import Typography from '../Typography';
 import headphones from '../../public/image-xx99-mark-two-headphones.jpg';
 import Image from 'next/image';
-import Button from '../Button';
+import Link from 'next/link';
+import Counter from '../Counter';
 
 const Cart = () => {
   return (
@@ -25,7 +26,7 @@ const Cart = () => {
           alt='headphones'
           className='rounded-lg mr-4'
         />
-        <div className='flex justify-between w-full'>
+        <div className='flex justify-between w-full items-center'>
           <div className='flex flex-col'>
             <span>
               <Typography as='xsmall' weight='font-bold'>
@@ -38,7 +39,7 @@ const Cart = () => {
               </Typography>
             </span>
           </div>
-          <div className='bg-brandGray-200 px-[52px] py-[15px] '>1</div>
+          <Counter paddingY='7px' paddingX='11.5px' gap='13px' />
         </div>
       </div>
       <div className='flex mb-6 items-center'>
@@ -49,7 +50,7 @@ const Cart = () => {
           alt='headphones'
           className='rounded-lg mr-4'
         />
-        <div className='flex justify-between w-full'>
+        <div className='flex justify-between w-full items-center'>
           <div className='flex flex-col'>
             <span>
               <Typography as='xsmall' weight='font-bold'>
@@ -62,10 +63,10 @@ const Cart = () => {
               </Typography>
             </span>
           </div>
-          <div className='bg-brandGray-200 px-[52px] py-[15px] '>1</div>
+          <Counter paddingY='7px' paddingX='11.5px' gap='13px' />
         </div>
       </div>
-      <div className='flex mb-6 items-center'>
+      <div className='flex mb-8 items-center'>
         <Image
           src={headphones}
           width={64}
@@ -73,11 +74,11 @@ const Cart = () => {
           alt='headphones'
           className='rounded-lg mr-4'
         />
-        <div className='flex justify-between w-full'>
+        <div className='flex justify-between w-full items-center'>
           <div className='flex flex-col'>
             <span>
               <Typography as='xsmall' weight='font-bold'>
-                XX99 MK II
+                YX1
               </Typography>
             </span>
             <span className='opacity-50'>
@@ -86,21 +87,24 @@ const Cart = () => {
               </Typography>
             </span>
           </div>
-          <div className='bg-brandGray-200 px-[52px] py-[15px] '>1</div>
+          <Counter paddingY='7px' paddingX='11.5px' gap='13px' />
         </div>
       </div>
-      <div className='flex justify-between mb-8'>
+      <div className='flex justify-between mb-6'>
         <span className='opacity-50'>
-          <Typography as='p2' weight='font-bold' transform='uppercase'>
+          <Typography as='p2' weight='font-medium' transform='uppercase'>
             total
           </Typography>
         </span>
         <span>000</span>
       </div>
-      <div className='text-center text-white'>
+      {/* <div className=' text-white '>
         <Button bg='brand-amber' hover='brand-pastelYellow' link='/'>
           checkout
         </Button>
+      </div> */}
+      <div className='bg-brand-amber duration-300 text-center uppercase cursor-pointer py-[15px] text-sm font-bold text-white hover:bg-brand-pastelYellow '>
+        <Link href='/'>checkout</Link>
       </div>
     </div>
   );

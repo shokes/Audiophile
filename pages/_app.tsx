@@ -13,6 +13,7 @@ import HomeProductFour from '@/components/HomeProductFour';
 import Product from '@/components/Product';
 import ProductSection from '@/components/ProductSection';
 import ProductDetail from '@/components/ProductDetail';
+import InBox from '@/components/InBox';
 import Like from '@/components/Like';
 
 const components = {
@@ -28,6 +29,7 @@ const components = {
   product_section: ProductSection,
   product_detail: ProductDetail,
   like: Like,
+  in_box: InBox,
 };
 
 const manrope = Manrope({

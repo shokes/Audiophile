@@ -6,6 +6,9 @@ import Typography from '../Typography';
 import { useRouter } from 'next/router';
 import Button from '../Button';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
+import Counter from '../Counter';
+import { addCommas } from '@/utils/general';
+import InBox from '../InBox';
 
 interface ProductDetailProps {
   blok: SbBlokData & ProductDetailStoryblok;
@@ -30,7 +33,6 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               go back
             </Typography>
           </button>
-
           <div className='flex items-center gap-[124.5px] mb-[160px]'>
             {blok.image1 && (
               <Image
@@ -65,9 +67,13 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                   {blok.description}
                 </Typography>
               </div>
-              <div className='mb-10'>${blok.price}</div>
+              <div className='mb-10'>
+                <Typography as='h6' weight='font-bold'>
+                  $ {addCommas(blok.price as number)}
+                </Typography>
+              </div>
               <div className='flex items-center gap-2'>
-                <span className='bg-brandGray-200 px-[52px] py-[15px]'>1</span>
+                <Counter paddingY='15px' paddingX='15px' gap='21px' />
                 <div className='text-white'>
                   <Button bg='brand-amber' hover='brand-pastelYellow' link='/'>
                     add to cart
@@ -76,8 +82,8 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               </div>
             </div>
           </div>
-          <div className='flex gap-7 mb-[106px]'>
-            <div className='w-3/4'>
+          <div className='flex gap-[125px] mb-[106px]'>
+            <div className='w-[635px]'>
               <div className='mb-8'>
                 <Typography transform='uppercase' as='h3' weight='font-bold'>
                   features
@@ -94,16 +100,16 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
             </div>
-            <div className='w-1/2'>
+            <div>
               <div className='mb-8'>
                 <Typography transform='uppercase' as='h3' weight='font-bold'>
                   in the box
                 </Typography>
               </div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              itaque, ipsa minus architecto, debitis rerum maxime quam beatae
-              officiis voluptatum sed. Praesentium ipsam sapiente, ipsum porro
-              quaerat quis vero et.
+              {blok.inBox &&
+                blok.inBox.map((box) => {
+                  return <InBox box={box} key={box.item} />;
+                })}
             </div>{' '}
           </div>
 

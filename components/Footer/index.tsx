@@ -5,6 +5,8 @@ import { FiInstagram } from 'react-icons/fi';
 import { FaTwitter } from 'react-icons/fa';
 import { ImFacebook2 } from 'react-icons/im';
 import Link from 'next/link';
+import rec from '../../public/Rectangle.png';
+import Image from 'next/image';
 
 const socials = [
   {
@@ -27,7 +29,14 @@ const socials = [
 const Footer = () => {
   return (
     <div className='text-white bg-black mx-auto mt-[200px] pb-12 pt-[75px]'>
-      <div className='max-w-[1110px] mx-auto '>
+      <div className='max-w-[1110px] mx-auto  relative'>
+        <Image
+          src={rec}
+          width={101}
+          height={4}
+          alt='rec'
+          className='absolute left-0 -top-[75px]'
+        />
         <div className='mb-9'>
           <Navigation shoppingCart={false} />
         </div>
