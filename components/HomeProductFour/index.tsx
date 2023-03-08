@@ -4,6 +4,7 @@ import Typography from '../Typography';
 import { SbBlokData } from '@storyblok/react';
 import { HomeProductFourStoryblok } from '@/@types/generated/storyblok';
 import { storyblokEditable } from '@storyblok/react';
+import Container from '../Container';
 
 interface HomeProductFourProps {
   blok: SbBlokData & HomeProductFourStoryblok;
@@ -11,33 +12,35 @@ interface HomeProductFourProps {
 
 const HomeProductFour = ({ blok }: HomeProductFourProps) => {
   return (
-    <div
-      {...storyblokEditable(blok)}
-      className='max-w-[1110px] mx-auto mt-[200px] flex items-center justify-between'
-    >
-      <div className='w-[445px]'>
-        <div className='mb-8'>
-          <Typography weight='font-bold' as='h2' transform='uppercase'>
-            Bringing you the <span className='text-brand-amber'>best</span>{' '}
-            audio gear
-          </Typography>
+    <Container>
+      <div
+        {...storyblokEditable(blok)}
+        className='mt-[200px] flex items-center justify-between'
+      >
+        <div className='w-[445px]'>
+          <div className='mb-8'>
+            <Typography weight='font-bold' as='h2' transform='uppercase'>
+              Bringing you the <span className='text-brand-amber'>best</span>{' '}
+              audio gear
+            </Typography>
+          </div>
+          <div className='opacity-50'>
+            <Typography weight='font-medium' as='xsmall'>
+              {blok && blok.description}
+            </Typography>
+          </div>
         </div>
-        <div className='opacity-50'>
-          <Typography weight='font-medium' as='xsmall'>
-            {blok && blok.description}
-          </Typography>
-        </div>
+        {blok && (
+          <Image
+            src={`https://${blok.image}`}
+            width={540}
+            height={588}
+            alt='gear'
+            className='rounded-lg object-cover'
+          />
+        )}
       </div>
-      {blok && (
-        <Image
-          src={`https://${blok.image}`}
-          width={540}
-          height={588}
-          alt='gear'
-          className='rounded-lg object-cover'
-        />
-      )}
-    </div>
+    </Container>
   );
 };
 

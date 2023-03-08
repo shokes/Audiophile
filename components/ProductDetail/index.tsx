@@ -9,6 +9,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
 import Counter from '../Counter';
 import { addCommas } from '@/utils/general';
 import InBox from '../InBox';
+import Container from '../Container';
 
 interface ProductDetailProps {
   blok: SbBlokData & ProductDetailStoryblok;
@@ -20,11 +21,13 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
     <section {...storyblokEditable(blok)}>
       <div className='body-font'>
         <div className='bg-black '>
-          <div className='max-w-[1110px]  mx-auto pb-[37px] pt-8'>
-            <Navigation shoppingCart={true} />
-          </div>
+          <Container>
+            <div className='pb-[37px] pt-8'>
+              <Navigation shoppingCart={true} />
+            </div>
+          </Container>
         </div>
-        <div className='max-w-[1110px] mx-auto'>
+        <Container>
           <button
             className='opacity-50 mb-[56px] mt-[79px]'
             onClick={() => router.back()}
@@ -63,7 +66,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
               <div className='mb-10 opacity-50'>
-                <Typography as='small' weight='font-medium'>
+                <Typography as='xsmall' weight='font-medium'>
                   {blok.description}
                 </Typography>
               </div>
@@ -74,8 +77,13 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               </div>
               <div className='flex items-center gap-2'>
                 <Counter paddingY='15px' paddingX='15px' gap='21px' />
-                <div className='text-white'>
-                  <Button bg='brand-amber' hover='brand-pastelYellow' link='/'>
+
+                {/* ! add to cart button */}
+                <div
+                  className='text-white'
+                  onClick={() => console.log(blok.name)}
+                >
+                  <Button bg='brand-amber' hover='brand-pastelYellow'>
                     add to cart
                   </Button>
                 </div>
@@ -145,7 +153,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               />
             )}
           </div>
-        </div>
+        </Container>
         <div className='text-center mb-1'>
           <Typography transform='uppercase' as='h3' weight='font-bold'>
             you may also like

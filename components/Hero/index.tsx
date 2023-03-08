@@ -6,6 +6,7 @@ import Button from '../Button';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
+import Container from '../Container';
 
 interface HeroProps {
   blok: SbBlokData & HeroStoryblok;
@@ -25,7 +26,7 @@ const Hero = ({ blok }: HeroProps) => {
         className='absolute inset-0 -z-10 h-full w-full object-cover 2xl:object-fill'
         fill
       />
-      <div className='max-w-[1110px]  mx-auto'>
+      <Container>
         <div className='border-b mb-32 border-white/20 pt-8  pb-9'>
           <Navigation shoppingCart={true} />
         </div>
@@ -54,7 +55,7 @@ const Hero = ({ blok }: HeroProps) => {
             see product
           </Button>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

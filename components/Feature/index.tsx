@@ -14,12 +14,13 @@ interface FeatureProps {
 
 const Feature = ({ feature }: FeatureProps) => {
   const resolvedLink = resolveLink(feature.link);
+
   return (
     <div {...storyblokEditable(feature)}>
       <Link
         key={feature.name}
         href={resolvedLink}
-        className='flex mt-[200px] rounded-lg flex-col relative items-center h-[204px] bg-brandGray-200 box'
+        className='flex mt-[200px] rounded-lg flex-col relative  items-center h-[204px] bg-brandGray-200 box'
       >
         <Image
           src={`https://${feature.image}`}

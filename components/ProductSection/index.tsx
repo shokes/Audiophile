@@ -9,6 +9,7 @@ import Typography from '../Typography';
 import Product from '../Product';
 import { ProductSectionStoryblok } from '@/@types/generated/storyblok';
 import { useState, useEffect } from 'react';
+import Container from '../Container';
 
 interface ProductSectionProps {
   blok: SbBlokData & ProductSectionStoryblok;
@@ -40,7 +41,7 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
   return (
     <div {...storyblokEditable(blok)}>
       <div className='bg-black pb-[97px]'>
-        <div className=' max-w-[1110px]  mx-auto '>
+        <Container>
           <div className='border-b mb-[98px] border-white/20 pt-8  pb-9'>
             <Navigation shoppingCart={true} />
           </div>
@@ -49,15 +50,15 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
               {blok.heading}
             </Typography>
           </div>
-        </div>
+        </Container>
       </div>
-      <div className='max-w-[1110px]  mx-auto'>
+      <Container>
         {/* // ! to fix typings later * */}
         {products &&
           products.map((product: any) => {
             return <Product key={product.name} product={product} />;
           })}
-      </div>
+      </Container>
     </div>
   );
 };

@@ -43,7 +43,7 @@ const Product = ({ product }: ProductProps) => {
         />
       )}
 
-      <div className='w-[445px]'>
+      <div>
         {newProduct && (
           <div className='mb-4 text-brand-amber'>
             <Typography as='p' transform='uppercase' weight='font-normal'>
@@ -62,7 +62,7 @@ const Product = ({ product }: ProductProps) => {
           </Typography>
         </div>
         <div className='mb-10 opacity-50'>
-          <Typography as='small' weight='font-medium'>
+          <Typography as='xsmall' weight='font-medium'>
             {description}
           </Typography>
         </div>

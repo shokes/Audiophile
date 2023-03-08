@@ -5,11 +5,11 @@ import Link from 'next/link';
 interface Props {
   bg?: string;
   hover: string;
-  link: string;
+  link?: string;
   children: React.ReactNode;
 }
 
-const Button = ({ bg = '', hover = '', link = '/', children }: Props) => {
+const Button = ({ bg = '', hover = '', link = '', children }: Props) => {
   return (
     <button
       className={classNames(
@@ -17,7 +17,11 @@ const Button = ({ bg = '', hover = '', link = '/', children }: Props) => {
         bg === '' ? 'border border-black  hover:text-white' : `bg-${bg}`
       )}
     >
-      <Link href={link}>{children}</Link>
+      {link !== '' ? (
+        <Link href={link}>{children}</Link>
+      ) : (
+        <div>{children}</div>
+      )}
     </button>
   );
 };
