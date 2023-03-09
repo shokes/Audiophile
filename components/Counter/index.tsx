@@ -13,15 +13,16 @@ const counterClasses = classNames(
 );
 
 const Counter = ({ paddingY = '', paddingX = '', gap = '' }: CounterProps) => {
+  console.log(paddingX, paddingY);
+
   return (
     <div
-      className={`bg-brandGray-200  px-[${paddingX}]  py-[${paddingY}] flex items-center  gap-[${gap}] justify-between}`}
-      // className='bg-brandGray-200  p-[1rem] flex items-center  gap-[${gap}] justify-between'
+      className={`bg-brandGray-200  !px-[${paddingX}]  !py-[${paddingY}] flex items-center  gap-[${gap}] justify-between`}
     >
       <span>
         <HiOutlineMinusSm className={counterClasses} />
       </span>
-      <span>1 </span>
+      <span>1</span>
       <span>
         <HiOutlinePlusSm className={counterClasses} />
       </span>

@@ -65,7 +65,7 @@ const Cart = () => {
                 </Typography>
               </span>
             </div>
-            <Counter paddingY='7px' paddingX='11.5px' gap='13px' />
+            <Counter paddingX='11.5px' gap='13px' paddingY='7px' />
           </div>
         </div>
         <div className='flex mb-8 items-center'>
