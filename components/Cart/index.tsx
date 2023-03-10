@@ -41,7 +41,11 @@ const Cart = () => {
                 </Typography>
               </span>
             </div>
-            <Counter paddingY='7px' paddingX='11.5px' gap='13px' />
+            <Counter
+              paddingX='px-[11.5px]'
+              paddingY='py-[7px]'
+              gap='gap-[13px]'
+            />
           </div>
         </div>
         <div className='flex mb-6 items-center'>
@@ -65,7 +69,11 @@ const Cart = () => {
                 </Typography>
               </span>
             </div>
-            <Counter paddingX='11.5px' gap='13px' paddingY='7px' />
+            <Counter
+              paddingX='px-[11.5px]'
+              paddingY='py-[7px]'
+              gap='gap-[13px]'
+            />
           </div>
         </div>
         <div className='flex mb-8 items-center'>
@@ -89,7 +97,11 @@ const Cart = () => {
                 </Typography>
               </span>
             </div>
-            <Counter paddingY='7px' paddingX='11.5px' gap='13px' />
+            <Counter
+              paddingX='px-[11.5px]'
+              paddingY='py-[7px]'
+              gap='gap-[13px]'
+            />
           </div>
         </div>
         <div className='flex justify-between mb-6'>

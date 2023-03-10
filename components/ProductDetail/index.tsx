@@ -76,14 +76,21 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
               <div className='flex items-center gap-2'>
-                <Counter paddingY='15px' paddingX='15px' gap='21px' />
+                <Counter
+                  paddingY='py-[15px]'
+                  paddingX='px-[15px]'
+                  gap='gap-[21px]'
+                />
 
                 {/* ! add to cart button */}
                 <div
                   className='text-white'
                   onClick={() => console.log(blok.name)}
                 >
-                  <Button bg='brand-amber' hover='brand-pastelYellow'>
+                  <Button
+                    bg='bg-brand-amber'
+                    hover='hover:bg-brand-pastelYellow'
+                  >
                     add to cart
                   </Button>
                 </div>

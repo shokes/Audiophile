@@ -68,8 +68,8 @@ const Product = ({ product }: ProductProps) => {
         </div>
         <div className='text-white'>
           <Button
-            bg='brand-amber'
-            hover='brand-pastelYellow'
+            bg='bg-brand-amber'
+            hover='hover:bg-brand-pastelYellow'
             link={resolvedLink}
           >
             see product

@@ -8,13 +8,12 @@ interface Props {
   link?: string;
   children: React.ReactNode;
 }
-
-const Button = ({ bg = '', hover = '', link = '', children }: Props) => {
+const Button = ({ bg = '', hover, link = '', children }: Props) => {
   return (
     <button
       className={classNames(
-        `hover:bg-${hover} uppercase  duration-300  px-[31px] py-[15px] text-sm font-bold`,
-        bg === '' ? 'border border-black  hover:text-white' : `bg-${bg}`
+        `${hover} uppercase  duration-300  px-[31px] py-[15px] text-sm font-bold`,
+        bg === '' ? 'border border-black  hover:text-white' : `${bg}`
       )}
     >
       {link !== '' ? (

@@ -48,8 +48,8 @@ const Hero = ({ blok }: HeroProps) => {
             </Typography>
           </div>
           <Button
-            bg='brand-amber'
-            hover='brand-pastelYellow'
+            bg='bg-brand-amber'
+            hover='hover:bg-brand-pastelYellow'
             link={resolvedLink}
           >
             see product
