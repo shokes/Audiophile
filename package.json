@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@next/font": "^13.1.6",
+    "@reduxjs/toolkit": "^1.9.3",
     "@storyblok/react": "^2.0.9",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
@@ -24,6 +25,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
     "storyblok": "^3.17.2",
     "storyblok-rich-text-react-renderer": "^2.6.1",
     "typescript": "4.9.4"

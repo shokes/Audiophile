@@ -21,7 +21,7 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
           {blok && (
             <Image
               src={`https://${blok.image}`}
-              alt='hero'
+              alt={blok.name}
               className='absolute inset-0 -z-10 object-cover rounded-lg'
               fill
             />
@@ -29,7 +29,7 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
           <div className=' pb-[151px] pl-[95px] pt-[101px] text-black'>
             <div className='mb-6 w-[398px] '>
               <Typography as='h4' weight='font-bold'>
-                {blok && blok.name}
+                {blok.name}
               </Typography>
             </div>
             <Button hover='hover:bg-brandBlack-100' link={resolvedLink}>

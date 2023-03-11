@@ -15,6 +15,8 @@ import ProductSection from '@/components/ProductSection';
 import ProductDetail from '@/components/ProductDetail';
 import InBox from '@/components/InBox';
 import Like from '@/components/Like';
+import { store } from '../redux/store';
+import { Provider } from 'react-redux';
 
 const components = {
   page: Page,
@@ -46,7 +48,9 @@ storyblokInit({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${manrope.variable} font-sans`}>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </main>
   );
 }

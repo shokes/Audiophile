@@ -22,7 +22,7 @@ const Hero = ({ blok }: HeroProps) => {
     >
       <Image
         src={`https://${blok.image}`}
-        alt='hero'
+        alt={blok.title}
         className='absolute inset-0 -z-10 h-full w-full object-cover 2xl:object-fill'
         fill
       />

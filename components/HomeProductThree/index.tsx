@@ -21,23 +21,20 @@ const HomeProductThree = ({ blok }: HomeProductThreeProps) => {
         {...storyblokEditable(blok)}
         className='mt-[48px] flex items-center justify-between'
       >
-        <div>
-          {blok && (
-            <Image
-              src={`https://${blok.image}`}
-              height={320}
-              width={540}
-              alt='earphones'
-              className='object-cover rounded-lg'
-            />
-          )}
-        </div>
-
+        {blok && (
+          <Image
+            src={`https://${blok.image}`}
+            height={320}
+            width={540}
+            alt={blok.name as string}
+            className='object-cover rounded-lg'
+          />
+        )}
         <div className='bg-brandGray-200 rounded-lg h-[320px] w-[540px]'>
           <div className='pt-[101px] pl-[95px] pr-[198px]'>
             <div className='mb-6 w-[398px] text-black'>
               <Typography as='h4' weight='font-bold'>
-                {blok && blok.name}
+                {blok.name}
               </Typography>
             </div>
             <Button hover='hover:bg-brandBlack-100' link={resolvedLink}>

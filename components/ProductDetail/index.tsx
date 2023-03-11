@@ -39,8 +39,8 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
           <div className='flex items-center gap-[124.5px] mb-[160px]'>
             {blok.image1 && (
               <Image
-                className=' object-cover object-center rounded'
-                alt='ddd'
+                className='object-cover object-center rounded'
+                alt={blok.name}
                 src={blok.image1.filename}
                 width={540}
                 height={560}
@@ -133,7 +133,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               {blok.image2 && (
                 <Image
                   className=' object-cover mb-8 rounded-lg'
-                  alt='ddd'
+                  alt={blok.name}
                   src={blok.image2.filename}
                   width={445}
                   height={280}
@@ -143,7 +143,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               {blok.image3 && (
                 <Image
                   className=' object-cover rounded-lg'
-                  alt='ddd'
+                  alt={blok.name}
                   src={blok.image3.filename}
                   width={445}
                   height={280}
@@ -153,7 +153,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
             {blok.image4 && (
               <Image
                 className=' object-cover  rounded-lg'
-                alt='ddd'
+                alt={blok.name}
                 src={blok.image4.filename}
                 width={635}
                 height={592}
