@@ -7,15 +7,13 @@ const initialState = {
 const homeSlice = createSlice({
   name: 'home',
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {},
+  reducers: {
+    addToCart: (state, action) => {
+      console.log(action.payload);
+    },
+  },
 });
 
-// export const {
-//   openLoginModal,
-//   closeLoginModal,
-//   openSignUpModal,
-//   closeSignUpModal,
-// } = homeSlice.actions;
+export const { addToCart } = homeSlice.actions;
 
 export default homeSlice.reducer;

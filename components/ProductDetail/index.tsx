@@ -9,6 +9,8 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
 import Counter from '../Counter';
 import { addCommas } from '@/utils/general';
 import InBox from '../InBox';
+import { addToCart } from '@/redux/features/homeSlice';
+import { useDispatch } from 'react-redux';
 import Container from '../Container';
 
 interface ProductDetailProps {
@@ -16,6 +18,7 @@ interface ProductDetailProps {
 }
 
 const ProductDetail = ({ blok }: ProductDetailProps) => {
+  const dispatch = useDispatch();
   const router = useRouter();
   return (
     <section {...storyblokEditable(blok)}>
@@ -85,7 +88,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 {/* ! add to cart button */}
                 <div
                   className='text-white'
-                  onClick={() => console.log(blok.name)}
+                  onClick={() => dispatch(addToCart(blok.name))}
                 >
                   <Button
                     bg='bg-brand-amber'
