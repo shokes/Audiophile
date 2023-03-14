@@ -137,6 +137,8 @@ export interface ProductDetailStoryblok {
   body?: any[];
   link?: MultilinkStoryblok;
   inBox?: any[];
+  short?: string;
+  cartImage?: AssetStoryblok;
   _uid: string;
   component: "product_detail";
 }

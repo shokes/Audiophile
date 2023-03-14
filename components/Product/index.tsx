@@ -43,7 +43,7 @@ const Product = ({ product }: ProductProps) => {
         />
       )}
 
-      <div>
+      <div className='w-[445px]'>
         {newProduct && (
           <div className='mb-4 text-brand-amber'>
             <Typography as='p' transform='uppercase' weight='font-normal'>
@@ -71,6 +71,7 @@ const Product = ({ product }: ProductProps) => {
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'
             link={resolvedLink}
+            block={false}
           >
             see product
           </Button>

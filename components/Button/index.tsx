@@ -7,19 +7,38 @@ interface Props {
   hover: string;
   link?: string;
   children: React.ReactNode;
+  block: boolean;
 }
-const Button = ({ bg = '', hover, link = '', children }: Props) => {
+
+const buttonClasses = classNames(
+  'uppercase duration-300  px-[31px] py-[15px] text-sm font-bold'
+);
+
+const blockClasses = classNames('w-full block');
+
+const Button = ({ bg = '', hover, link = '', children, block }: Props) => {
   return (
-    <button
-      className={classNames(
-        `${hover} uppercase  duration-300  px-[31px] py-[15px] text-sm font-bold`,
-        bg === '' ? 'border border-black  hover:text-white' : `${bg}`
-      )}
-    >
+    <button className={`${block && blockClasses}`}>
       {link !== '' ? (
-        <Link href={link}>{children}</Link>
+        <Link
+          href={link}
+          className={classNames(
+            `${hover} ${buttonClasses}`,
+            bg === '' ? 'border border-black  hover:text-white' : `${bg}`,
+            block && blockClasses
+          )}
+        >
+          {children}
+        </Link>
       ) : (
-        <div>{children}</div>
+        <div
+          className={classNames(
+            `${hover} ${buttonClasses} ${bg}`,
+            block && blockClasses
+          )}
+        >
+          {children}
+        </div>
       )}
     </button>
   );

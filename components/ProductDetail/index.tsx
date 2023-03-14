@@ -49,8 +49,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 height={560}
               />
             )}
-
-            <div className=''>
+            <div className='w-[445px]'>
               {blok.new && (
                 <div className='mb-4 text-brand-amber'>
                   <Typography as='p' transform='uppercase' weight='font-normal'>
@@ -84,15 +83,14 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                   paddingX='px-[15px]'
                   gap='gap-[21px]'
                 />
-
-                {/* ! add to cart button */}
                 <div
                   className='text-white'
-                  onClick={() => dispatch(addToCart(blok.name))}
+                  onClick={() => dispatch(addToCart(blok))}
                 >
                   <Button
                     bg='bg-brand-amber'
                     hover='hover:bg-brand-pastelYellow'
+                    block={false}
                   >
                     add to cart
                   </Button>

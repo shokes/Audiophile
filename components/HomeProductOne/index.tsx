@@ -66,6 +66,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
                 bg='bg-black'
                 hover='hover:bg-brandGray-300'
                 link={resolvedLink}
+                block={false}
               >
                 see product
               </Button>

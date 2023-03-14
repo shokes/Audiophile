@@ -34,6 +34,7 @@ const Like = ({ like }: LikeProps) => {
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'
             link={resolvedLink}
+            block={false}
           >
             see product
           </Button>
