@@ -10,31 +10,31 @@ const homeSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      //console.log(action.payload.short);
       const tempItem = state.cart.find(
-        (item) => item.short === action.payload.short
+        (item: any) => item.short === action.payload.short
       );
-     if (tempItem) {
-     const tempCart = state.cart.map((cartItem) => {
-       if (cartItem.short === action.payload.short) {
-         let newAmount = cartItem.amount + action.payload.amount;
-         if (newAmount > cartItem.max) {
-           newAmount = cartItem.max;
-         }
-         return { ...cartItem, amount: newAmount };
-       } else {
-         return cartItem;
-       }
-    });
-  }
-}
+      if (tempItem) {
+        console.log('product already exists');
+      } else {
+        console.log('new product');
+        // state.cart.push(tempItem);
+        state.cart.push(action.payload);
+      }
+    },
+  },
 });
 
 export const { addToCart } = homeSlice.actions;
 
 export default homeSlice.reducer;
 
-
-//  if (action.type === 'ADD_TO_CART') {
-
-
+//  const tempCart = state.cart.map((cartItem: any) => {
+//    if (cartItem.short === action.payload.short) {
+//      let newAmount = cartItem.amount + 1;
+//      if (newAmount > cartItem.max) {
+//        newAmount = cartItem.max;
+//      }
+//    } else {
+//      return cartItem;
+//    }
+//  });
