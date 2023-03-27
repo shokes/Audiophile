@@ -6,11 +6,12 @@ import Typography from '../Typography';
 import { useRouter } from 'next/router';
 import Button from '../Button';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
-import Counter from '../Counter';
+import ProductDetailCounter from '../Counter/ProductDetailCounter';
 import { addCommas } from '@/utils/general';
 import InBox from '../InBox';
 import { addToCart } from '@/redux/features/homeSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
 import Container from '../Container';
 
 interface ProductDetailProps {
@@ -20,6 +21,9 @@ interface ProductDetailProps {
 const ProductDetail = ({ blok }: ProductDetailProps) => {
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const { tempQuantity } = useSelector((store: RootState) => store.home);
+
   return (
     <section {...storyblokEditable(blok)}>
       <div className='body-font'>
@@ -78,14 +82,10 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
               <div className='flex items-center gap-2'>
-                <Counter
-                  paddingY='py-[15px]'
-                  paddingX='px-[15px]'
-                  gap='gap-[21px]'
-                />
+                <ProductDetailCounter />
                 <div
                   className='text-white'
-                  onClick={() => dispatch(addToCart(blok))}
+                  onClick={() => dispatch(addToCart([blok, tempQuantity]))}
                 >
                   <Button
                     bg='bg-brand-amber'

@@ -1,17 +1,26 @@
 import React from 'react';
 import Typography from '../Typography';
 import Image from 'next/image';
-import Counter from '../Counter';
+import Counter from '../Counter/ProductDetailCounter';
 import ModalLayout from '../ModalLayout';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Button from '../Button';
 import { addCommas } from '@/utils/general';
 import { ProductDetailStoryblok } from '@/@types/generated/storyblok';
+import CartCounter from '../Counter/CartCounter';
 import Link from 'next/link';
 
 const Cart = () => {
   const { cart } = useSelector((store: RootState) => store.home);
+
+  const total = cart.reduce(
+    (acc: number, item: { price: number; quantity: number }) => {
+      const itemTotal = item.price * item.quantity;
+      return acc + itemTotal;
+    },
+    0
+  );
 
   return (
     <ModalLayout>
@@ -45,43 +54,48 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          cart.map((item: ProductDetailStoryblok) => {
-            return (
-              <div key={item.name}>
-                <div className='flex mb-6 items-center'>
-                  {item.cartImage && (
+          cart.map(
+            (item: {
+              name: string;
+              image: string;
+              short: string;
+              price: number;
+              quantity: number;
+            }) => {
+              return (
+                <div key={item.name}>
+                  <div className='flex mb-6 items-center'>
                     <Image
-                      src={item.cartImage.filename}
+                      src={item.image}
                       width={64}
                       height={64}
                       alt='headphones'
                       className='rounded-lg mr-4'
                     />
-                  )}
 
-                  <div className='flex justify-between w-full items-center'>
-                    <div className='flex flex-col'>
-                      <span>
-                        <Typography as='xsmall' weight='font-bold'>
-                          {item.short}
-                        </Typography>
-                      </span>
-                      <span className='opacity-50'>
-                        <Typography as='p2' weight='font-bold'>
-                          ${addCommas(item.price as number)}
-                        </Typography>
-                      </span>
+                    <div className='flex justify-between w-full items-center'>
+                      <div className='flex flex-col'>
+                        <span>
+                          <Typography as='xsmall' weight='font-bold'>
+                            {item.short}
+                          </Typography>
+                        </span>
+                        <span className='opacity-50'>
+                          <Typography as='p2' weight='font-bold'>
+                            ${addCommas(item.price as number)}
+                          </Typography>
+                        </span>
+                      </div>
+                      <CartCounter
+                        quantity={item.quantity}
+                        short={item.short}
+                      />
                     </div>
-                    <Counter
-                      paddingX='px-[11.5px]'
-                      paddingY='py-[7px]'
-                      gap='gap-[13px]'
-                    />
                   </div>
                 </div>
-              </div>
-            );
-          })
+              );
+            }
+          )
         )}
         {cart.length > 0 && (
           <div>
@@ -91,7 +105,11 @@ const Cart = () => {
                   total
                 </Typography>
               </span>
-              <span>000</span>
+              <span>
+                <Typography as='h6' weight='font-bold'>
+                  $ {addCommas(total)}
+                </Typography>
+              </span>
             </div>
             <div className='text-white'>
               <Button

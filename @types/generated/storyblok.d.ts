@@ -1,4 +1,4 @@
-import {StoryblokStory} from 'storyblok-generate-ts'
+import { StoryblokStory } from 'storyblok-generate-ts';
 
 export type MultilinkStoryblok =
   | {
@@ -9,17 +9,17 @@ export type MultilinkStoryblok =
       id?: string;
       cached_url?: string;
       anchor?: string;
-      linktype?: "story";
+      linktype?: 'story';
     }
   | {
       url?: string;
       cached_url?: string;
       anchor?: string;
-      linktype?: "asset" | "url";
+      linktype?: 'asset' | 'url';
     }
   | {
       email?: string;
-      linktype?: "email";
+      linktype?: 'email';
     };
 
 export interface FeatureStoryblok {
@@ -27,13 +27,13 @@ export interface FeatureStoryblok {
   link: MultilinkStoryblok;
   name?: string;
   _uid: string;
-  component: "feature";
+  component: 'feature';
 }
 
 export interface FeatureSectionStoryblok {
   features?: any[];
   _uid: string;
-  component: "feature_section";
+  component: 'feature_section';
 }
 
 export interface HeroStoryblok {
@@ -42,14 +42,14 @@ export interface HeroStoryblok {
   description: string;
   link?: MultilinkStoryblok;
   _uid: string;
-  component: "hero";
+  component: 'hero';
 }
 
 export interface HomeProductFourStoryblok {
   description?: string;
   image?: string;
   _uid: string;
-  component: "home_product_four";
+  component: 'home_product_four';
 }
 
 export interface HomeProductOneStoryblok {
@@ -58,7 +58,7 @@ export interface HomeProductOneStoryblok {
   link?: MultilinkStoryblok;
   image?: string;
   _uid: string;
-  component: "home_product_one";
+  component: 'home_product_one';
 }
 
 export interface HomeProductThreeStoryblok {
@@ -66,7 +66,7 @@ export interface HomeProductThreeStoryblok {
   name?: string;
   link?: MultilinkStoryblok;
   _uid: string;
-  component: "home_product_three";
+  component: 'home_product_three';
 }
 
 export interface HomeProductTwoStoryblok {
@@ -74,14 +74,14 @@ export interface HomeProductTwoStoryblok {
   link: MultilinkStoryblok;
   image: string;
   _uid: string;
-  component: "home_product_two";
+  component: 'home_product_two';
 }
 
 export interface InBoxStoryblok {
   quantity?: number;
   item?: string;
   _uid: string;
-  component: "in_box";
+  component: 'in_box';
 }
 
 export interface AssetStoryblok {
@@ -99,13 +99,13 @@ export interface LikeStoryblok {
   name?: string;
   link?: MultilinkStoryblok;
   _uid: string;
-  component: "like";
+  component: 'like';
 }
 
 export interface PageStoryblok {
   body?: any[];
   _uid: string;
-  component: "page";
+  component: 'page';
   uuid?: string;
 }
 
@@ -115,18 +115,18 @@ export interface ProductStoryblok {
   image?: string;
   description?: string;
   link?: MultilinkStoryblok;
-  reverse?: "" | "reverse" | "no-reverse";
+  reverse?: '' | 'reverse' | 'no-reverse';
   type?: string;
   _uid: string;
-  component: "product";
+  component: 'product';
 }
 
 export interface ProductDetailStoryblok {
   name: string;
   new?: boolean;
   description: string;
-  reverse: "reverse" | "no-reverse";
-  category: "headphones" | "earphones" | "speakers";
+  reverse: 'reverse' | 'no-reverse';
+  category: 'headphones' | 'earphones' | 'speakers';
   price?: number;
   featureOne?: string;
   featureTwo?: string;
@@ -140,7 +140,7 @@ export interface ProductDetailStoryblok {
   short?: string;
   cartImage?: AssetStoryblok;
   _uid: string;
-  component: "product_detail";
+  component: 'product_detail';
 }
 
 export interface ProductInfoShortStoryblok {
@@ -148,12 +148,12 @@ export interface ProductInfoShortStoryblok {
   description?: string;
   link?: MultilinkStoryblok;
   _uid: string;
-  component: "product_info_short";
+  component: 'product_info_short';
 }
 
 export interface ProductSectionStoryblok {
   heading?: string;
   products?: any[];
   _uid: string;
-  component: "product_section";
+  component: 'product_section';
 }
