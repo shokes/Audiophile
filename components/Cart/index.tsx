@@ -1,7 +1,6 @@
 import React from 'react';
 import Typography from '../Typography';
 import Image from 'next/image';
-import Counter from '../Counter/ProductDetailCounter';
 import ModalLayout from '../ModalLayout';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
@@ -9,9 +8,11 @@ import Button from '../Button';
 import { addCommas } from '@/utils/general';
 import { ProductDetailStoryblok } from '@/@types/generated/storyblok';
 import CartCounter from '../Counter/CartCounter';
-import Link from 'next/link';
+import { deleteAllProductsInCart } from '@/redux/features/homeSlice';
+import { useDispatch } from 'react-redux';
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const { cart } = useSelector((store: RootState) => store.home);
 
   const total = cart.reduce(
@@ -31,7 +32,10 @@ const Cart = () => {
               cart ({cart.length})
             </Typography>
           </div>
-          <div className='opacity-50 underline hover:text-brand-amber duration-300 cursor-pointer hover:opacity-100 '>
+          <div
+            className='opacity-50 underline hover:text-brand-amber duration-300 cursor-pointer hover:opacity-100 '
+            onClick={() => dispatch(deleteAllProductsInCart())}
+          >
             <Typography as='xsmall'>Remove all</Typography>
           </div>
         </div>

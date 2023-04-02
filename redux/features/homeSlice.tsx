@@ -65,6 +65,10 @@ const homeSlice = createSlice({
         product.quantity -= 1;
       }
     },
+
+    deleteAllProductsInCart: (state) => {
+      state.cart = [];
+    },
   },
 });
 
@@ -74,6 +78,7 @@ export const {
   decreaseQuantity,
   increaseQuantityInCart,
   decreaseQuantityInCart,
+  deleteAllProductsInCart,
 } = homeSlice.actions;
 
 export default homeSlice.reducer;
