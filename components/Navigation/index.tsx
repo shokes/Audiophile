@@ -25,9 +25,9 @@ const Navigation = (props: { shoppingCart: boolean }) => {
           const { name, href } = item;
           return (
             <div className='hover:text-brand-amber duration-200' key={name}>
-              <Typography as='small' weight='font-bold' transform='uppercase'>
+              <span className='text-sm font-bold uppercase'>
                 <Link href={href}>{name}</Link>
-              </Typography>
+              </span>
             </div>
           );
         })}

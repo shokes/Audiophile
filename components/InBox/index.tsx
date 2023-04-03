@@ -12,14 +12,10 @@ const InBox = ({ box }: InboxProps) => {
     return (
       <div {...storyblokEditable(box)} className='flex gap-[21px] mb-2'>
         <div className='text-brand-amber'>
-          <Typography as='xsmall' weight='font-medium'>
-            {box.quantity}x
-          </Typography>
+          <span className='text-xs font-medium'>{box.quantity}x</span>
         </div>
         <div className='opacity-50'>
-          <Typography as='xsmall' weight='font-medium' transform='capitalize'>
-            {box.item}
-          </Typography>
+          <span className='text-xs font-medium capitalize'> {box.item}x</span>
         </div>
       </div>
     );

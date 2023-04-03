@@ -57,9 +57,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
               </Typography>
             </div>
             <div className='mb-10'>
-              <Typography as='xsmall' weight='font-medium'>
-                {blok.description}
-              </Typography>
+              <p className='text-xs font-medium'> {blok.description}</p>
             </div>
             <div className='z-50'>
               <Button

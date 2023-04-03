@@ -17,6 +17,7 @@ import InBox from '@/components/InBox';
 import Like from '@/components/Like';
 import { store } from '../redux/store';
 import { Provider } from 'react-redux';
+import CheckOutForm from '@/components/CheckOutForm';
 
 const components = {
   page: Page,
@@ -32,6 +33,7 @@ const components = {
   product_detail: ProductDetail,
   like: Like,
   in_box: InBox,
+  check_out_form: CheckOutForm,
 };
 
 const manrope = Manrope({

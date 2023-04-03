@@ -36,9 +36,7 @@ const Feature = ({ feature }: FeatureProps) => {
         </div>
         <div className='absolute top-[156px]  duration-200 text-center flex justify-center'>
           <div className='opacity-50 boxName'>
-            <Typography as='small' transform='uppercase' weight='font-bold'>
-              Shop
-            </Typography>
+            <span className='text-sm uppercase font-bold'>Shop</span>
           </div>
           <MdOutlineKeyboardArrowRight className='w-[26px] h-[26px] text-brand-amber' />
         </div>

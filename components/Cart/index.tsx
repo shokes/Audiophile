@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Button from '../Button';
 import { addCommas } from '@/utils/general';
-import { ProductDetailStoryblok } from '@/@types/generated/storyblok';
 import CartCounter from '../Counter/CartCounter';
 import { deleteAllProductsInCart } from '@/redux/features/homeSlice';
 import { useDispatch } from 'react-redux';
@@ -36,15 +35,13 @@ const Cart = () => {
             className='opacity-50 underline hover:text-brand-amber duration-300 cursor-pointer hover:opacity-100 '
             onClick={() => dispatch(deleteAllProductsInCart())}
           >
-            <Typography as='xsmall'>Remove all</Typography>
+            <span className='text-xs'>Remove all</span>
           </div>
         </div>
         {cart.length === 0 ? (
           <div className='text-center'>
             <div className='mb-8'>
-              <Typography as='xsmall' weight='font-bold'>
-                Your Cart is Empty
-              </Typography>
+              <span className='text-xs font-bold'> Your Cart is Empty</span>
             </div>
             <div className='text-white'>
               <Button
@@ -79,16 +76,16 @@ const Cart = () => {
 
                     <div className='flex justify-between w-full items-center'>
                       <div className='flex flex-col'>
-                        <span>
-                          <Typography as='xsmall' weight='font-bold'>
+                        <div>
+                          <span className='text-xs font-bold'>
                             {item.short}
-                          </Typography>
-                        </span>
-                        <span className='opacity-50'>
-                          <Typography as='p2' weight='font-bold'>
+                          </span>
+                        </div>
+                        <div className='opacity-50'>
+                          <span className='text-base2 font-bold'>
                             ${addCommas(item.price as number)}
-                          </Typography>
-                        </span>
+                          </span>
+                        </div>
                       </div>
                       <CartCounter
                         quantity={item.quantity}
@@ -104,11 +101,9 @@ const Cart = () => {
         {cart.length > 0 && (
           <div>
             <div className='flex justify-between mb-6'>
-              <span className='opacity-50'>
-                <Typography as='p2' weight='font-medium' transform='uppercase'>
-                  total
-                </Typography>
-              </span>
+              <div className='opacity-50'>
+                <span className='text-base2 font-medium uppercase'>total</span>
+              </div>
               <span>
                 <Typography as='h6' weight='font-bold'>
                   $ {addCommas(total)}
@@ -120,7 +115,7 @@ const Cart = () => {
                 bg='bg-brand-amber'
                 hover='hover:bg-brand-pastelYellow'
                 block={true}
-                link='/'
+                link='/checkout'
               >
                 checkout
               </Button>

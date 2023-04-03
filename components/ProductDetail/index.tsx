@@ -39,9 +39,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
             className='opacity-50 mb-[56px] mt-[79px]'
             onClick={() => router.back()}
           >
-            <Typography transform='capitalize' as='xsmall'>
-              go back
-            </Typography>
+            <span className='text-xs capitalize'>go back</span>
           </button>
           <div className='flex items-center gap-[124.5px] mb-[160px]'>
             {blok.image1 && (
@@ -72,9 +70,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
               <div className='mb-10 opacity-50'>
-                <Typography as='xsmall' weight='font-medium'>
-                  {blok.description}
-                </Typography>
+                <p className='text-xs font-medium'>{blok.description}</p>
               </div>
               <div className='mb-10'>
                 <Typography as='h6' weight='font-bold'>
@@ -106,14 +102,11 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
               <div className='mb-8 opacity-50'>
-                <Typography as='xsmall' weight='font-medium'>
-                  {blok.featureOne}
-                </Typography>
+                <span className='text-xs font-medium'>{blok.featureOne}</span>
               </div>
+
               <div className='opacity-50'>
-                <Typography as='xsmall' weight='font-medium'>
-                  {blok.featureTwo}
-                </Typography>
+                <span className='text-xs font-medium'> {blok.featureTwo}</span>
               </div>
             </div>
             <div>

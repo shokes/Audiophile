@@ -25,9 +25,7 @@ const HomeProductFour = ({ blok }: HomeProductFourProps) => {
             </Typography>
           </div>
           <div className='opacity-50'>
-            <Typography weight='font-medium' as='xsmall'>
-              {blok.description}
-            </Typography>
+            <p className='text-xs font-medium'>{blok.description}</p>
           </div>
         </div>
         {blok && (

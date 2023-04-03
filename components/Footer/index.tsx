@@ -45,17 +45,17 @@ const Footer = () => {
           <div className='flex items-center justify-between'>
             <div className='w-[540px] opacity-50'>
               <div className='mb-14'>
-                <Typography as='xsmall' weight='font-medium'>
+                <div className='text-xs font-medium'>
                   Audiophile is an all in one stop to fulfill your audio needs.
                   Were a small team of music lovers and sound specialists who
                   are devoted to helping you get the most out of personal audio.
                   Come and visit our demo facility - we’re open 7 days a week.
-                </Typography>
+                </div>
               </div>
               <div>
-                <Typography as='xsmall' weight='font-bold'>
+                <div className='text-xs font-bold'>
                   Copyright 2021. All Rights Reserved
-                </Typography>
+                </div>
               </div>
             </div>
             <div className='flex items-center gap-4'>

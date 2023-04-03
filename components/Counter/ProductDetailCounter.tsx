@@ -1,7 +1,6 @@
 import React from 'react';
 import { HiOutlineMinusSm, HiOutlinePlusSm } from 'react-icons/hi';
 import classNames from 'classnames';
-import { useState } from 'react';
 import { RootState } from '@/redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { increaseQuantity, decreaseQuantity } from '@/redux/features/homeSlice';

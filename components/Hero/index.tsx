@@ -43,9 +43,7 @@ const Hero = ({ blok }: HeroProps) => {
             </Typography>
           </div>
           <div className='opacity-75 mb-6 w-[349px]'>
-            <Typography as='xsmall' weight='font-medium'>
-              {blok.description}
-            </Typography>
+            <p className='text-xs font-medium'>{blok.description}</p>
           </div>
           <Button
             bg='bg-brand-amber'

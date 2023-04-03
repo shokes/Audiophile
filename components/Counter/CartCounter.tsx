@@ -1,7 +1,6 @@
 import React from 'react';
 import { HiOutlineMinusSm, HiOutlinePlusSm } from 'react-icons/hi';
 import classNames from 'classnames';
-import { useState } from 'react';
 import { RootState } from '@/redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -20,8 +19,6 @@ interface CartCounterProps {
 
 const CartCounter = ({ quantity, short }: CartCounterProps) => {
   const dispatch = useDispatch();
-
-  const { tempQuantity } = useSelector((store: RootState) => store.home);
 
   return (
     <div
