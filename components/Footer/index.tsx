@@ -29,7 +29,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <div className='text-white bg-black mx-auto mt-[200px] pb-12 pt-[75px]'>
+    <div className='text-white bg-black mx-auto pb-12 pt-[75px]'>
       <Container>
         <div className='relative'>
           <Image

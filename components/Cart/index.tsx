@@ -64,7 +64,7 @@ const Cart = () => {
               quantity: number;
             }) => {
               return (
-                <div key={item.name}>
+                <div key={item.short}>
                   <div className='flex mb-6 items-center'>
                     <Image
                       src={item.image}

@@ -15,7 +15,7 @@ const HomeProductFour = ({ blok }: HomeProductFourProps) => {
     <Container>
       <div
         {...storyblokEditable(blok)}
-        className='mt-[200px] flex items-center justify-between'
+        className='my-[200px] flex items-center justify-between'
       >
         <div className='w-[445px]'>
           <div className='mb-8'>

@@ -35,12 +35,12 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
           </Container>
         </div>
         <Container>
-          <button
-            className='opacity-50 mb-[56px] mt-[79px]'
+          <div
+            className='opacity-50 mb-[56px] mt-[79px] hover:text-brand-amber hover:opacity-100 cursor-pointer'
             onClick={() => router.back()}
           >
             <span className='text-xs capitalize'>go back</span>
-          </button>
+          </div>
           <div className='flex items-center gap-[124.5px] mb-[160px]'>
             {blok.image1 && (
               <Image
