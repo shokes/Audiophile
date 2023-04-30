@@ -1,7 +1,7 @@
 import React from 'react';
+import ModalLayout from '../ModalLayout';
 import Typography from '../Typography';
 import Image from 'next/image';
-import ModalLayout from '../ModalLayout';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Button from '../Button';
@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 
 const Cart = () => {
   const dispatch = useDispatch();
+
   const { cart } = useSelector((store: RootState) => store.home);
 
   const total = cart.reduce(

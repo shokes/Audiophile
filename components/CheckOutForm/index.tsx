@@ -10,6 +10,7 @@ import Button from '../Button';
 import { addCommas } from '@/utils/general';
 import Cash from '../../public/icon-cash-on-delivery.svg';
 import { useState } from 'react';
+import ModalLayout from '../Modal';
 
 const labelClasses = classNames(
   `block text-[12px] leading-[16.39px] tracking-[-0.21px] text-black font-bold`
@@ -196,7 +197,7 @@ const CheckOutForm = () => {
                       type='radio'
                       defaultChecked
                       onChange={() => setEmoney(true)}
-                      className='h-5 w-5 border-gray-300 text-brand-amber focus:ring-brand-amber'
+                      className='h-5 w-5 cursor-pointer border-gray-300 text-brand-amber focus:ring-brand-amber'
                     />{' '}
                     <label htmlFor='name' className={labelClasses}>
                       e-Money
@@ -215,7 +216,7 @@ const CheckOutForm = () => {
                       name='payment-type'
                       type='radio'
                       onChange={() => setEmoney(false)}
-                      className='h-5 w-5 border-gray-300 text-brand-amber focus:ring-brand-amber'
+                      className='h-5 w-5 border-gray-300 cursor-pointer text-brand-amber focus:ring-brand-amber'
                     />{' '}
                     <label htmlFor='name' className={labelClasses}>
                       Cash on Delivery
