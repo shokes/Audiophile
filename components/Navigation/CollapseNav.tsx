@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Cart from '../Cart';
@@ -11,9 +10,7 @@ const navigation = [
   { name: 'Earphones', href: '/earphones' },
 ];
 
-const Navigation = (props: { shoppingCart: boolean }) => {
-  const [open, setOpen] = useState(false);
-
+const CollapseNav = () => {
   return (
     <nav className='flex items-center justify-between text-white'>
       <Link href='/' className='text-logo'>
@@ -45,4 +42,4 @@ const Navigation = (props: { shoppingCart: boolean }) => {
   );
 };
 
-export default Navigation;
+export default CollapseNav;
