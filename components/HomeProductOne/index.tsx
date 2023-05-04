@@ -40,14 +40,14 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
             />
           </div>
           <Image
-            className='absolute lg:left-[53px] md:rotate-180 md:top-[-3px] md:left-[100px]   opacity-50 lg:top-[256px]'
+            className='absolute lg:left-[53px] md:rotate-180 lg:rotate-0 md:top-[-3px] md:left-[100px]   opacity-50 lg:top-[256px]'
             alt='oval'
             src={mdOval}
             width={515}
             height={515}
           />
           <Image
-            className='absolute lg:top-[224px] md:rotate-180 md:top-[-21px] md:left-[68px] opacity-50 lg:left-[22.4px]'
+            className='absolute lg:top-[224px] md:rotate-180 lg:rotate-0 md:top-[-21px] md:left-[68px] opacity-50 lg:left-[22.4px]'
             alt='oval'
             src={mdOval}
             width={580}
