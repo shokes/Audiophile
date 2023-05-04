@@ -15,34 +15,52 @@ interface HeroProps {
 const Hero = ({ blok }: HeroProps) => {
   const resolvedLink = resolveLink(blok.link);
 
+  console.log(blok);
+
   return (
     <div
       className='relative isolate overflow-hidden'
       {...storyblokEditable(blok)}
     >
       <Image
-        src={`https://${blok.image}`}
+        src={blok.desktop_image?.filename as string}
         alt={blok.title}
-        className='absolute inset-0 -z-10 h-full w-full object-cover 2xl:object-fill'
+        className='absolute hidden lg:block inset-0 -z-10 h-full w-full object-cover 2xl:object-fill'
         fill
+      />
+
+      <Image
+        src={blok.tablet_image?.filename as string}
+        alt={blok.title}
+        className='absolute hidden md:block lg:hidden inset-0 -z-10 h-full w-full'
+        width={500}
+        height={500}
+      />
+
+      <Image
+        src={blok.mobile_image?.filename as string}
+        alt={blok.title}
+        className='absolute md:hidden  inset-0 -z-10 h-full w-full '
+        width={500}
+        height={500}
       />
       <Container>
         <div className='border-b mb-32 border-white/20 pt-8  pb-9'>
           <Navigation shoppingCart={true} />
         </div>
 
-        <div className='text-white pb-[151px]'>
+        <div className='text-white text-center lg:text-left pb-[151px]'>
           <div className='mb-6 opacity-50'>
             <Typography as='p' weight='font-normal'>
               New product
             </Typography>
           </div>
-          <div className='mb-6 w-[398px]'>
+          <div className='mb-6 w-[398px] mx-auto lg:mx-0'>
             <Typography as='h1' weight='font-bold'>
               {blok.title}
             </Typography>
           </div>
-          <div className='opacity-75 mb-6 w-[349px]'>
+          <div className='opacity-75 mb-6 w-[349px] mx-auto lg:mx-0'>
             <p className='text-xs font-medium'>{blok.description}</p>
           </div>
           <Button

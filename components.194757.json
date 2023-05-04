@@ -1,6 +1,29 @@
 {
   "components": [
     {
+      "name": "check_out_form",
+      "display_name": null,
+      "created_at": "2023-04-03T09:10:02.749Z",
+      "updated_at": "2023-04-03T09:10:12.414Z",
+      "id": 3732206,
+      "schema": {
+        "name": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "check_out_form",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "feature",
       "display_name": null,
       "created_at": "2023-02-01T11:21:48.438Z",
@@ -57,13 +80,9 @@
       "name": "hero",
       "display_name": null,
       "created_at": "2023-02-01T12:16:47.615Z",
-      "updated_at": "2023-03-01T10:20:23.637Z",
+      "updated_at": "2023-05-03T17:46:19.537Z",
       "id": 3377977,
       "schema": {
-        "image": {
-          "type": "image",
-          "required": true
-        },
         "title": {
           "type": "text",
           "required": true
@@ -74,6 +93,15 @@
         },
         "link": {
           "type": "multilink"
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
         }
       },
       "image": null,
@@ -344,7 +372,7 @@
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-03-13T12:39:34.809Z",
+      "updated_at": "2023-03-27T09:51:06.989Z",
       "id": 3425386,
       "schema": {
         "name": {
@@ -393,8 +421,8 @@
             },
             {
               "_uid": "84d5ec40-ea59-4d1e-b4b3-a497797e427a",
-              "value": "speakers",
-              "name": "speakers"
+              "value": "speaker",
+              "name": "speaker"
             }
           ],
           "exclude_empty_option": true,
