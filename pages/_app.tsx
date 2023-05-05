@@ -36,15 +36,15 @@ const components = {
   check_out_form: CheckOutForm,
 };
 
-const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-});
-
 storyblokInit({
   accessToken: '1sTj4AJrYMXEamEVPocEAwtt',
   use: [apiPlugin],
   components,
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
 });
 
 export default function App({ Component, pageProps }: AppProps) {

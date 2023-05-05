@@ -120,7 +120,7 @@
       "name": "home_product_four",
       "display_name": null,
       "created_at": "2023-02-06T07:57:25.975Z",
-      "updated_at": "2023-02-08T08:49:10.883Z",
+      "updated_at": "2023-05-04T20:44:58.917Z",
       "id": 3398305,
       "schema": {
         "description": {
@@ -128,6 +128,15 @@
         },
         "image": {
           "type": "image"
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
         }
       },
       "image": null,
@@ -146,7 +155,7 @@
       "name": "home_product_one",
       "display_name": null,
       "created_at": "2023-02-04T11:27:17.730Z",
-      "updated_at": "2023-02-04T11:33:41.670Z",
+      "updated_at": "2023-05-04T07:52:15.467Z",
       "id": 3393726,
       "schema": {
         "name": {
@@ -160,6 +169,15 @@
         },
         "image": {
           "type": "image"
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
         }
       },
       "image": null,
@@ -178,17 +196,23 @@
       "name": "home_product_three",
       "display_name": null,
       "created_at": "2023-02-06T07:38:03.277Z",
-      "updated_at": "2023-02-06T07:39:23.316Z",
+      "updated_at": "2023-05-04T11:35:49.949Z",
       "id": 3398180,
       "schema": {
-        "image": {
-          "type": "image"
-        },
         "name": {
           "type": "text"
         },
         "link": {
           "type": "multilink"
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
         }
       },
       "image": null,
@@ -207,7 +231,7 @@
       "name": "home_product_two",
       "display_name": null,
       "created_at": "2023-02-05T16:20:12.354Z",
-      "updated_at": "2023-02-06T07:26:17.258Z",
+      "updated_at": "2023-05-04T10:44:13.821Z",
       "id": 3396753,
       "schema": {
         "name": {
@@ -221,6 +245,15 @@
         "image": {
           "type": "image",
           "required": true
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
         }
       },
       "image": null,

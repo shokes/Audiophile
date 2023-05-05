@@ -66,6 +66,9 @@ export interface HeroStoryblok {
 export interface HomeProductFourStoryblok {
   description?: string;
   image?: string;
+  desktop_image?: AssetStoryblok;
+  mobile_image?: AssetStoryblok;
+  tablet_image?: AssetStoryblok;
   _uid: string;
   component: "home_product_four";
 }
@@ -75,14 +78,19 @@ export interface HomeProductOneStoryblok {
   description?: string;
   link?: MultilinkStoryblok;
   image?: string;
+  desktop_image?: AssetStoryblok;
+  mobile_image?: AssetStoryblok;
+  tablet_image?: AssetStoryblok;
   _uid: string;
   component: "home_product_one";
 }
 
 export interface HomeProductThreeStoryblok {
-  image?: string;
   name?: string;
   link?: MultilinkStoryblok;
+  desktop_image?: AssetStoryblok;
+  tablet_image?: AssetStoryblok;
+  mobile_image?: AssetStoryblok;
   _uid: string;
   component: "home_product_three";
 }
@@ -91,6 +99,9 @@ export interface HomeProductTwoStoryblok {
   name: string;
   link: MultilinkStoryblok;
   image: string;
+  desktop_image?: AssetStoryblok;
+  mobile_image?: AssetStoryblok;
+  tablet_image?: AssetStoryblok;
   _uid: string;
   component: "home_product_two";
 }

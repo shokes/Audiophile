@@ -19,14 +19,29 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
       <div className='mt-[48px]' {...storyblokEditable(blok)}>
         <div className='relative isolate overflow-hidden'>
           {blok && (
-            <Image
-              src={`https://${blok.image}`}
-              alt={blok.name}
-              className='absolute inset-0 -z-10 object-cover rounded-lg'
-              fill
-            />
+            <div>
+              <Image
+                src={blok.desktop_image?.filename as string}
+                alt={blok.name}
+                className='absolute hidden lg:block inset-0 -z-10 object-cover rounded-lg'
+                fill
+              />
+
+              <Image
+                src={blok.tablet_image?.filename as string}
+                alt={blok.name}
+                className='absolute hidden md:block lg:hidden inset-0 -z-10 object-cover rounded-lg'
+                fill
+              />
+              <Image
+                src={blok.mobile_image?.filename as string}
+                alt={blok.name}
+                className='absolute  md:hidden inset-0 -z-10 object-cover rounded-lg'
+                fill
+              />
+            </div>
           )}
-          <div className=' pb-[151px] pl-[95px] pt-[101px] text-black'>
+          <div className=' pb-[151px] pl-[24px] md:pl-[95px] pt-[101px] text-black'>
             <div className='mb-6 w-[398px] '>
               <Typography as='h4' weight='font-bold'>
                 {blok.name}

@@ -15,9 +15,9 @@ const HomeProductFour = ({ blok }: HomeProductFourProps) => {
     <Container>
       <div
         {...storyblokEditable(blok)}
-        className='my-[200px] flex items-center justify-between'
+        className='my-[120px] md:my-[96px] lg:my-[200px] lg:gap-[125px] flex flex-col-reverse lg:flex-row gap-y-[40px] items-center justify-between'
       >
-        <div className='w-[445px]'>
+        <div className='text-center lg:text-left md:w-[537px] lg:w-[445px]'>
           <div className='mb-8'>
             <Typography weight='font-bold' as='h2' transform='uppercase'>
               Bringing you the <span className='text-brand-amber'>best</span>{' '}
@@ -29,13 +29,29 @@ const HomeProductFour = ({ blok }: HomeProductFourProps) => {
           </div>
         </div>
         {blok && (
-          <Image
-            src={`https://${blok.image}`}
-            width={540}
-            height={588}
-            alt='gear'
-            className='rounded-lg object-cover'
-          />
+          <div>
+            <Image
+              src={blok.desktop_image?.filename as string}
+              width={540}
+              height={588}
+              alt='gear'
+              className='rounded-lg object-cover hidden lg:block'
+            />
+            <Image
+              src={blok.tablet_image?.filename as string}
+              width={889}
+              height={300}
+              alt='gear'
+              className='rounded-lg object-cover hidden md:block lg:hidden'
+            />{' '}
+            <Image
+              src={blok.mobile_image?.filename as string}
+              width={807}
+              height={300}
+              alt='gear'
+              className='rounded-lg object-cover md:hidden'
+            />{' '}
+          </div>
         )}
       </div>
     </Container>

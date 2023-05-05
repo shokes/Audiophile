@@ -15,8 +15,6 @@ interface HeroProps {
 const Hero = ({ blok }: HeroProps) => {
   const resolvedLink = resolveLink(blok.link);
 
-  console.log(blok);
-
   return (
     <div
       className='relative isolate overflow-hidden'
@@ -55,12 +53,12 @@ const Hero = ({ blok }: HeroProps) => {
               New product
             </Typography>
           </div>
-          <div className='mb-6 w-[398px] mx-auto lg:mx-0'>
+          <div className='mb-6 lg:w-[398px] mx-auto lg:mx-0'>
             <Typography as='h1' weight='font-bold'>
               {blok.title}
             </Typography>
           </div>
-          <div className='opacity-75 mb-6 w-[349px] mx-auto lg:mx-0'>
+          <div className='opacity-75 mb-6 lg:w-[349px] mx-auto lg:mx-0'>
             <p className='text-xs font-medium'>{blok.description}</p>
           </div>
           <Button

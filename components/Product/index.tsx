@@ -13,6 +13,7 @@ interface ProductProps {
 }
 
 const Product = ({ product }: ProductProps) => {
+  console.log(product);
   const {
     reverse,
     image1,
@@ -29,21 +30,37 @@ const Product = ({ product }: ProductProps) => {
     <div
       {...storyblokEditable(product)}
       className={classNames(
-        'flex items-center gap-[125px] mt-40',
+        'flex flex-col lg:flex-row items-center md:gap-[52px] lg:gap-[125px] md:mt-[120px] lg:mt-40',
         reverse === 'reverse' && 'flex-row-reverse'
       )}
     >
       {image1 && (
-        <Image
-          src={image1.filename}
-          width={540}
-          height={560}
-          alt={name}
-          className='object-cover rounded-lg'
-        />
+        <div>
+          <Image
+            src={image1.filename}
+            width={540}
+            height={560}
+            alt={name}
+            className='object-cover rounded-lg'
+          />
+          <Image
+            src={image1.filename}
+            width={540}
+            height={560}
+            alt={name}
+            className='object-cover rounded-lg'
+          />
+          <Image
+            src={image1.filename}
+            width={540}
+            height={560}
+            alt={name}
+            className='object-cover rounded-lg'
+          />
+        </div>
       )}
 
-      <div className='w-[445px]'>
+      <div className='text-center lg:text-left lg:w-[445px]'>
         {newProduct && (
           <div className='mb-4 text-brand-amber'>
             <Typography as='p' transform='uppercase' weight='font-normal'>
