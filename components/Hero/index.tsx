@@ -65,7 +65,7 @@ const Hero = ({ blok }: HeroProps) => {
           <Button
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'
-            link={resolvedLink}
+            // link={resolvedLink}
             block={false}
           >
             see product
