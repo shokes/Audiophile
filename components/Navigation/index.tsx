@@ -20,7 +20,7 @@ const Navigation = () => {
         <>
           <div className='text-white'>
             <div className='relative'>
-              <div className='relative flex items-center justify-between md:justify-start lg:justify-between'>
+              <div className='flex items-center justify-between  md:justify-start lg:justify-between'>
                 <div className='flex items-center lg:hidden'>
                   {/* Mobile menu button*/}
                   <Disclosure.Button className='inline-flex items-center justify-center rounded-md text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
@@ -32,7 +32,7 @@ const Navigation = () => {
                     )}
                   </Disclosure.Button>
                 </div>
-                <Link href='/' className='text-logo ml-[32px] lg:ml-0'>
+                <Link href='/' className='text-logo md:ml-[32px] lg:ml-0'>
                   audiophile
                 </Link>
 
@@ -52,9 +52,9 @@ const Navigation = () => {
                   })}
                 </div>
 
-                <div className='md:absolute right-0 lg:static '>
+                <div className=''>
                   <AiOutlineShoppingCart
-                    className='w-[23.33px]  text-white h-[20px] cursor-pointer'
+                    className='w-6  text-white h-6 cursor-pointer'
                     onClick={() => setOpenModal(!openModal)}
                   />
 
