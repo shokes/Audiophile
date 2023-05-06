@@ -43,7 +43,7 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
       <div className='bg-black pb-[97px]'>
         <Container>
           <div className='border-b mb-[98px] border-white/20 pt-8  pb-9'>
-            <Navigation shoppingCart={true} />
+            <Navigation />
           </div>
           <div className='text-white text-center'>
             <Typography as='h2' weight='font-bold' transform='uppercase'>
@@ -53,7 +53,6 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
         </Container>
       </div>
       <Container>
-        {/* // ! to fix typings later * */}
         {products &&
           products.map((product: any) => {
             return <Product key={product.name} product={product} />;
