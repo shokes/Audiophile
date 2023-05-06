@@ -7,7 +7,6 @@ import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import Container from '../Container';
-import Link from 'next/link';
 
 interface HeroProps {
   blok: SbBlokData & HeroStoryblok;

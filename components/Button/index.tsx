@@ -21,7 +21,7 @@ const Button = ({ bg = '', hover, link = '', children, block }: Props) => {
     <Link
       href={link}
       className={classNames(
-        `${hover} ${buttonClasses} `,
+        `${hover} ${buttonClasses} text-center `,
         bg === '' ? 'border border-black  hover:text-white' : `${bg}`,
         block && blockClasses
       )}
@@ -31,7 +31,7 @@ const Button = ({ bg = '', hover, link = '', children, block }: Props) => {
   ) : (
     <div
       className={classNames(
-        `${hover} ${buttonClasses} ${bg}`,
+        `${hover} ${buttonClasses} cursor-pointer ${bg}`,
         block && blockClasses
       )}
     >

@@ -1,6 +1,12 @@
 import { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import Container from '../Container';
+import { Manrope } from '@next/font/google';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+});
 
 const ModalLayout = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(true);
@@ -11,7 +17,7 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => {
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as='div'
-        className='relative z-10'
+        className={`${manrope.variable} font-sans relative z-10`}
         initialFocus={cancelButtonRef}
         onClose={setOpen}
       >

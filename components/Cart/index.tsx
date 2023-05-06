@@ -9,7 +9,6 @@ import { addCommas } from '@/utils/general';
 import CartCounter from '../Counter/CartCounter';
 import { deleteAllProductsInCart } from '@/redux/features/homeSlice';
 import { useDispatch } from 'react-redux';
-import Link from 'next/link';
 
 const Cart = () => {
   const dispatch = useDispatch();
