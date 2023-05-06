@@ -11,7 +11,7 @@ interface Props {
 }
 
 const buttonClasses = classNames(
-  'uppercase duration-300  py-[15px] px-[31px]  text-sm font-bold'
+  'uppercase duration-300  px-[31px]  text-sm font-bold'
 );
 
 const blockClasses = classNames('w-full block');
