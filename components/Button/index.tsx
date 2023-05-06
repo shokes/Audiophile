@@ -17,30 +17,26 @@ const buttonClasses = classNames(
 const blockClasses = classNames('w-full block');
 
 const Button = ({ bg = '', hover, link = '', children, block }: Props) => {
-  return (
-    <button className={`${block && blockClasses}`}>
-      {link !== '' ? (
-        <Link
-          href={link}
-          className={classNames(
-            `${hover} ${buttonClasses}`,
-            bg === '' ? 'border border-black  hover:text-white' : `${bg}`,
-            block && blockClasses
-          )}
-        >
-          {children}
-        </Link>
-      ) : (
-        <div
-          className={classNames(
-            `${hover} ${buttonClasses} ${bg}`,
-            block && blockClasses
-          )}
-        >
-          {children}
-        </div>
+  return link !== '' ? (
+    <Link
+      href={link}
+      className={classNames(
+        `${hover} ${buttonClasses} `,
+        bg === '' ? 'border border-black  hover:text-white' : `${bg}`,
+        block && blockClasses
       )}
-    </button>
+    >
+      {children}
+    </Link>
+  ) : (
+    <div
+      className={classNames(
+        `${hover} ${buttonClasses} ${bg}`,
+        block && blockClasses
+      )}
+    >
+      {children}
+    </div>
   );
 };
 
