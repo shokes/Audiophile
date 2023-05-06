@@ -65,18 +65,10 @@ const Hero = ({ blok }: HeroProps) => {
           <Button
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'
-            // link={resolvedLink}
+            link='/'
             block={false}
           >
             see product
-          </Button>
-
-          <Button
-            bg='bg-brand-amber'
-            hover='hover:bg-brand-pastelYellow'
-            block={false}
-          >
-            add to cart
           </Button>
         </div>
       </Container>
