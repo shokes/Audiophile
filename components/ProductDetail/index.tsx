@@ -30,7 +30,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
         <div className='bg-black '>
           <Container>
             <div className='pb-[37px] pt-8'>
-              <Navigation shoppingCart={true} />
+              <Navigation />
             </div>
           </Container>
         </div>
