@@ -66,7 +66,7 @@ const Hero = ({ blok }: HeroProps) => {
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'
             link='/'
-            block={false}
+            // block={false}
           >
             see product
           </Button>
