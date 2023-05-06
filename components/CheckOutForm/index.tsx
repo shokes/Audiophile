@@ -56,7 +56,7 @@ const CheckOutForm = () => {
         </div>
 
         <div className='flex flex-col md:flex-row gap-[30px] '>
-          <div className='bg-white rounded-lg lg:w-[730px] py-[54px] px-12'>
+          <div className='bg-white rounded-lg lg:w-[730px] px-[24px] md:px-[28px] md:py-[30px] lg:py-[54px] py-[24px] lg:px-12'>
             <div className='mb-[53px]'>
               <div className='mb-[41px]'>
                 <Typography as='h3' weight='font-bold' transform='uppercase'>

@@ -1,6 +1,4 @@
 import React from 'react';
-import Navigation from '../Navigation';
-import Typography from '../Typography';
 import { FiInstagram } from 'react-icons/fi';
 import { FaTwitter } from 'react-icons/fa';
 import { ImFacebook2 } from 'react-icons/im';
@@ -44,7 +42,7 @@ const Footer = () => {
             width={101}
             height={4}
             alt='rec'
-            className='absolute left-[42.5%] md:left-0 -top-[75px]'
+            className='absolute  md:left-0 -top-[75px]'
           />
           <div className='mb-9'>
             <nav className='flex items-center text-center  gap-[48px] flex-col lg:flex-row md:items-start md:gap-[32px] lg:items-center lg:justify-between text-white'>

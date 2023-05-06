@@ -14,7 +14,6 @@ interface FeatureProps {
 
 const Feature = ({ feature }: FeatureProps) => {
   const resolvedLink = resolveLink(feature.link);
-  console.log(feature);
 
   return (
     <div {...storyblokEditable(feature)}>
