@@ -61,14 +61,16 @@ const Hero = ({ blok }: HeroProps) => {
           <div className='opacity-75 mb-6 lg:w-[349px] mx-auto lg:mx-0'>
             <p className='text-xs font-medium'>{blok.description}</p>
           </div>
-          <Button
-            bg='bg-brand-amber'
-            hover='hover:bg-brand-pastelYellow'
-            link={resolvedLink}
-            block={false}
-          >
-            see product
-          </Button>
+          <div>
+            <Button
+              bg='bg-brand-amber'
+              hover='hover:bg-brand-pastelYellow'
+              link={resolvedLink}
+              block={false}
+            >
+              see product
+            </Button>
+          </div>
         </div>
       </Container>
     </div>
