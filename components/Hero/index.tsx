@@ -7,6 +7,7 @@ import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import Container from '../Container';
+import Link from 'next/link';
 
 interface HeroProps {
   blok: SbBlokData & HeroStoryblok;
@@ -62,14 +63,21 @@ const Hero = ({ blok }: HeroProps) => {
             <p className='text-xs font-medium'>{blok.description}</p>
           </div>
 
-          <Button
-            bg='bg-brand-amber'
-            hover='hover:bg-brand-pastelYellow'
-            link='/'
-            // block={false}
+          {/* <Button
+              bg='bg-brand-amber'
+              hover='hover:bg-brand-pastelYellow'
+              link={resolvedLink}
+              block={false}
+            >
+              see product
+            </Button>  */}
+
+          <Link
+            href={resolvedLink}
+            className='bg-brand-amber px-[31px] py-[15px] '
           >
             see product
-          </Button>
+          </Link>
         </div>
       </Container>
     </div>
