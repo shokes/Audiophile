@@ -29,7 +29,7 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => {
 
         <div className='fixed inset-0 z-10 overflow-y-auto'>
           <Container>
-            <div className='flex min-h-full justify-end items-center mt-[129px]'>
+            <div className='flex min-h-full  justify-center md:justify-end items-center mt-[129px]'>
               <Transition.Child
                 as={Fragment}
                 enter='ease-out duration-300'
@@ -39,7 +39,7 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => {
                 leaveFrom='opacity-100 translate-y-0 sm:scale-100'
                 leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
               >
-                <Dialog.Panel className=' transform overflow-hidden transition-all '>
+                <Dialog.Panel className='w-full md:w-[377px] transform overflow-hidden transition-all '>
                   {children}
                 </Dialog.Panel>
               </Transition.Child>

@@ -41,17 +41,33 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
           >
             <span className='text-xs capitalize'>go back</span>
           </div>
-          <div className='flex items-center gap-[124.5px] mb-[160px]'>
+          <div className='flex flex-col md:flex-row items-center gap-[32px] md:gap-[124.5px] mb-[160px]'>
             {blok.image1 && (
-              <Image
-                className='object-cover object-center rounded'
-                alt={blok.name}
-                src={blok.image1.filename}
-                width={540}
-                height={560}
-              />
+              <div>
+                <Image
+                  className='object-cover object-center rounded hidden lg:block'
+                  alt={blok.name}
+                  src={blok.detail_desktop?.filename as string}
+                  width={540}
+                  height={560}
+                />{' '}
+                <Image
+                  className='object-cover object-center rounded hidden md:block lg:hidden'
+                  alt={blok.name}
+                  src={blok.detail_tablet?.filename as string}
+                  width={540}
+                  height={560}
+                />{' '}
+                <Image
+                  className='object-cover object-center rounded md:hidden'
+                  alt={blok.name}
+                  src={blok.detail_mobile?.filename as string}
+                  width={740}
+                  height={560}
+                />
+              </div>
             )}
-            <div className='w-[445px]'>
+            <div className='md:w-[445px]'>
               {blok.new && (
                 <div className='mb-4 text-brand-amber'>
                   <Typography as='p' transform='uppercase' weight='font-normal'>
@@ -94,8 +110,8 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               </div>
             </div>
           </div>
-          <div className='flex gap-[125px] mb-[106px]'>
-            <div className='w-[635px]'>
+          <div className='flex flex-col lg:flex-row gap-[125px] mb-[106px]'>
+            <div className='lg:w-[635px]'>
               <div className='mb-8'>
                 <Typography transform='uppercase' as='h3' weight='font-bold'>
                   features
@@ -109,20 +125,22 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 <span className='text-xs font-medium'> {blok.featureTwo}</span>
               </div>
             </div>
-            <div>
+            <div className='md:flex lg:flex-col lg:gap-0  md:gap-[170px]'>
               <div className='mb-8'>
                 <Typography transform='uppercase' as='h3' weight='font-bold'>
                   in the box
                 </Typography>
               </div>
-              {blok.inBox &&
-                blok.inBox.map((box) => {
-                  return <InBox box={box} key={box.item} />;
-                })}
+              <div>
+                {blok.inBox &&
+                  blok.inBox.map((box) => {
+                    return <InBox box={box} key={box.item} />;
+                  })}
+              </div>
             </div>{' '}
           </div>
 
-          <div className='flex gap-[30px] mb-[106px]'>
+          <div className=' gap-[30px] mb-[106px] hidden md:flex'>
             <div>
               {blok.image2 && (
                 <Image
@@ -154,8 +172,40 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
               />
             )}
           </div>
+
+          <div className=' gap-[30px] mb-[106px] flex flex-col md:hidden'>
+            {blok.image2 && (
+              <Image
+                className=' object-cover mb-8 rounded-lg'
+                alt={blok.name}
+                src={blok.image2_mobile?.filename as string}
+                width={845}
+                height={280}
+              />
+            )}
+
+            {blok.image3 && (
+              <Image
+                className=' object-cover rounded-lg'
+                alt={blok.name}
+                src={blok.image3_mobile?.filename as string}
+                width={845}
+                height={280}
+              />
+            )}
+
+            {blok.image4 && (
+              <Image
+                className=' object-cover  rounded-lg'
+                alt={blok.name}
+                src={blok.image4_mobile?.filename as string}
+                width={845}
+                height={592}
+              />
+            )}
+          </div>
         </Container>
-        <div className='text-center mb-1'>
+        <div className='text-center mb-[40px] md:mb-[56px] lg:[64px]'>
           <Typography transform='uppercase' as='h3' weight='font-bold'>
             you may also like
           </Typography>

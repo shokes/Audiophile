@@ -25,7 +25,7 @@ const Cart = () => {
 
   return (
     <ModalLayout>
-      <div className='text-black bg-white py-[31px] px-[33px] rounded-lg w-[377px]'>
+      <div className='text-black bg-white py-[31px] px-[33px]  rounded-lg '>
         <div className='flex items-center justify-between mb-8'>
           <div>
             <Typography as='h6' weight='font-bold' transform='uppercase'>

@@ -139,7 +139,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
             height={778}
           />
 
-          <div className='w-[349px] z-30 text-white  lg:mt-[133px] pb-[124px]'>
+          <div className='md:w-[349px] z-30 text-white  lg:mt-[133px] pb-[124px]'>
             <div className='mb-6'>
               <Typography as='h1' weight='font-bold'>
                 {blok.name}

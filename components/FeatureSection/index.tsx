@@ -13,7 +13,7 @@ const FeatureSection = ({ blok }: FeatureSectionProps) => {
   return (
     <Container>
       <ul
-        className='grid grid-cols-1 gap-x-[30px] md:grid-cols-3'
+        className='grid grid-cols-1  md:gap-x-[30px]  md:grid-cols-3'
         {...storyblokEditable(blok)}
       >
         {blok.features &&

@@ -117,6 +117,9 @@ export interface LikeStoryblok {
   image?: AssetStoryblok;
   name?: string;
   link?: MultilinkStoryblok;
+  desktop_image?: AssetStoryblok;
+  tablet_image?: AssetStoryblok;
+  mobile_image?: AssetStoryblok;
   _uid: string;
   component: "like";
 }
@@ -136,6 +139,9 @@ export interface ProductStoryblok {
   link?: MultilinkStoryblok;
   reverse?: "" | "reverse" | "no-reverse";
   type?: string;
+  desktop_image?: AssetStoryblok;
+  mobile_image?: AssetStoryblok;
+  tablet_image?: AssetStoryblok;
   _uid: string;
   component: "product";
 }
@@ -149,7 +155,6 @@ export interface ProductDetailStoryblok {
   price?: number;
   featureOne?: string;
   featureTwo?: string;
-  image1?: AssetStoryblok;
   image2?: AssetStoryblok;
   image3?: AssetStoryblok;
   image4?: AssetStoryblok;
@@ -158,6 +163,15 @@ export interface ProductDetailStoryblok {
   inBox?: any[];
   short?: string;
   cartImage?: AssetStoryblok;
+  desktop_image?: AssetStoryblok;
+  mobile_image?: AssetStoryblok;
+  tablet_image?: AssetStoryblok;
+  detail_desktop?: AssetStoryblok;
+  detail_tablet?: AssetStoryblok;
+  detail_mobile?: AssetStoryblok;
+  image2_mobile?: AssetStoryblok;
+  image3_mobile?: AssetStoryblok;
+  image4_mobile?: AssetStoryblok;
   _uid: string;
   component: "product_detail";
 }

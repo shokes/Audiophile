@@ -13,7 +13,6 @@ interface ProductProps {
 }
 
 const Product = ({ product }: ProductProps) => {
-  console.log(product);
   const {
     reverse,
     image1,
@@ -22,6 +21,9 @@ const Product = ({ product }: ProductProps) => {
     category,
     description,
     link,
+    desktop_image,
+    tablet_image,
+    mobile_image,
   } = product.content as SbBlokData & ProductDetailStoryblok;
 
   const resolvedLink = resolveLink(link);
@@ -30,32 +32,32 @@ const Product = ({ product }: ProductProps) => {
     <div
       {...storyblokEditable(product)}
       className={classNames(
-        'flex flex-col lg:flex-row items-center md:gap-[52px] lg:gap-[125px] md:mt-[120px] lg:mt-40',
-        reverse === 'reverse' && 'flex-row-reverse'
+        'flex flex-col lg:flex-row items-center gap-[32px] md:gap-[52px] lg:gap-[125px] mt-[64px] md:mt-[120px] lg:mt-40',
+        reverse === 'reverse' && 'lg:flex-row-reverse'
       )}
     >
-      {image1 && (
+      {product.content && (
         <div>
           <Image
-            src={image1.filename}
+            src={desktop_image?.filename as string}
             width={540}
             height={560}
             alt={name}
-            className='object-cover rounded-lg'
+            className='object-cover rounded-lg hidden lg:block'
           />
           <Image
-            src={image1.filename}
-            width={540}
-            height={560}
+            src={tablet_image?.filename as string}
+            width={889}
+            height={352}
             alt={name}
-            className='object-cover rounded-lg'
+            className='object-cover rounded-lg hidden md:block lg:hidden'
           />
           <Image
-            src={image1.filename}
-            width={540}
+            src={mobile_image?.filename as string}
+            width={600}
             height={560}
             alt={name}
-            className='object-cover rounded-lg'
+            className='object-cover md:hidden rounded-lg'
           />
         </div>
       )}

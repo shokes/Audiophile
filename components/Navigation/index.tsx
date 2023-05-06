@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Earphones', href: '/earphones' },
 ];
 
-const Navigation = (props: { shoppingCart: boolean }) => {
+const Navigation = () => {
   const [openModal, setOpenModal] = useState(false);
   return (
     <Disclosure as='nav'>
@@ -51,16 +51,15 @@ const Navigation = (props: { shoppingCart: boolean }) => {
                     );
                   })}
                 </div>
-                {props.shoppingCart && (
-                  <div className='md:absolute right-0 lg:static '>
-                    <AiOutlineShoppingCart
-                      className='w-[23.33px]  text-white h-[20px] cursor-pointer'
-                      onClick={() => setOpenModal(!openModal)}
-                    />
 
-                    <div className=''>{openModal && <Cart />}</div>
-                  </div>
-                )}
+                <div className='md:absolute right-0 lg:static '>
+                  <AiOutlineShoppingCart
+                    className='w-[23.33px]  text-white h-[20px] cursor-pointer'
+                    onClick={() => setOpenModal(!openModal)}
+                  />
+
+                  <div className=''>{openModal && <Cart />}</div>
+                </div>
               </div>
             </div>
           </div>

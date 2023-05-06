@@ -298,7 +298,7 @@
       "name": "like",
       "display_name": null,
       "created_at": "2023-02-28T08:35:32.923Z",
-      "updated_at": "2023-02-28T10:15:00.015Z",
+      "updated_at": "2023-05-05T08:45:32.530Z",
       "id": 3501760,
       "schema": {
         "image": {
@@ -309,6 +309,15 @@
         },
         "link": {
           "type": "multilink"
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
         }
       },
       "image": null,
@@ -350,7 +359,7 @@
       "name": "product",
       "display_name": null,
       "created_at": "2023-02-07T11:47:52.121Z",
-      "updated_at": "2023-02-10T16:41:20.708Z",
+      "updated_at": "2023-05-04T22:20:20.342Z",
       "id": 3405084,
       "schema": {
         "new": {
@@ -387,6 +396,15 @@
         },
         "type": {
           "type": "text"
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
         }
       },
       "image": null,
@@ -405,7 +423,7 @@
       "name": "product_detail",
       "display_name": null,
       "created_at": "2023-02-10T16:03:17.535Z",
-      "updated_at": "2023-03-27T09:51:06.989Z",
+      "updated_at": "2023-05-05T08:29:56.931Z",
       "id": 3425386,
       "schema": {
         "name": {
@@ -470,12 +488,6 @@
         "featureTwo": {
           "type": "text"
         },
-        "image1": {
-          "type": "asset",
-          "filetypes": [
-            "images"
-          ]
-        },
         "image2": {
           "type": "asset",
           "filetypes": [
@@ -505,6 +517,33 @@
           "max_length": 10
         },
         "cartImage": {
+          "type": "asset"
+        },
+        "desktop_image": {
+          "type": "asset"
+        },
+        "mobile_image": {
+          "type": "asset"
+        },
+        "tablet_image": {
+          "type": "asset"
+        },
+        "detail_desktop": {
+          "type": "asset"
+        },
+        "detail_tablet": {
+          "type": "asset"
+        },
+        "detail_mobile": {
+          "type": "asset"
+        },
+        "image2_mobile": {
+          "type": "asset"
+        },
+        "image3_mobile": {
+          "type": "asset"
+        },
+        "image4_mobile": {
           "type": "asset"
         }
       },

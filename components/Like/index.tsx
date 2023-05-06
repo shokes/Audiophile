@@ -15,14 +15,31 @@ const Like = ({ like }: LikeProps) => {
 
   return (
     <div {...storyblokEditable(like)}>
-      <div className='flex flex-col items-center gap-10 mt-16'>
+      <div className='flex flex-col items-center gap-10 mb-[56px]'>
         {like.image && like.name && (
-          <Image
-            src={like.image?.filename}
-            width={350}
-            height={318}
-            alt={like.name}
-          />
+          <div>
+            <Image
+              src={like.desktop_image?.filename as string}
+              width={350}
+              height={318}
+              alt={like.name}
+              className='hidden lg:block'
+            />
+            <Image
+              src={like.tablet_image?.filename as string}
+              width={350}
+              height={318}
+              alt={like.name}
+              className='hidden md:block lg:hidden'
+            />
+            <Image
+              src={like.mobile_image?.filename as string}
+              width={750}
+              height={318}
+              alt={like.name}
+              className=' md:hidden'
+            />
+          </div>
         )}
         <div>
           <Typography as='h5' weight='font-bold'>

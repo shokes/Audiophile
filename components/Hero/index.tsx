@@ -44,16 +44,16 @@ const Hero = ({ blok }: HeroProps) => {
       />
       <Container>
         <div className='border-b mb-32 border-white/20 pt-8  pb-9'>
-          <Navigation shoppingCart={true} />
+          <Navigation />
         </div>
 
-        <div className='text-white text-center lg:text-left pb-[151px]'>
+        <div className='text-white text-center md:w-[369px] lg:w-full mx-auto lg:text-left pb-[151px]'>
           <div className='mb-6 opacity-50'>
             <Typography as='p' weight='font-normal'>
               New product
             </Typography>
           </div>
-          <div className='mb-6 lg:w-[398px] mx-auto lg:mx-0'>
+          <div className='mb-6  lg:w-[398px] mx-auto lg:mx-0'>
             <Typography as='h1' weight='font-bold'>
               {blok.title}
             </Typography>
