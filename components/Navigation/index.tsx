@@ -52,7 +52,7 @@ const Navigation = () => {
                   })}
                 </div>
 
-                <div className=''>
+                <div className='md:absolute md:right-0 lg:static'>
                   <AiOutlineShoppingCart
                     className='w-6  text-white h-6 cursor-pointer'
                     onClick={() => setOpenModal(!openModal)}
