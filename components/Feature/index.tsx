@@ -14,6 +14,7 @@ interface FeatureProps {
 
 const Feature = ({ feature }: FeatureProps) => {
   const resolvedLink = resolveLink(feature.link);
+  console.log(feature);
 
   return (
     <div {...storyblokEditable(feature)}>
@@ -23,7 +24,7 @@ const Feature = ({ feature }: FeatureProps) => {
         className='flex rounded-lg flex-col relative mt-[120px]  items-center h-[204px] bg-brandGray-200 box'
       >
         <Image
-          src={`https://${feature.image}`}
+          src={feature.feature_image?.filename as string}
           alt={feature.name as string}
           width={200}
           height={200}

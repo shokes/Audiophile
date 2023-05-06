@@ -28,20 +28,6 @@ export type MultilinkStoryblok =
       linktype?: "email";
     };
 
-export interface FeatureStoryblok {
-  image?: string;
-  link: MultilinkStoryblok;
-  name?: string;
-  _uid: string;
-  component: "feature";
-}
-
-export interface FeatureSectionStoryblok {
-  features?: any[];
-  _uid: string;
-  component: "feature_section";
-}
-
 export interface AssetStoryblok {
   alt?: string;
   copyright?: string;
@@ -50,6 +36,20 @@ export interface AssetStoryblok {
   name: string;
   title?: string;
   focus?: string;
+}
+
+export interface FeatureStoryblok {
+  link: MultilinkStoryblok;
+  name?: string;
+  feature_image?: AssetStoryblok;
+  _uid: string;
+  component: "feature";
+}
+
+export interface FeatureSectionStoryblok {
+  features?: any[];
+  _uid: string;
+  component: "feature_section";
 }
 
 export interface HeroStoryblok {

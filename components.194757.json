@@ -27,18 +27,18 @@
       "name": "feature",
       "display_name": null,
       "created_at": "2023-02-01T11:21:48.438Z",
-      "updated_at": "2023-03-01T09:06:18.266Z",
+      "updated_at": "2023-05-06T11:01:11.020Z",
       "id": 3377775,
       "schema": {
-        "image": {
-          "type": "image"
-        },
         "link": {
           "type": "multilink",
           "required": true
         },
         "name": {
           "type": "text"
+        },
+        "feature_image": {
+          "type": "asset"
         }
       },
       "image": null,
