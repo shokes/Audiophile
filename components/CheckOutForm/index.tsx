@@ -10,7 +10,7 @@ import Button from '../Button';
 import { addCommas } from '@/utils/general';
 import Cash from '../../public/icon-cash-on-delivery.svg';
 import { useState } from 'react';
-import ModalLayout from '../Modal';
+import ModalLayout from '../ModalLayout';
 
 const labelClasses = classNames(
   `block text-[12px] leading-[16.39px] tracking-[-0.21px] text-black font-bold`
@@ -43,7 +43,7 @@ const CheckOutForm = () => {
       <div className='bg-black '>
         <Container>
           <div className='pb-[37px] pt-8'>
-            <Navigation shoppingCart={true} />
+            <Navigation />
           </div>
         </Container>
       </div>
@@ -55,8 +55,8 @@ const CheckOutForm = () => {
           <span className='text-xs capitalize'>go back</span>
         </div>
 
-        <div className='flex gap-[30px] '>
-          <div className='bg-white rounded-lg w-[730px] py-[54px] px-12'>
+        <div className='flex flex-col md:flex-row gap-[30px] '>
+          <div className='bg-white rounded-lg lg:w-[730px] py-[54px] px-12'>
             <div className='mb-[53px]'>
               <div className='mb-[41px]'>
                 <Typography as='h3' weight='font-bold' transform='uppercase'>
@@ -68,7 +68,7 @@ const CheckOutForm = () => {
                 Billing Details
               </h2>
               <form className='grid grid-cols-12 gap-x-4 gap-y-6'>
-                <div className='col-span-6'>
+                <div className='col-span-full md:col-span-6'>
                   <label htmlFor='name' className={labelClasses}>
                     Name
                   </label>
@@ -83,7 +83,7 @@ const CheckOutForm = () => {
                   </div>
                 </div>
 
-                <div className='col-span-6'>
+                <div className='col-span-full md:col-span-6'>
                   <label htmlFor='email-address' className={labelClasses}>
                     Email address
                   </label>
@@ -99,7 +99,7 @@ const CheckOutForm = () => {
                   </div>
                 </div>
 
-                <div className='col-span-6'>
+                <div className='col-span-full md:col-span-6'>
                   <label htmlFor='company' className={labelClasses}>
                     Phone number
                   </label>
@@ -134,7 +134,7 @@ const CheckOutForm = () => {
                   </div>
                 </div>
 
-                <div className='col-span-6'>
+                <div className='col-span-full md:col-span-6'>
                   <label htmlFor='last-name' className={labelClasses}>
                     ZIP Code
                   </label>
@@ -149,7 +149,7 @@ const CheckOutForm = () => {
                   </div>
                 </div>
 
-                <div className='col-span-6'>
+                <div className='col-span-full md:col-span-6'>
                   <label htmlFor='company' className={labelClasses}>
                     City
                   </label>
@@ -162,7 +162,7 @@ const CheckOutForm = () => {
                     />
                   </div>
                 </div>
-                <div className='col-span-6'>
+                <div className='col-span-full md:col-span-6'>
                   <label htmlFor='country' className={labelClasses}>
                     Country
                   </label>
@@ -182,11 +182,11 @@ const CheckOutForm = () => {
               <h2 className='text-sm mb-4 text-brand-amber uppercase font-bold'>
                 Payment details
               </h2>
-              <h2 className='text-[12px] leading-[16.39px] font-bold'>
+              <h2 className='text-[12px] leading-[16.39px] font-bold mb-[17px]'>
                 Payment Method
               </h2>
               <form className='grid grid-cols-12 gap-x-4 '>
-                <div className='col-start-7 col-end-13 mb-4'>
+                <div className='col-span-full md:col-start-7 md:col-end-13 mb-4'>
                   <div
                     className={`flex gap-4 items-center hover:border-brand-amber border w-full py-[18px] pl-[24px] rounded-lg ${
                       eMoney ? 'border-brand-amber' : 'border-[#CFCFCF]'
@@ -205,7 +205,7 @@ const CheckOutForm = () => {
                   </div>
                 </div>
 
-                <div className='col-start-7 col-end-13 mb-8'>
+                <div className='col-span-full md:col-start-7 md:col-end-13 mb-8'>
                   <div
                     className={`flex gap-4 items-center border hover:border-brand-amber w-full py-[18px] pl-[24px] rounded-lg ${
                       !eMoney ? 'border-brand-amber' : 'border-[#CFCFCF]'
@@ -226,7 +226,7 @@ const CheckOutForm = () => {
 
                 {eMoney ? (
                   <>
-                    <div className='col-span-6'>
+                    <div className='col-span-full md:col-span-6  mb-[24px] md:mb-0'>
                       <label htmlFor='company' className={labelClasses}>
                         e-Money Number
                       </label>
@@ -239,7 +239,7 @@ const CheckOutForm = () => {
                         />
                       </div>
                     </div>
-                    <div className='col-span-6'>
+                    <div className='col-span-full md:col-span-6'>
                       <label htmlFor='country' className={labelClasses}>
                         e-Money PIN
                       </label>
@@ -272,7 +272,7 @@ const CheckOutForm = () => {
               </form>
             </div>
           </div>
-          <div className='bg-white h-full w-[350px] p-[32px] rounded-lg'>
+          <div className='bg-white h-full lg:w-[350px] p-[32px] rounded-lg'>
             <h2 className='text-lg font-bold uppercase text-gray-900 mb-[31px]'>
               Summary
             </h2>
