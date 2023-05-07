@@ -62,7 +62,7 @@ const Hero = ({ blok }: HeroProps) => {
           <div className='relative'>
             <div className='mb-6  lg:w-[398px] mx-auto lg:mx-0 overflow-y-hidden'>
               <motion.div variants={nameVariant}>
-                <Typography as='h1' weight='font-bold'>
+                <Typography as='h1' weight='font-bold' transform='uppercase'>
                   {blok.title}
                 </Typography>
               </motion.div>
