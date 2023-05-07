@@ -7,6 +7,8 @@ import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import Container from '../Container';
+import { motion } from 'framer-motion';
+import { nameVariant, containerVariant } from '../Animation/variants';
 
 interface HeroProps {
   blok: SbBlokData & HeroStoryblok;
@@ -46,17 +48,25 @@ const Hero = ({ blok }: HeroProps) => {
         <div className='border-b mb-32 border-white/20 pt-8  pb-9'>
           <Navigation />
         </div>
-
-        <div className='text-white text-center md:w-[369px] lg:w-full mx-auto lg:text-left pb-[151px]'>
+        <motion.div
+          variants={containerVariant}
+          initial='initial'
+          animate='animate'
+          className='relative text-white text-center md:w-[369px] lg:w-full mx-auto lg:text-left pb-[151px]'
+        >
           <div className='mb-6 opacity-50'>
             <Typography as='p' weight='font-normal'>
               New product
             </Typography>
           </div>
-          <div className='mb-6  lg:w-[398px] mx-auto lg:mx-0'>
-            <Typography as='h1' weight='font-bold'>
-              {blok.title}
-            </Typography>
+          <div className='relative'>
+            <div className='mb-6  lg:w-[398px] mx-auto lg:mx-0 overflow-y-hidden'>
+              <motion.div variants={nameVariant}>
+                <Typography as='h1' weight='font-bold'>
+                  {blok.title}
+                </Typography>
+              </motion.div>
+            </div>
           </div>
           <div className='opacity-75 mb-6 lg:w-[349px] mx-auto lg:mx-0'>
             <p className='text-xs font-medium'>{blok.description}</p>
@@ -70,7 +80,7 @@ const Hero = ({ blok }: HeroProps) => {
           >
             see product
           </Button>
-        </div>
+        </motion.div>
       </Container>
     </div>
   );
