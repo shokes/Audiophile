@@ -6,6 +6,10 @@ import Image from 'next/image';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import { HomeProductTwoStoryblok } from '@/@types/generated/storyblok';
 import Container from '../Container';
+import SlideUp from '../Animations/slideUp';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 interface HomeProductTwoProps {
   blok: SbBlokData & HomeProductTwoStoryblok;
@@ -13,6 +17,15 @@ interface HomeProductTwoProps {
 
 const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
   const resolvedLink = resolveLink(blok.link);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('animate');
+    }
+  }, [controls, inView]);
 
   return (
     <Container>
@@ -42,10 +55,12 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
             </div>
           )}
           <div className=' pb-[151px] pl-[24px] md:pl-[95px] pt-[101px] text-black'>
-            <div className='mb-6 w-[398px] '>
-              <Typography as='h4' weight='font-bold'>
-                {blok.name}
-              </Typography>
+            <div className='mb-6 w-[398px]' ref={ref}>
+              <SlideUp animate={controls}>
+                <Typography as='h4' weight='font-bold'>
+                  {blok.name}
+                </Typography>
+              </SlideUp>
             </div>
             <Button
               hover='hover:bg-brandBlack-100'

@@ -7,6 +7,10 @@ import { HomeProductThreeStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import { storyblokEditable } from '@storyblok/react';
 import Container from '../Container';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import SlideUp from '../Animations/slideUp';
 
 interface HomeProductThreeProps {
   blok: SbBlokData & HomeProductThreeStoryblok;
@@ -14,6 +18,15 @@ interface HomeProductThreeProps {
 
 const HomeProductThree = ({ blok }: HomeProductThreeProps) => {
   const resolvedLink = resolveLink(blok.link);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('animate');
+    }
+  }, [controls, inView]);
 
   return (
     <Container>
@@ -50,10 +63,12 @@ const HomeProductThree = ({ blok }: HomeProductThreeProps) => {
         )}
         <div className='bg-brandGray-200 rounded-lg'>
           <div className=' py-[44px] lg:pt-[101px]  pl-[24px] md:pl-[41px] lg:pl-[95px]'>
-            <div className='mb-[32px] md:mb-6 text-black'>
-              <Typography as='h4' weight='font-bold'>
-                {blok.name}
-              </Typography>
+            <div className='mb-[32px] md:mb-6 text-black' ref={ref}>
+              <SlideUp animate={controls}>
+                <Typography as='h4' weight='font-bold'>
+                  {blok.name}
+                </Typography>
+              </SlideUp>
             </div>
             <Button
               hover='hover:bg-brandBlack-100'

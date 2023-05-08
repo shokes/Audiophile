@@ -11,7 +11,11 @@ import Container from '../Container';
 import mdOval from '../../public/mdoval.png';
 import bottomOval from '../../public/bottomoval.png';
 import smOval from '../../public/smoval.png';
-import full from '../../public/full.png';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import SlideUp from '../Animations/slideUp';
+import { FadeIn } from '../Animations/fadeIn';
 
 interface HomeProductOneProps {
   blok: SbBlokData & HomeProductOneStoryblok;
@@ -19,6 +23,15 @@ interface HomeProductOneProps {
 
 const HomeProductOne = ({ blok }: HomeProductOneProps) => {
   const resolvedLink = resolveLink(blok.link);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('animate');
+    }
+  }, [controls, inView]);
 
   return (
     <Container>
@@ -141,12 +154,16 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
 
           <div className='md:w-[349px] z-30 text-white  lg:mt-[133px] pb-[124px]'>
             <div className='mb-6'>
-              <Typography as='h1' weight='font-bold'>
-                {blok.name}
-              </Typography>
+              <SlideUp animate={controls}>
+                <Typography as='h1' weight='font-bold'>
+                  {blok.name}
+                </Typography>
+              </SlideUp>
             </div>
-            <div className='mb-10'>
-              <p className='text-xs font-medium'> {blok.description}</p>
+            <div className='mb-10' ref={ref}>
+              <FadeIn>
+                <p className='text-xs font-medium'> {blok.description}</p>
+              </FadeIn>
             </div>
             <div className='z-50'>
               <Button

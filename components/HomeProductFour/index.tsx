@@ -5,12 +5,26 @@ import { SbBlokData } from '@storyblok/react';
 import { HomeProductFourStoryblok } from '@/@types/generated/storyblok';
 import { storyblokEditable } from '@storyblok/react';
 import Container from '../Container';
+import SlideUp from '../Animations/slideUp';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import { FadeIn } from '../Animations/fadeIn';
 
 interface HomeProductFourProps {
   blok: SbBlokData & HomeProductFourStoryblok;
 }
 
 const HomeProductFour = ({ blok }: HomeProductFourProps) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('animate');
+    }
+  }, [controls, inView]);
+
   return (
     <Container>
       <div
@@ -19,13 +33,17 @@ const HomeProductFour = ({ blok }: HomeProductFourProps) => {
       >
         <div className='text-center lg:text-left md:w-[537px] lg:w-[445px]'>
           <div className='mb-8'>
-            <Typography weight='font-bold' as='h2' transform='uppercase'>
-              Bringing you the <span className='text-brand-amber'>best</span>{' '}
-              audio gear
-            </Typography>
+            <SlideUp animate={controls}>
+              <Typography weight='font-bold' as='h2' transform='uppercase'>
+                Bringing you the <span className='text-brand-amber'>best</span>{' '}
+                audio gear
+              </Typography>
+            </SlideUp>
           </div>
-          <div className='opacity-50'>
-            <p className='text-xs font-medium'>{blok.description}</p>
+          <div className='opacity-50' ref={ref}>
+            <FadeIn>
+              <p className='text-xs font-medium'>{blok.description}</p>
+            </FadeIn>
           </div>
         </div>
         {blok && (
