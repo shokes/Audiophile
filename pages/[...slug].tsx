@@ -6,9 +6,14 @@ import {
 import Footer from '@/components/Footer';
 import { NextSeo } from 'next-seo';
 
+interface Paths {
+  params: {
+    slug: string[];
+  };
+}
+
 export default function Page({ story }: any) {
   story = useStoryblokState(story);
-  console.log(story);
 
   return (
     <div>
@@ -23,7 +28,7 @@ export default function Page({ story }: any) {
   );
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: Paths) {
   let slug = params.slug ? params.slug.join('/') : 'home';
 
   let sbParams = {
@@ -48,7 +53,8 @@ export async function getStaticPaths() {
     version: 'draft',
   });
 
-  let paths = [] as any;
+  const paths: Paths[] = [];
+
   Object.keys(data.links).forEach((linkKey) => {
     if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
       return;

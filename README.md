@@ -1,8 +1,2 @@
--- custorm cursor ✔✔
--- lenis smooth scroll ✔✔
--- progress bar ✔✔
--- default title on each page ✔✔
--- touch device ✔✔
 -- fixing types in [...slug]
--- env
 -- payment intergration

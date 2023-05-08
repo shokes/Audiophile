@@ -220,7 +220,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
         </Container>
         <div className='text-center mb-[40px] md:mb-[56px] lg:[64px]'>
           <Typography transform='uppercase' as='h3' weight='font-bold'>
-            <FadeOneBy text='  you may also like' />
+            <FadeOneBy text='you may also like' />
           </Typography>
         </div>
       </div>

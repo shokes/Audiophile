@@ -19,7 +19,7 @@ const InBox = ({ box }: InboxProps) => {
         </div>
         <div className='opacity-50'>
           <FadeIn>
-            <span className='text-xs font-medium capitalize'> {box.item}x</span>
+            <span className='text-xs font-medium capitalize'> {box.item}</span>
           </FadeIn>
         </div>
       </div>
