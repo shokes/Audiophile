@@ -13,6 +13,9 @@ import { addToCart } from '@/redux/features/homeSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Container from '../Container';
+import SlideUp from '../Animation/slideUp';
+import { FadeIn } from '../Animation/fadeIn';
+import FadeOneBy from '../Animation/fadeOneBy';
 
 interface ProductDetailProps {
   blok: SbBlokData & ProductDetailStoryblok;
@@ -76,17 +79,23 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </div>
               )}
               <div>
-                <Typography as='h2' weight='font-bold' transform='uppercase'>
-                  {blok.name}
-                </Typography>
+                <SlideUp animate='animate'>
+                  <Typography as='h2' weight='font-bold' transform='uppercase'>
+                    {blok.name}
+                  </Typography>
+                </SlideUp>
               </div>
               <div className='mb-8'>
-                <Typography as='h2' weight='font-bold' transform='uppercase'>
-                  {blok.category}
-                </Typography>
+                <SlideUp animate='animate'>
+                  <Typography as='h2' weight='font-bold' transform='uppercase'>
+                    {blok.category}
+                  </Typography>
+                </SlideUp>
               </div>
               <div className='mb-10 opacity-50'>
-                <p className='text-xs font-medium'>{blok.description}</p>
+                <FadeIn>
+                  <p className='text-xs font-medium'>{blok.description}</p>
+                </FadeIn>
               </div>
               <div className='mb-10'>
                 <Typography as='h6' weight='font-bold'>
@@ -118,11 +127,15 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 </Typography>
               </div>
               <div className='mb-8 opacity-50'>
-                <span className='text-xs font-medium'>{blok.featureOne}</span>
+                <FadeIn>
+                  <p className='text-xs font-medium'>{blok.featureOne}</p>
+                </FadeIn>
               </div>
 
               <div className='opacity-50'>
-                <span className='text-xs font-medium'> {blok.featureTwo}</span>
+                <FadeIn>
+                  <p className='text-xs font-medium'> {blok.featureTwo}</p>
+                </FadeIn>
               </div>
             </div>
             <div className='md:flex lg:flex-col lg:gap-0  md:gap-[170px]'>
@@ -207,7 +220,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
         </Container>
         <div className='text-center mb-[40px] md:mb-[56px] lg:[64px]'>
           <Typography transform='uppercase' as='h3' weight='font-bold'>
-            you may also like
+            <FadeOneBy text='  you may also like' />
           </Typography>
         </div>
       </div>

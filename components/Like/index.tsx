@@ -3,8 +3,12 @@ import Button from '../Button';
 import Image from 'next/image';
 import Typography from '../Typography';
 import { storyblokEditable, SbBlokData } from '@storyblok/react';
-import { LikeStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
+import { LikeStoryblok } from '@/@types/generated/storyblok';
+import SlideUp from '../Animation/slideUp';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 interface LikeProps {
   like: SbBlokData & LikeStoryblok;
@@ -12,6 +16,15 @@ interface LikeProps {
 
 const Like = ({ like }: LikeProps) => {
   const resolvedLink = resolveLink(like.link);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('animate');
+    }
+  }, [controls, inView]);
 
   return (
     <div {...storyblokEditable(like)}>
@@ -42,11 +55,13 @@ const Like = ({ like }: LikeProps) => {
           </div>
         )}
         <div>
-          <Typography as='h5' weight='font-bold'>
-            {like.name}
-          </Typography>
+          <SlideUp animate={controls}>
+            <Typography as='h5' weight='font-bold'>
+              {like.name}
+            </Typography>
+          </SlideUp>
         </div>
-        <div className='text-white'>
+        <div className='text-white' ref={ref}>
           <Button
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'

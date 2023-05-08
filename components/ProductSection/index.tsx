@@ -10,6 +10,7 @@ import Product from '../Product';
 import { ProductSectionStoryblok } from '@/@types/generated/storyblok';
 import { useState, useEffect } from 'react';
 import Container from '../Container';
+import FadeOneBy from '../Animation/fadeOneBy';
 
 interface ProductSectionProps {
   blok: SbBlokData & ProductSectionStoryblok;
@@ -47,7 +48,7 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
           </div>
           <div className='text-white text-center'>
             <Typography as='h2' weight='font-bold' transform='uppercase'>
-              {blok.heading}
+              <FadeOneBy text={blok.heading} />
             </Typography>
           </div>
         </Container>

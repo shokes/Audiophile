@@ -7,6 +7,11 @@ import { storyblokEditable, SbBlokData } from '@storyblok/react';
 import { ProductStoryblok } from '@/@types/generated/storyblok';
 import { ProductDetailStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
+import SlideUp from '../Animation/slideUp';
+import { FadeIn } from '../Animation/fadeIn';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 interface ProductProps {
   product: SbBlokData & ProductStoryblok;
@@ -27,6 +32,15 @@ const Product = ({ product }: ProductProps) => {
   } = product.content as SbBlokData & ProductDetailStoryblok;
 
   const resolvedLink = resolveLink(link);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('animate');
+    }
+  }, [controls, inView]);
 
   return (
     <div
@@ -71,17 +85,23 @@ const Product = ({ product }: ProductProps) => {
           </div>
         )}
         <div>
-          <Typography as='h2' weight='font-bold' transform='uppercase'>
-            {name}
-          </Typography>
+          <SlideUp animate={controls}>
+            <Typography as='h2' weight='font-bold' transform='uppercase'>
+              {name}
+            </Typography>
+          </SlideUp>
         </div>
-        <div className='mb-8'>
-          <Typography as='h2' weight='font-bold' transform='uppercase'>
-            {category}
-          </Typography>
+        <div className='mb-8' ref={ref}>
+          <SlideUp animate={controls}>
+            <Typography as='h2' weight='font-bold' transform='uppercase'>
+              {category}
+            </Typography>
+          </SlideUp>
         </div>
         <div className='mb-10 opacity-50'>
-          <p className='text-xs font-medium'>{description}</p>
+          <FadeIn>
+            <p className='text-xs font-medium'>{description}</p>
+          </FadeIn>
         </div>
         <div className='text-white'>
           <Button

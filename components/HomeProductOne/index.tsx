@@ -14,8 +14,8 @@ import smOval from '../../public/smoval.png';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import SlideUp from '../Animations/slideUp';
-import { FadeIn } from '../Animations/fadeIn';
+import SlideUp from '../Animation/slideUp';
+import { FadeIn } from '../Animation/fadeIn';
 
 interface HomeProductOneProps {
   blok: SbBlokData & HomeProductOneStoryblok;

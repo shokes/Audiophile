@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import { HomeProductTwoStoryblok } from '@/@types/generated/storyblok';
 import Container from '../Container';
-import SlideUp from '../Animations/slideUp';
+import SlideUp from '../Animation/slideUp';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';

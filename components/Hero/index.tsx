@@ -7,8 +7,8 @@ import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { HeroStoryblok } from '@/@types/generated/storyblok';
 import { resolveLink } from '@/utils/storyblok/resolveLinks';
 import Container from '../Container';
-import { FadeIn } from '../Animations/fadeIn';
-import SlideUp from '../Animations/slideUp';
+import { FadeIn } from '../Animation/fadeIn';
+import SlideUp from '../Animation/slideUp';
 
 interface HeroProps {
   blok: SbBlokData & HeroStoryblok;

@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion';
 
-interface FadeInProps {
-  children: React.ReactNode;
-}
-
-export const FadeIn = ({ children }: FadeInProps) => {
+export const FadeIn = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

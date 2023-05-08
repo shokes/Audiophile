@@ -1,7 +1,7 @@
 import React from 'react';
 import { storyblokEditable, SbBlokData } from '@storyblok/react';
 import { InBoxStoryblok } from '@/@types/generated/storyblok';
-import Typography from '../Typography';
+import { FadeIn } from '../Animation/fadeIn';
 
 interface InboxProps {
   box: SbBlokData & InBoxStoryblok;
@@ -12,10 +12,15 @@ const InBox = ({ box }: InboxProps) => {
     return (
       <div {...storyblokEditable(box)} className='flex gap-[21px] mb-2'>
         <div className='text-brand-amber'>
-          <span className='text-xs font-medium'>{box.quantity}x</span>
+          <FadeIn>
+            {' '}
+            <span className='text-xs font-medium'>{box.quantity}x</span>
+          </FadeIn>
         </div>
         <div className='opacity-50'>
-          <span className='text-xs font-medium capitalize'> {box.item}x</span>
+          <FadeIn>
+            <span className='text-xs font-medium capitalize'> {box.item}x</span>
+          </FadeIn>
         </div>
       </div>
     );

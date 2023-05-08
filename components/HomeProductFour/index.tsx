@@ -5,11 +5,11 @@ import { SbBlokData } from '@storyblok/react';
 import { HomeProductFourStoryblok } from '@/@types/generated/storyblok';
 import { storyblokEditable } from '@storyblok/react';
 import Container from '../Container';
-import SlideUp from '../Animations/slideUp';
+import SlideUp from '../Animation/slideUp';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import { FadeIn } from '../Animations/fadeIn';
+import { FadeIn } from '../Animation/fadeIn';
 
 interface HomeProductFourProps {
   blok: SbBlokData & HomeProductFourStoryblok;

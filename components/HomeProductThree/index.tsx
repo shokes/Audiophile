@@ -10,7 +10,7 @@ import Container from '../Container';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import SlideUp from '../Animations/slideUp';
+import SlideUp from '../Animation/slideUp';
 
 interface HomeProductThreeProps {
   blok: SbBlokData & HomeProductThreeStoryblok;
