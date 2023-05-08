@@ -55,7 +55,7 @@ const Hero = ({ blok }: HeroProps) => {
               New product
             </Typography>
           </div>
-          <div className='mb-6  lg:w-[398px] mx-auto lg:mx-0'>
+          <div className='mb-6  md:w-[398px] mx-auto lg:mx-0'>
             <SlideUp animate='animate'>
               <Typography as='h1' weight='font-bold' transform='uppercase'>
                 {blok.title}

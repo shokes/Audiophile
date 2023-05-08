@@ -38,6 +38,7 @@ const ProductSection = ({ blok }: ProductSectionProps) => {
       );
     };
     getProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div {...storyblokEditable(blok)}>
