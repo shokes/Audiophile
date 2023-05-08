@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { DefaultSeo } from 'next-seo';
 import {
   useStoryblokState,
   getStoryblokApi,
@@ -11,6 +12,7 @@ export default function Home({ story }: any) {
 
   return (
     <Fragment>
+      <DefaultSeo titleTemplate='%s | Audiophile' defaultTitle='Audiophile' />
       <StoryblokComponent blok={story.content} />
       <Footer />
     </Fragment>

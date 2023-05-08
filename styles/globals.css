@@ -16,6 +16,17 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+body {
+  /* hide scrollbar */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* hide scrollbar */
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
 input {
   box-sizing: border-box;
   -webkit-transition: 0.5s;
@@ -25,9 +36,4 @@ input {
 
 input:focus {
   border: 1px solid #d87d4a;
-}
-
-.cursor-styling {
-  background: rgba(51, 154, 240, 0.3);
-  border: 1.8px solid var(--blue);
 }

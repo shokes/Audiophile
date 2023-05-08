@@ -18,7 +18,51 @@ import Like from '@/components/Like';
 import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 import CheckOutForm from '@/components/CheckOutForm';
-import { CustomCursor } from '@/components/CustomCursor';
+import Progressbar from '@/components/ProgressBar';
+import { LenisProvider } from '../context/LenisContext';
+import { useIsTouchDevice } from '@/hooks/useTouchDevice';
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import useMouse from '@react-hook/mouse-position';
+
+const useVariants = (ref: React.MutableRefObject<null>) => {
+  const mouse = useMouse(ref, {
+    enterDelay: 100,
+    leaveDelay: 100,
+  });
+
+  let mouseXPosition = 0;
+  let mouseYPosition = 0;
+  if (mouse.clientX !== null) {
+    mouseXPosition = mouse.clientX;
+  }
+
+  if (mouse.clientY !== null) {
+    mouseYPosition = mouse.clientY;
+  }
+
+  return {
+    default: {
+      opacity: 1,
+      height: 10,
+      width: 10,
+      fontSize: '20px',
+      backgroundColor: '#d87d4a',
+      x: mouseXPosition,
+      y: mouseYPosition,
+      transition: {
+        type: 'spring',
+        mass: 0.6,
+      },
+    },
+  };
+};
+
+const spring = {
+  type: 'spring',
+  stiffness: 500,
+  damping: 28,
+};
 
 const components = {
   page: Page,
@@ -38,7 +82,8 @@ const components = {
 };
 
 storyblokInit({
-  accessToken: '1sTj4AJrYMXEamEVPocEAwtt',
+  // accessToken: '1sTj4AJrYMXEamEVPocEAwtt',
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   components,
 });
@@ -49,12 +94,30 @@ const manrope = Manrope({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <main className={`${manrope.variable} font-sans`}>
-      <CustomCursor />
+  const isTouchDevice = useIsTouchDevice();
 
+  const ref = useRef(null);
+
+  const variants = useVariants(ref);
+
+  return (
+    <main className={`${manrope.variable} font-sans`} ref={ref}>
       <Provider store={store}>
-        <Component {...pageProps} />
+        <LenisProvider>
+          {!isTouchDevice && (
+            <motion.div
+              variants={variants}
+              className='fixed z-[9999] top-0 left-0 rounded-full'
+              animate='default'
+              transition={spring}
+            >
+              <span className='cursor'></span>
+            </motion.div>
+          )}
+
+          {!isTouchDevice && <Progressbar />}
+          <Component {...pageProps} />
+        </LenisProvider>
       </Provider>
     </main>
   );

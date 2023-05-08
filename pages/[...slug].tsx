@@ -1,20 +1,22 @@
-import Head from 'next/head';
 import {
   useStoryblokState,
   getStoryblokApi,
   StoryblokComponent,
 } from '@storyblok/react';
 import Footer from '@/components/Footer';
+import { NextSeo } from 'next-seo';
 
 export default function Page({ story }: any) {
   story = useStoryblokState(story);
+  console.log(story);
 
   return (
     <div>
-      {/* <Head>
-        <title>{story ? story.name : 'My Site'}</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head> */}
+      <NextSeo
+        title={`${
+          story.slug.charAt(0).toUpperCase() + story.slug.slice(1)
+        } - Audiophile`}
+      />
       <StoryblokComponent blok={story.content} />
       <Footer />
     </div>
