@@ -82,5 +82,3 @@ const Hero = ({ blok }: HeroProps) => {
 };
 
 export default Hero;
-
-//  <div className='mb-6 md:w-[400px] mx-auto lg:mx-0 overflow-y-hidden'></div>

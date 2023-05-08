@@ -18,6 +18,7 @@ import Like from '@/components/Like';
 import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 import CheckOutForm from '@/components/CheckOutForm';
+import { CustomCursor } from '@/components/CustomCursor';
 
 const components = {
   page: Page,
@@ -50,6 +51,8 @@ const manrope = Manrope({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${manrope.variable} font-sans`}>
+      <CustomCursor />
+
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>

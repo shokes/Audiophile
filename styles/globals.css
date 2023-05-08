@@ -26,9 +26,8 @@ input {
 input:focus {
   border: 1px solid #d87d4a;
 }
-/* 
-@media (max-width: 68em) {
-  html {
-    font-size: 95%;
-  }
-} */
+
+.cursor-styling {
+  background: rgba(51, 154, 240, 0.3);
+  border: 1.8px solid var(--blue);
+}
