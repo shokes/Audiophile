@@ -26,14 +26,3 @@ body {
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
-
-input {
-  box-sizing: border-box;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-
-input:focus {
-  border: 1px solid #d87d4a;
-}

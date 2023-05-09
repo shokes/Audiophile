@@ -10,14 +10,13 @@ import Button from '../Button';
 import { addCommas } from '@/utils/general';
 import Cash from '../../public/icon-cash-on-delivery.svg';
 import { useState } from 'react';
-import ModalLayout from '../ModalLayout';
 
 const labelClasses = classNames(
   `block text-[12px] leading-[16.39px] tracking-[-0.21px] text-black font-bold`
 );
 
 const inputClasses = classNames(
-  `block border-[#CFCFCF] border w-full py-[18px] pl-[24px] rounded-lg`
+  `block border-[#CFCFCF] border w-full py-[18px] pl-[24px] rounded-lg focus:border-brand-amber focus:ring-brand-amber`
 );
 
 const CheckOutForm = () => {
