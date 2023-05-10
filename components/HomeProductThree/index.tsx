@@ -73,7 +73,7 @@ const HomeProductThree = ({ blok }: HomeProductThreeProps) => {
             <Button
               hover='hover:bg-brandBlack-100'
               link={resolvedLink}
-              block={false}
+              width={false}
             >
               see product
             </Button>

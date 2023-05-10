@@ -2,41 +2,62 @@ import React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 
-interface Props {
+interface ButtonProps {
   bg?: string;
   hover: string;
   link?: string;
   children: React.ReactNode;
-  block: boolean;
+  width: boolean;
+  type?: 'button' | 'submit' | 'reset';
+
+  disable?: boolean;
 }
 
 const buttonClasses = classNames(
   'uppercase duration-300 py-[15px] px-[31px]  text-sm font-bold'
 );
 
-const blockClasses = classNames('w-full block');
+const Button = ({
+  bg = '',
+  hover,
+  link = '',
+  children,
 
-const Button = ({ bg = '', hover, link = '', children, block }: Props) => {
-  return link !== '' ? (
-    <Link
-      href={link}
-      className={classNames(
-        `${hover} ${buttonClasses} text-center `,
-        bg === '' ? 'border border-black  hover:text-white' : `${bg}`,
-        block && blockClasses
-      )}
-    >
-      {children}
-    </Link>
-  ) : (
-    <div
-      className={classNames(
-        `${hover} ${buttonClasses} cursor-pointer ${bg}`,
-        block && blockClasses
-      )}
-    >
-      {children}
-    </div>
+  width,
+  type,
+
+  disable,
+}: ButtonProps) => {
+  if (type) {
+    return (
+      <button
+        disabled={disable}
+        type={type}
+        className={` ${width && 'w-full'} ${disable && 'cursor-no-drop'}`}
+      >
+        <a
+          className={classNames(
+            `${hover} ${buttonClasses} ${bg} w-full block`,
+            bg === 'bg-brand-amber' && 'text-white'
+          )}
+        >
+          {children}
+        </a>
+      </button>
+    );
+  }
+  return (
+    <button className={`${width && 'w-full'}`}>
+      <Link
+        href={link}
+        className={classNames(
+          `${hover} ${buttonClasses}  ${bg} w-full block`,
+          bg === '' && 'hover:text-white border-black border'
+        )}
+      >
+        {children}
+      </Link>
+    </button>
   );
 };
 

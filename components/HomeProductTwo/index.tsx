@@ -65,7 +65,7 @@ const HomeProductTwo = ({ blok }: HomeProductTwoProps) => {
             <Button
               hover='hover:bg-brandBlack-100'
               link={resolvedLink}
-              block={false}
+              width={false}
             >
               see product
             </Button>

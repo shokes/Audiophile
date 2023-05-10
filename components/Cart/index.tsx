@@ -48,7 +48,7 @@ const Cart = () => {
               <Button
                 bg='bg-brand-amber'
                 hover='hover:bg-brand-pastelYellow'
-                block={true}
+                width={true}
                 link='/'
               >
                 continue shopping
@@ -115,7 +115,7 @@ const Cart = () => {
               <Button
                 bg='bg-brand-amber'
                 hover='hover:bg-brand-pastelYellow'
-                block={true}
+                width={true}
                 link='/checkout'
               >
                 checkout

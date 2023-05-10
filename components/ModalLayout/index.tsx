@@ -46,7 +46,7 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => {
                 leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
               >
                 <Dialog.Panel className='w-full md:w-[377px] transform overflow-hidden transition-all '>
-                  {children}
+                  <div className='mb-[64px]'>{children}</div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>

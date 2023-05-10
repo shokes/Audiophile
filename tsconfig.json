@@ -26,7 +26,7 @@
     "components/Page/[...slug].tsx",
     "next.config.js",
     "tailwind.config.js",
-    "postcss.config.js"
+    "postcss.config.ts"
   ],
   "exclude": ["node_modules"]
 }

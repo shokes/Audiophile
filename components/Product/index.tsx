@@ -108,7 +108,7 @@ const Product = ({ product }: ProductProps) => {
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'
             link={resolvedLink}
-            block={false}
+            width={false}
           >
             see product
           </Button>
