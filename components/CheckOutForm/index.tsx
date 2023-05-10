@@ -24,6 +24,8 @@ const CheckOutForm = () => {
 
   const [eMoney, setEmoney] = useState(true);
 
+  const [success, setSuccess] = useState(false);
+
   const { cart } = useSelector((store: RootState) => store.home);
 
   const total = cart.reduce(
