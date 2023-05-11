@@ -10,6 +10,7 @@ import Button from '../Button';
 import { addCommas } from '@/utils/general';
 import Cash from '../../public/icon-cash-on-delivery.svg';
 import { SyntheticEvent, useState } from 'react';
+import Success from '../Success';
 
 const labelClasses = classNames(
   `block text-[12px] leading-[16.39px] tracking-[-0.21px] text-black font-bold`
@@ -38,10 +39,11 @@ const CheckOutForm = () => {
 
   const vat = Math.round(total * 0.2);
   const shippingFee = 50;
+  const grandTotal = vat + shippingFee + total;
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    console.log('submit');
+    setSuccess(true);
   };
 
   return (
@@ -357,7 +359,7 @@ const CheckOutForm = () => {
                   </div>
                   <span className='text-brand-amber'>
                     <Typography as='h6' weight='font-bold'>
-                      $ {addCommas(vat + shippingFee + total)}
+                      $ {addCommas(grandTotal)}
                     </Typography>
                   </span>
                 </div>
@@ -375,6 +377,7 @@ const CheckOutForm = () => {
           </div>
         </form>
       </Container>
+      {success && <Success grandTotal={grandTotal} cart={cart} />}
     </div>
   );
 };

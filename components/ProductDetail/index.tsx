@@ -112,6 +112,7 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                     bg='bg-brand-amber'
                     hover='hover:bg-brand-pastelYellow'
                     width={false}
+                    type='button'
                   >
                     add to cart
                   </Button>
