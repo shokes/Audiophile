@@ -26,6 +26,7 @@ const CheckOutForm = () => {
   const [eMoney, setEmoney] = useState(true);
 
   const [success, setSuccess] = useState(false);
+  console.log(success);
 
   const { cart } = useSelector((store: RootState) => store.home);
 
@@ -43,6 +44,7 @@ const CheckOutForm = () => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
+
     setSuccess(true);
   };
 

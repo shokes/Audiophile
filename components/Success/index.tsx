@@ -5,6 +5,7 @@ import { addCommas } from '@/utils/general';
 import Image from 'next/image';
 import Button from '../Button';
 import ModalLayout from '../ModalLayout';
+import { useEffect, useState } from 'react';
 
 interface SuccessProps {
   cart: [];
@@ -12,9 +13,16 @@ interface SuccessProps {
 }
 
 const Success = ({ cart, grandTotal }: SuccessProps) => {
+  const [successCart, setSuccessCart] = useState([]);
+  const [viewMore, setViewMore] = useState(true);
+
+  useEffect(() => {
+    setSuccessCart(cart);
+  }, [cart]);
+
   return (
     <ModalLayout>
-      <div className='bg-white w-[540px] shadow-2xl inline-block mt-5 p-[48px] rounded-lg  '>
+      <div className='bg-white  shadow-2xl inline-block mt-5 p-[48px] rounded-lg  '>
         <div className='mb-[33px]'>
           <IoMdCheckmark className='w-[64px] h-[64px] text-white flex justify-center p-[14px] items-center rounded-full bg-amber-700' />
         </div>
@@ -31,54 +39,59 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
         <div className='flex'>
           <div className='bg-brandGray-200 rounded-l-lg  py-[17px] px-[24px] w-[246px] '>
             {' '}
-            {cart.map(
-              (item: {
-                name: string;
-                image: string;
-                short: string;
-                price: number;
-                quantity: number;
-              }) => {
-                return (
-                  <div key={item.short} className='flex '>
-                    <Image
-                      src={item.image}
-                      width={64}
-                      height={64}
-                      alt='headphones'
-                      className='rounded-lg mr-4 flex-none'
-                    />
+            {viewMore ? (
+              successCart.map(
+                (item: {
+                  name: string;
+                  image: string;
+                  short: string;
+                  price: number;
+                  quantity: number;
+                }) => {
+                  console.log(successCart[0]);
+                  return (
+                    <div key={item.short} className='flex '>
+                      <Image
+                        src={item.image}
+                        width={64}
+                        height={64}
+                        alt='headphones'
+                        className='rounded-lg mr-4 flex-none'
+                      />
 
-                    <div className='flex-auto '>
-                      <div className='flex flex-col'>
-                        <div>
-                          <span className='text-xs font-bold'>
-                            {' '}
-                            {item.short}
-                          </span>
-                        </div>
-                        <div className='opacity-50'>
-                          <span className='text-base2 font-bold'>
-                            $ {addCommas(item.price as number)}
-                          </span>
+                      <div className='flex-auto '>
+                        <div className='flex flex-col'>
+                          <div>
+                            <span className='text-xs font-bold'>
+                              {' '}
+                              {item.short}
+                            </span>
+                          </div>
+                          <div className='opacity-50'>
+                            <span className='text-base2 font-bold'>
+                              $ {addCommas(item.price as number)}
+                            </span>
+                          </div>
                         </div>
                       </div>
+                      <p className='text-sm text-black opacity-50 flex-none font-bold'>
+                        x{item.quantity}
+                      </p>
                     </div>
-                    <p className='text-sm text-black opacity-50 flex-none font-bold'>
-                      x{item.quantity}
-                    </p>
-                  </div>
-                );
-              }
+                  );
+                }
+              )
+            ) : (
+              <p>view less</p>
             )}
             <div className='border-t-2 mt-[16px] pt-3 text-sm font-bold opacity-50  text-center'>
               View more
             </div>
           </div>
-          <div className='bg-black text-white rounded-r-lg flex flex-col pl-[32px] w-[198px] pt-[121px]'>
-            <span className='opacity-50 text-xs uppercase mb-[8px] '>
+          <div className='bg-black text-white rounded-r-lg inline-fle pl-[32px] w-[198px] flex flex-col justify-center'>
+            <div className='opacity-50 text-xs uppercase block '>
               Grand Total
-            </span>
+            </div>
 
             <Typography as='h6' weight='font-bold'>
               $ {addCommas(grandTotal)}
