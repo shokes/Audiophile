@@ -8,7 +8,13 @@ const manrope = Manrope({
   variable: '--font-manrope',
 });
 
-const ModalLayout = ({ children }: { children: React.ReactNode }) => {
+const ModalLayout = ({
+  children,
+  position,
+}: {
+  children: React.ReactNode;
+  position: string;
+}) => {
   const [open, setOpen] = useState(true);
 
   const cancelButtonRef = useRef(null);
@@ -35,7 +41,13 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => {
 
         <div className='fixed inset-0 z-10 overflow-y-auto'>
           <Container>
-            <div className='flex justify-center min-h-full'>
+            <div
+              className={`flex  min-h-full ${
+                position === 'center'
+                  ? 'justify-center'
+                  : 'justify-center md:justify-end'
+              }`}
+            >
               <Transition.Child
                 as={Fragment}
                 enter='ease-out duration-300'

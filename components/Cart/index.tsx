@@ -24,7 +24,7 @@ const Cart = () => {
   );
 
   return (
-    <ModalLayout>
+    <ModalLayout position='end'>
       <div className='text-black bg-white py-[31px] px-[33px]  rounded-lg '>
         <div className='flex items-center justify-between mb-8'>
           <div>
@@ -75,7 +75,7 @@ const Cart = () => {
                       className='rounded-lg mr-4'
                     />
 
-                    <div className='flex justify-between w-full items-center'>
+                    <div className='flex justify-between w-full items-center gap-[55px]'>
                       <div className='flex flex-col'>
                         <div>
                           <span className='text-xs font-bold'>

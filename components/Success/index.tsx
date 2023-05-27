@@ -13,16 +13,17 @@ interface SuccessProps {
 }
 
 const Success = ({ cart, grandTotal }: SuccessProps) => {
-  const [successCart, setSuccessCart] = useState([]);
+  const [successCart, setSuccessCart] = useState<any>([]);
 
   const [viewMore, setViewMore] = useState(true);
 
   useEffect(() => {
     setSuccessCart(cart);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <ModalLayout>
+    <ModalLayout position='center'>
       <div className='bg-white  shadow-2xl inline-block mt-5 p-[48px] rounded-lg  '>
         <div className='mb-[33px]'>
           <IoMdCheckmark className='w-[64px] h-[64px] text-white flex justify-center p-[14px] items-center rounded-full bg-amber-700' />
