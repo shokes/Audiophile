@@ -43,7 +43,6 @@ const CheckOutForm = () => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-
     setSuccess(true);
   };
 

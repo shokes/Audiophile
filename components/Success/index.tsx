@@ -38,8 +38,8 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
         <p className='text-xs opacity-50 mb-[33px]'>
           You will receive an email confirmation shortly.
         </p>
-        <div className='flex'>
-          <div className='bg-brandGray-200 rounded-l-lg  py-[17px] px-[24px] w-[246px] '>
+        <div className='flex flex-col md:flex-row'>
+          <div className='bg-brandGray-200  rounded-t-lg md:rounded-l-lg  py-[17px] px-[24px] w-full md:w-[246px] '>
             {' '}
             {viewMore ? (
               <div className='flex items-center '>
@@ -134,7 +134,7 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
               )}
             </div>
           </div>
-          <div className='bg-black text-white rounded-r-lg inline-fle pl-[32px] w-[198px] flex flex-col justify-center'>
+          <div className='bg-black text-white rounded-b-lg md:rounded-r-lg inline-fle pl-[32px] w-full md:w-[198px] flex flex-col justify-center'>
             <div className='opacity-50 text-xs uppercase block '>
               Grand Total
             </div>
