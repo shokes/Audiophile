@@ -13,14 +13,13 @@ interface SuccessProps {
 }
 
 const Success = ({ cart, grandTotal }: SuccessProps) => {
-  console.log(cart);
   const [successCart, setSuccessCart] = useState([]);
-  console.log(successCart);
+
   const [viewMore, setViewMore] = useState(true);
 
   useEffect(() => {
     setSuccessCart(cart);
-  }, [cart]);
+  }, []);
 
   return (
     <ModalLayout>
@@ -42,9 +41,9 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
           <div className='bg-brandGray-200 rounded-l-lg  py-[17px] px-[24px] w-[246px] '>
             {' '}
             {viewMore ? (
-              <div key={successCart[0].short} className='flex '>
+              <div className='flex items-center '>
                 <Image
-                  src={successCart[0].image}
+                  src={successCart[0] && successCart[0].image}
                   width={64}
                   height={64}
                   alt='headphones'
@@ -54,20 +53,22 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
                 <div className='flex-auto '>
                   <div className='flex flex-col'>
                     <div>
-                      <span className='text-xs font-bold'>
+                      <span className='text-xs font-bold text-black'>
                         {' '}
-                        {successCart[0].short}
+                        {successCart[0] && successCart[0].short}
                       </span>
                     </div>
-                    <div className='opacity-50'>
-                      <span className='text-base2 font-bold'>
-                        $ {addCommas(successCart[0].price as number)}
-                      </span>
-                    </div>
+                    {successCart[0] && (
+                      <div className='opacity-50'>
+                        <span className='text-base2 font-bold'>
+                          $ {addCommas(successCart[0].price)}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <p className='text-sm text-black opacity-50 flex-none font-bold'>
-                  x{successCart[0].quantity}
+                  x{successCart[0] && successCart[0].quantity}
                 </p>
               </div>
             ) : (
@@ -79,9 +80,8 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
                   price: number;
                   quantity: number;
                 }) => {
-                  console.log(successCart[0]);
                   return (
-                    <div key={item.short} className='flex '>
+                    <div key={item.short} className='flex items-center'>
                       <Image
                         src={item.image}
                         width={64}
@@ -113,14 +113,25 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
                 }
               )
             )}
-            {/* <div className='border-t-2 mt-[16px] pt-3 text-sm font-bold opacity-50  text-center'>
-              {successCart.length > 1 ? 'View more' : 'view less'}
-            </div> */}
-            {successCart.length > 1 ? (
-              <span onClick={() => setViewMore(false)}>view more</span>
-            ) : (
-              <span onClick={() => setViewMore(false)}>view less</span>
-            )}
+            <div className='border-t-2 mt-[16px] pt-3 text-sm font-bold opacity-50  text-center'>
+              {viewMore ? (
+                <span
+                  onClick={() => setViewMore(false)}
+                  className='cursor-pointer'
+                >
+                  {successCart.length > 1
+                    ? `and ${successCart.length - 1} other item(s)`
+                    : ''}
+                </span>
+              ) : (
+                <span
+                  onClick={() => setViewMore(true)}
+                  className='cursor-pointer'
+                >
+                  view less
+                </span>
+              )}
+            </div>
           </div>
           <div className='bg-black text-white rounded-r-lg inline-fle pl-[32px] w-[198px] flex flex-col justify-center'>
             <div className='opacity-50 text-xs uppercase block '>
