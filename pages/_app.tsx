@@ -14,8 +14,9 @@ import Product from '@/components/Product';
 import ProductSection from '@/components/ProductSection';
 import ProductDetail from '@/components/ProductDetail';
 import InBox from '@/components/InBox';
+import { PersistGate } from 'redux-persist/integration/react';
 import Like from '@/components/Like';
-import { store } from '../redux/store';
+import { store, persistor } from '../redux/store';
 import { Provider } from 'react-redux';
 import CheckOutForm from '@/components/CheckOutForm';
 import Progressbar from '@/components/ProgressBar';
@@ -102,21 +103,23 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${manrope.variable} font-sans`} ref={ref}>
       <Provider store={store}>
-        <LenisProvider>
-          {!isTouchDevice && (
-            <motion.div
-              variants={variants}
-              className='fixed z-[9999] top-0 left-0 rounded-full'
-              animate='default'
-              transition={spring}
-            >
-              <span className='cursor'></span>
-            </motion.div>
-          )}
+        <PersistGate loading={null} persistor={persistor}>
+          <LenisProvider>
+            {!isTouchDevice && (
+              <motion.div
+                variants={variants}
+                className='fixed z-[9999] top-0 left-0 rounded-full'
+                animate='default'
+                transition={spring}
+              >
+                <span className='cursor'></span>
+              </motion.div>
+            )}
 
-          {!isTouchDevice && <Progressbar />}
-          <Component {...pageProps} />
-        </LenisProvider>
+            {!isTouchDevice && <Progressbar />}
+            <Component {...pageProps} />
+          </LenisProvider>
+        </PersistGate>
       </Provider>
     </main>
   );

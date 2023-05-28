@@ -9,7 +9,7 @@ import Image from 'next/image';
 import Button from '../Button';
 import { addCommas } from '@/utils/general';
 import Cash from '../../public/icon-cash-on-delivery.svg';
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import Success from '../Success';
 
 const labelClasses = classNames(
@@ -36,6 +36,11 @@ const CheckOutForm = () => {
     },
     0
   );
+
+  useEffect(() => {
+    cart.length === 0 ? router.push('/') : router.push('/checkout');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const vat = Math.round(total * 0.2);
   const shippingFee = 50;

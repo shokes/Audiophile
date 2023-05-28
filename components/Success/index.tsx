@@ -134,7 +134,7 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
               )}
             </div>
           </div>
-          <div className='bg-black text-white rounded-b-lg md:rounded-r-lg inline-fle pl-[32px] w-full md:w-[198px] flex flex-col justify-center'>
+          <div className='bg-black py-[19px] md:py-0 text-white rounded-b-lg md:rounded-r-lg inline-fle pl-[32px] w-full md:w-[198px] flex flex-col justify-center'>
             <div className='opacity-50 text-xs uppercase block '>
               Grand Total
             </div>

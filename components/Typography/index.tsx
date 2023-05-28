@@ -5,11 +5,11 @@ type Type = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 const VARIANT_Styles: Record<Type, string> = {
   h1: 'text-[36px] md:text-5xl',
   h2: 'text-2xl md:text-4xl',
-  h3: 'text-3xl',
-  h4: 'text-2xl',
-  h5: 'text-xl',
+  h3: 'text-2xl md:text-3xl',
+  h4: 'text-xl md:text-2xl',
+  h5: 'text-lg md:text-xl',
   h6: 'text-lg',
-  p: 'text-base',
+  p: 'text-sm md:text-base',
 };
 type Weight =
   | 'font-thin'
