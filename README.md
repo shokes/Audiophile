@@ -46,7 +46,7 @@ Users should be able to:
 - TailwindCSS
 - Storyblok as a CMS
 - RTK
-- Mobile-first workflow
+- Lenis for smooth scroll effect
 
 ## Author
 
