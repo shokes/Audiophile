@@ -37,7 +37,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
     <Container>
       <div className='mt-[168px]' {...storyblokEditable(blok)}>
         <div className='bg-brand-amber w-full relative items-center text-center lg:items-start lg:text-left rounded-lg flex flex-col lg:flex-row gap-[32px] md:gap-[64px] lg:gap-[138.28px] justify-center'>
-          <div className='mt-[133px] hidden lg:block z-30'>
+          <div className='mt-[133px] hidden lg:block z-10'>
             <Image
               src={blok.desktop_image?.filename as string}
               width={410.23}
@@ -87,7 +87,6 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
           />
 
           {/* large oval three */}
-
           <Image
             className='absolute hidden lg:block top-[-16px]  opacity-50 left-[-148px]'
             alt='oval'
@@ -152,7 +151,7 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
             height={778}
           />
 
-          <div className='md:w-[349px] z-30 text-white  lg:mt-[133px] pb-[124px]'>
+          <div className='md:w-[349px] z-10 text-white  lg:mt-[133px] pb-[124px]'>
             <div className='mb-6'>
               <SlideUp animate={controls}>
                 <Typography as='h1' weight='font-bold'>
@@ -165,16 +164,15 @@ const HomeProductOne = ({ blok }: HomeProductOneProps) => {
                 <p className='text-xs font-medium'> {blok.description}</p>
               </FadeIn>
             </div>
-            <div className='z-50'>
-              <Button
-                bg='bg-black'
-                hover='hover:bg-brandGray-300'
-                link={resolvedLink}
-                width={false}
-              >
-                see product
-              </Button>
-            </div>
+
+            <Button
+              bg='bg-black'
+              hover='hover:bg-brandGray-300'
+              link={resolvedLink}
+              width={false}
+            >
+              see product
+            </Button>
           </div>
         </div>
       </div>
