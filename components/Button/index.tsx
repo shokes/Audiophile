@@ -14,7 +14,7 @@ interface ButtonProps {
 }
 
 const buttonClasses = classNames(
-  'uppercase duration-300 py-[15px] px-[31px]  text-sm font-bold'
+  'uppercase duration-300 py-[15px] px-[31px]  lg:text-sm text-xs font-bold'
 );
 
 const Button = ({

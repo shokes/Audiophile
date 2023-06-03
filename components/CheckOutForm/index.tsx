@@ -72,8 +72,8 @@ const CheckOutForm = () => {
 '
           onSubmit={handleSubmit}
         >
-          <div className='flex flex-col md:flex-row gap-[30px] '>
-            <div className='bg-white rounded-lg lg:w-[730px] px-[24px] md:px-[28px] md:py-[30px] lg:py-[54px] py-[24px] lg:px-12'>
+          <div className='flex flex-col min-[890px]:flex-row gap-[30px] '>
+            <div className='bg-white rounded-lg min-[890px]:w-[65%] px-[24px] md:px-[28px] md:py-[30px] lg:py-[54px] py-[24px] lg:px-12'>
               <div className='mb-[53px]'>
                 <div className='mb-[41px]'>
                   <Typography as='h3' weight='font-bold' transform='uppercase'>
@@ -275,7 +275,7 @@ const CheckOutForm = () => {
                 </div>
               </div>
             </div>
-            <div className='bg-white h-full lg:w-[350px] p-[32px] rounded-lg'>
+            <div className='bg-white h-full min-[890px]:w-[35%] p-[32px] rounded-lg'>
               <h2 className='text-lg font-bold uppercase text-gray-900 mb-[31px]'>
                 Summary
               </h2>
