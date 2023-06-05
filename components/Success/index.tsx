@@ -6,6 +6,8 @@ import Image from 'next/image';
 import Button from '../Button';
 import ModalLayout from '../ModalLayout';
 import { useEffect, useState } from 'react';
+import { deleteAllProductsInCart } from '@/redux/features/homeSlice';
+import { useDispatch } from 'react-redux';
 
 interface SuccessProps {
   cart: [];
@@ -14,6 +16,7 @@ interface SuccessProps {
 
 const Success = ({ cart, grandTotal }: SuccessProps) => {
   const [successCart, setSuccessCart] = useState<any>([]);
+  const dispatch = useDispatch();
 
   const [viewMore, setViewMore] = useState(true);
 
@@ -39,7 +42,7 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
           You will receive an email confirmation shortly.
         </p>
         <div className='flex flex-col md:flex-row'>
-          <div className='bg-brandGray-200  rounded-t-lg md:rounded-l-lg  py-[17px] px-[24px] w-full md:w-[246px] '>
+          <div className='bg-brandGray-200  rounded-t-lg md:rounded-l-lg  md:rounded-r-none py-[17px] px-[24px] w-full md:w-[246px] '>
             {' '}
             {viewMore ? (
               <div className='flex items-center '>
@@ -134,7 +137,7 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
               )}
             </div>
           </div>
-          <div className='bg-black py-[19px] md:py-0 text-white rounded-b-lg md:rounded-r-lg inline-fle pl-[32px] w-full md:w-[198px] flex flex-col justify-center'>
+          <div className='bg-black py-[19px] md:py-0 text-white rounded-b-lg md:rounded-l-none md:rounded-r-lg inline-fle pl-[32px] w-full md:w-[198px] flex flex-col justify-center'>
             <div className='opacity-50 text-xs uppercase block '>
               Grand Total
             </div>
@@ -144,7 +147,10 @@ const Success = ({ cart, grandTotal }: SuccessProps) => {
             </Typography>
           </div>
         </div>
-        <div className='text-white mt-[48px]'>
+        <div
+          className='text-white mt-[48px]'
+          onClick={() => dispatch(deleteAllProductsInCart())}
+        >
           <Button
             bg='bg-brand-amber'
             hover='hover:bg-brand-pastelYellow'

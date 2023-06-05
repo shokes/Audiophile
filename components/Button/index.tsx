@@ -9,7 +9,6 @@ interface ButtonProps {
   children: React.ReactNode;
   width: boolean;
   type?: 'button' | 'submit' | 'reset';
-
   disable?: boolean;
 }
 
