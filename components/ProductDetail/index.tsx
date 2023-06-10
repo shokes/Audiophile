@@ -16,6 +16,7 @@ import Container from '../Container';
 import SlideUp from '../Animation/slideUp';
 import { FadeIn } from '../Animation/fadeIn';
 import FadeOneBy from '../Animation/fadeOneBy';
+import { addedAlert } from '../Toasts';
 
 interface ProductDetailProps {
   blok: SbBlokData & ProductDetailStoryblok;
@@ -106,7 +107,10 @@ const ProductDetail = ({ blok }: ProductDetailProps) => {
                 <ProductDetailCounter />
                 <div
                   className='text-white'
-                  onClick={() => dispatch(addToCart([blok, tempQuantity]))}
+                  onClick={() => {
+                    dispatch(addToCart([blok, tempQuantity]));
+                    addedAlert(blok.name);
+                  }}
                 >
                   <Button
                     bg='bg-brand-amber'

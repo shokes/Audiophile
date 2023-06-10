@@ -25,6 +25,7 @@ import { useIsTouchDevice } from '@/hooks/useTouchDevice';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import useMouse from '@react-hook/mouse-position';
+import { Toaster } from 'react-hot-toast';
 
 const useVariants = (ref: React.MutableRefObject<null>) => {
   const mouse = useMouse(ref, {
@@ -117,6 +118,7 @@ export default function App({ Component, pageProps }: AppProps) {
             )}
 
             {!isTouchDevice && <Progressbar />}
+            <Toaster position='top-right' />
             <Component {...pageProps} />
           </LenisProvider>
         </PersistGate>

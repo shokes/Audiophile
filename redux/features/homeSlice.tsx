@@ -1,7 +1,11 @@
-import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-// ! to fix typings later
-const initialState: any = {
+interface StateTypes {
+  cart: {}[] | any;
+  tempQuantity: number;
+}
+
+const initialState: StateTypes = {
   cart: [],
   tempQuantity: 1,
 };
@@ -69,6 +73,10 @@ const homeSlice = createSlice({
     deleteAllProductsInCart: (state) => {
       state.cart = [];
     },
+
+    resetProductQuantity: (state) => {
+      state.tempQuantity = 1;
+    },
   },
 });
 
@@ -79,6 +87,7 @@ export const {
   increaseQuantityInCart,
   decreaseQuantityInCart,
   deleteAllProductsInCart,
+  resetProductQuantity,
 } = homeSlice.actions;
 
 export default homeSlice.reducer;
